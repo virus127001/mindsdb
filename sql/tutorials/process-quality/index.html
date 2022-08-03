@@ -790,7 +790,7 @@
   
     <li class="md-nav__item">
       <a href="../../table-structure/" class="md-nav__link">
-        Table Structure (Schema)
+        MindsDB Tables Structure
       </a>
     </li>
   
@@ -1234,22 +1234,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../mindsdb-superset-snowflake/" class="md-nav__link">
-        AI powered forecasts with MindsDB
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../house-sales-forecasting/" class="md-nav__link">
-        Forecasting house sales
+        House Sales
       </a>
     </li>
   
@@ -1660,6 +1646,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../docs-rules/" class="md-nav__link">
+        Docs style guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../contribute/tests/" class="md-nav__link">
         Testing and improving test coverage
       </a>
@@ -1866,7 +1866,8 @@ MindsDB abstracts ML models as virtual “AI Tables” in databases and you can 
 <li>Fix headers: </li>
 <li><code>sed -e 's/ /_/g' -e 's/\(.*\)/\L\1/' -e 's/%_//g' MiningProcess_Flotation_Plant_Database.csv &gt; fixed_headers.csv</code> (for Linux/Unix)</li>
 <li>edit headers manually: change <code>space</code> to <code>underscore</code>, upper case to lower case, remove <code>%</code> from headers (for Windows)</li>
-<li>Access MindsDB GUI either on cloud or local via URL 127.0.0.1:47334/.</li>
+<li>Access MindsDB GUI on local via URL 127.0.0.1:47334/. </li>
+<li>If you are using MindsDB Cloud, make sure to add the file to a database and create a database connection to MindsDB's GUI. Cloud has a file size limit of 10MB, therefore for this dataset it would be best to either use MindsDB local instance or if on Cloud <a href="https://docs.mindsdb.com/sql/create/databases/">connect via a database.</a></li>
 <li>Select the <code>Add data</code> button or the plug icon on the left side bar.</li>
 <li>The page will navigate to the 'Select your data source' page. Select 'Files'.</li>
 <li>Under 'Import a file' select the tab 'Click here to browse local files' and select your data file.</li>
@@ -1899,9 +1900,9 @@ MindsDB abstracts ML models as virtual “AI Tables” in databases and you can 
 <span class="w">           </span><span class="n">flotation_column_01_level</span><span class="p">,</span><span class="w"> </span><span class="n">flotation_column_02_level</span><span class="p">,</span><span class="w"></span>
 <span class="w">           </span><span class="n">flotation_column_03_level</span><span class="p">,</span><span class="w"> </span><span class="n">flotation_column_04_level</span><span class="p">,</span><span class="w"></span>
 <span class="w">           </span><span class="n">flotation_column_05_level</span><span class="p">,</span><span class="w"> </span><span class="n">flotation_column_06_level</span><span class="p">,</span><span class="w"> </span>
-<span class="w">           </span><span class="n">flotation_column_07_level</span><span class="p">,</span><span class="w"> </span><span class="n">iron_concentrate</span><span class="p">,</span><span class="w"> </span><span class="n">silica_concentrate</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">process_quality</span><span class="w"> </span>
+<span class="w">           </span><span class="n">flotation_column_07_level</span><span class="p">,</span><span class="w"> </span><span class="n">iron_concentrate</span><span class="p">,</span><span class="w"> </span><span class="n">silica_concentrate</span><span class="w"></span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">process_quality</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5000</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span><span class="n">PREDICT</span><span class="w"> </span><span class="n">silica_concentrate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">quality</span><span class="w"> </span><span class="k">USING</span><span class="p">;</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="n">PREDICT</span><span class="w"> </span><span class="n">silica_concentrate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">quality</span><span class="p">;</span><span class="w"></span>
 </code></pre></div></p>
 </blockquote>
 <p>After creating the Predictor you should see a similar output:</p>

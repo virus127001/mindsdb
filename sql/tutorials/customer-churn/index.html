@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pre-requisites" class="md-skip">
+        <a href="#predicting-customer-churn-with-mindsdb" class="md-skip">
           Skip to content
         </a>
       
@@ -790,7 +790,7 @@
   
     <li class="md-nav__item">
       <a href="../../table-structure/" class="md-nav__link">
-        Table Structure (Schema)
+        MindsDB Tables Structure
       </a>
     </li>
   
@@ -1197,6 +1197,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Customer Churn
@@ -1213,6 +1215,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1221,43 +1225,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
-    Pre-requisites
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#log-into-mindsdb-cloud" class="md-nav__link">
-    Log into Mindsdb Cloud
+  <a href="#the-data" class="md-nav__link">
+    The Data
   </a>
   
-    <nav class="md-nav" aria-label="Log into Mindsdb Cloud">
+    <nav class="md-nav" aria-label="The Data">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upload-a-data-file-to-mindsdb-cloud" class="md-nav__link">
-    Upload a data file to MindsDB Cloud
+  <a href="#connecting-the-data" class="md-nav__link">
+    Connecting the data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-overview" class="md-nav__link">
-    Data Overview
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-predictor" class="md-nav__link">
-    Create a predictor
+  <a href="#understanding-the-data" class="md-nav__link">
+    Understanding the Data
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-a-predictor-via-create-predictor" class="md-nav__link">
+    Training a Predictor Via CREATE PREDICTOR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-the-status-of-a-predictor" class="md-nav__link">
+    Checking the Status of a Predictor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-predictions" class="md-nav__link">
+    Making Predictions
+  </a>
   
 </li>
       
@@ -1316,22 +1334,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../mindsdb-superset-snowflake/" class="md-nav__link">
-        AI powered forecasts with MindsDB
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../house-sales-forecasting/" class="md-nav__link">
-        Forecasting house sales
+        House Sales
       </a>
     </li>
   
@@ -1653,6 +1657,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../docs-rules/" class="md-nav__link">
+        Docs style guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../contribute/tests/" class="md-nav__link">
         Testing and improving test coverage
       </a>
@@ -1760,6 +1778,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1768,43 +1788,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
-    Pre-requisites
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#log-into-mindsdb-cloud" class="md-nav__link">
-    Log into Mindsdb Cloud
+  <a href="#the-data" class="md-nav__link">
+    The Data
   </a>
   
-    <nav class="md-nav" aria-label="Log into Mindsdb Cloud">
+    <nav class="md-nav" aria-label="The Data">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upload-a-data-file-to-mindsdb-cloud" class="md-nav__link">
-    Upload a data file to MindsDB Cloud
+  <a href="#connecting-the-data" class="md-nav__link">
+    Connecting the data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-overview" class="md-nav__link">
-    Data Overview
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-predictor" class="md-nav__link">
-    Create a predictor
+  <a href="#understanding-the-data" class="md-nav__link">
+    Understanding the Data
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-a-predictor-via-create-predictor" class="md-nav__link">
+    Training a Predictor Via CREATE PREDICTOR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-the-status-of-a-predictor" class="md-nav__link">
+    Checking the Status of a Predictor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-predictions" class="md-nav__link">
+    Making Predictions
+  </a>
   
 </li>
       
@@ -1833,97 +1867,285 @@
 
 
 
-  <h1>Customer Churn</h1>
-
-<p>MindsDB as a Machine Learning framework can help marketing, sales, and customer retention teams determine the best incentive and the right time to make an offer to minimize customer turnover.</p>
-<p>In this tutorial you will learn how to use SQL queries to train a machine learning model and make predictions in three simple steps:</p>
-<ol>
-<li>Connect a database with customer's data to MindsDB.</li>
-<li>Use an <code>CREATE PREDICTOR</code> statement to train the machine learning model automatically.</li>
-<li>Query predictions with a simple <code>SELECT</code> statement from MindsDB <code>AI Table</code> (this special table returns data from an ML model upon being queried).</li>
-</ol>
-<p>Using SQL to perform machine learning at the data layer will bring you many benefits like removing unnecessary ETL-ing, seamless integration with your data, and enabling predictive analytics in your BI tool.  Let's see how this works with a real world example to predict the probability of churn for a new customer of a telecom company.</p>
-<blockquote>
-<p>Note: You can follow up this tutorial by connecting to your own database and using different data - the same workflow applies to most machine learning use cases.</p>
-</blockquote>
-<h2 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h2>
-<p>First, you can log into MindsDB Cloud or make sure you have successfully installed MindsDB. Check out the installation guide for <a href="/deployment/docker/">Docker</a> or <a href="/deployment/source/">PyPi</a> install. Second, you will need to have mysql-client or DBeaver, MySQL WOrkbench etc installed locally to connect to MySQL API.</p>
-<h2 id="log-into-mindsdb-cloud">Log into Mindsdb Cloud<a class="headerlink" href="#log-into-mindsdb-cloud" title="Permanent link">&para;</a></h2>
-<p>The first step will be to log into <a href="https://docs.mindsdb.com/deployment/cloud/">Mindsdb Cloud</a> , where we will gain access to the MySQL editor to execute SQL syntax. The Upload file feature and the MySQL Editor will make it easy to upload a file, create a predictor and make a prediction.</p>
-<h3 id="upload-a-data-file-to-mindsdb-cloud">Upload a data file to MindsDB Cloud<a class="headerlink" href="#upload-a-data-file-to-mindsdb-cloud" title="Permanent link">&para;</a></h3>
-<p>The datafile can be uploaded directly to Mindsdb Cloud for you to query. </p>
-<ol>
-<li>Navigate to <strong>+Upload file</strong> and select the option.</li>
-<li>Select <strong>Upload file</strong> to upsert a file from your local files or drag the file onto the 'Upload a file' section.</li>
-<li>Once the file has been uploaded,name the file you as a table name.</li>
-<li>Save and continue.</li>
-</ol>
-<p>The file will be stored as a table in your files table.</p>
-<p><img alt="Upload file" src="/assets/sql/tutorials/customer_churn/upload.png" /></p>
-<p>You can query the file you have uploaded as a table, eg.</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="n">churn</span><span class="w"></span>
+<h1 id="predicting-customer-churn-with-mindsdb">Predicting Customer Churn with MindsDB<a class="headerlink" href="#predicting-customer-churn-with-mindsdb" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>In this tutorial, we'll create, train, and query a machine learning model, which, in MindsDB language, is an <code>AI Table</code> or a <code>predictor</code>. We aim to predict the probability of churn for new customers of a telecom company.</p>
+<p>Make sure you have access to a working MindsDB installation either locally or via <a href="https://cloud.mindsdb.com/">cloud.mindsdb.com</a>.</p>
+<p>You can learn how to set up your account at MindsDB Cloud by following <a href="https://docs.mindsdb.com/setup/cloud/">this guide</a>. Another way is to set up MindsDB locally using <a href="https://docs.mindsdb.com/setup/self-hosted/docker/">Docker</a> or <a href="https://docs.mindsdb.com/setup/self-hosted/pip/source/">Python</a>.</p>
+<p>Let's get started.</p>
+<h2 id="the-data">The Data<a class="headerlink" href="#the-data" title="Permanent link">&para;</a></h2>
+<h3 id="connecting-the-data">Connecting the data<a class="headerlink" href="#connecting-the-data" title="Permanent link">&para;</a></h3>
+<p>There are a couple of ways you can get the data to follow through with this tutorial.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Connecting as a database via <code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"></span></code></label><label for="__tabbed_1_2">Connecting as a file</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>You can connect to a demo database that we've prepared for you. It contains the data used throughout this tutorial which is the <code class="highlight"><span class="n">example_db</span><span class="p">.</span><span class="n">demo_data</span><span class="p">.</span><span class="n">customer_churn</span><span class="w"></span></code> table.</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">example_db</span><span class="w"></span>
+<span class="w">    </span><span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;postgres&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">PARAMETERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="ss">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;demo_user&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="ss">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;demo_password&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="ss">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;3.220.66.106&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="ss">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;5432&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="ss">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;demo&quot;</span><span class="w"></span>
+<span class="err">}</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<h3 id="data-overview">Data Overview<a class="headerlink" href="#data-overview" title="Permanent link">&para;</a></h3>
-<p>In this tutorial, we will use the customer churn data-set . Each row represents a customer and we will train a machine learning model to help us predict if the customer is going to stop using the company products. Below is a short description of each feature inside the data.</p>
-<ul>
-<li>CustomerId - Customer ID</li>
-<li>Gender - Male or Female customer</li>
-<li>SeniorCitizen - Whether the customer is a senior citizen or not (1, 0)</li>
-<li>Partner - Whether the customer has a partner or not (Yes, No)</li>
-<li>Dependents - Whether the customer has dependents or not (Yes, No)</li>
-<li>Tenure - Number of months the customer has stayed with the company</li>
-<li>PhoneService - Whether the customer has a phone service or not (Yes, No)</li>
-<li>MultipleLines - Whether the customer has multiple lines or not (Yes, No, No phone service)</li>
-<li>InternetService - Customer’s internet service provider (DSL, Fiber optic, No)</li>
-<li>OnlineSecurity - Whether the customer has online security or not (Yes, No, No internet service)</li>
-<li>OnlineBackup - Whether the customer has online backup or not (Yes, No, No internet service)</li>
-<li>DeviceProtection - Whether the customer has device protection or not (Yes, No, No internet service)</li>
-<li>TechSupport - Whether the customer has tech support or not (Yes, No, No internet service)</li>
-<li>StreamingTv - Whether the customer has streaming TV or not (Yes, No, No internet service)</li>
-<li>StreamingMovies - Whether the customer has streaming movies or not (Yes, No, No internet service)</li>
-<li>Contract - The contract term of the customer (Month-to-month, One year, Two year)</li>
-<li>PaperlessBilling - Whether the customer has paperless billing or not (Yes, No)</li>
-<li>PaymentMethod - The customer’s payment method (Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic))</li>
-<li>MonthlyCharges - The monthly charge amount</li>
-<li>TotalCharges - The total amount charged to the customer</li>
-<li>Churn - Whether the customer churned or not (Yes or No). This is what we want to predict.</li>
-</ul>
-<h3 id="create-a-predictor">Create a predictor<a class="headerlink" href="#create-a-predictor" title="Permanent link">&para;</a></h3>
-<p>We will create a machine learning model with the relevant parameters in order for it to train.</p>
-<p>For that we are going to use the CREATE PREDICTOR syntax, where we specify what query to train FROM and what we want to learn to PREDICT:</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">predictor_name</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">file_name</span><span class="p">)</span><span class="w"></span>
-<span class="n">PREDICT</span><span class="w"> </span><span class="k">column_name</span><span class="p">;</span><span class="w"></span>
+<p>Now you can run queries directly on the demo database. Let's preview the data that we'll use to train our predictor.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">example_db</span><span class="p">.</span><span class="n">demo_data</span><span class="p">.</span><span class="n">customer_churn</span><span class="w"> </span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>The required values that we need to provide are:</p>
-<ul>
-<li>predictor_name (string) - The name of the model</li>
-<li>file_name - The name of the table/file you have uploaded.</li>
-<li>column_name (string) - The feature you want to predict.</li>
-</ul>
-<p>To train the model that will predict customer churn, run the following syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">customer_churn</span><span class="w"></span>
+</div>
+<div class="tabbed-block">
+<p>In this tutorial, we use the customer churn dataset. You can download it <a href="https://github.com/mindsdb/mindsdb-examples/blob/master/classics/customer_churn/raw_data/WA_Fn-UseC_-Telco-Customer-Churn.csv">here</a>.</p>
+<p>And <a href="https://docs.mindsdb.com/sql/create/file/">this guide</a> explains how to upload a file to MindsDB.</p>
+<p>Now, you can query the uploaded file as if it were a table.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="n">churn</span><span class="w"></span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">From now on, we will use the <code>files.churn</code> file as a table. Make sure you replace it with <code class="highlight"><span class="n">example_db</span><span class="p">.</span><span class="n">demo_data</span><span class="p">.</span><span class="n">customer_churn</span><span class="w"></span></code> if you use the <code>demo</code> database.</p>
+</div>
+<h3 id="understanding-the-data">Understanding the Data<a class="headerlink" href="#understanding-the-data" title="Permanent link">&para;</a></h3>
+<p>We will use the customer churn dataset where each row represents one customer. In the following sections of this tutorial, we will predict if the customer is going to stop using the company products.</p>
+<p>Below is the sample data stored in the customer churn dataset.</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">----------+------+-------------+-------+----------+------+------------+----------------+---------------+--------------+------------+----------------+-----------+-----------+---------------+--------------+----------------+-------------------------+--------------+------------+-----+</span>
+<span class="o">|</span><span class="n">customerID</span><span class="o">|</span><span class="n">gender</span><span class="o">|</span><span class="n">SeniorCitizen</span><span class="o">|</span><span class="n">Partner</span><span class="o">|</span><span class="n">Dependents</span><span class="o">|</span><span class="n">tenure</span><span class="o">|</span><span class="n">PhoneService</span><span class="o">|</span><span class="n">MultipleLines</span><span class="w">   </span><span class="o">|</span><span class="n">InternetService</span><span class="o">|</span><span class="n">OnlineSecurity</span><span class="o">|</span><span class="n">OnlineBackup</span><span class="o">|</span><span class="n">DeviceProtection</span><span class="o">|</span><span class="n">TechSupport</span><span class="o">|</span><span class="n">StreamingTV</span><span class="o">|</span><span class="n">StreamingMovies</span><span class="o">|</span><span class="n">Contract</span><span class="w">      </span><span class="o">|</span><span class="n">PaperlessBilling</span><span class="o">|</span><span class="n">PaymentMethod</span><span class="w">            </span><span class="o">|</span><span class="n">MonthlyCharges</span><span class="o">|</span><span class="n">TotalCharges</span><span class="o">|</span><span class="n">Churn</span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">----------+------+-------------+-------+----------+------+------------+----------------+---------------+--------------+------------+----------------+-----------+-----------+---------------+--------------+----------------+-------------------------+--------------+------------+-----+</span>
+<span class="o">|</span><span class="mi">7590</span><span class="o">-</span><span class="n">VHVEG</span><span class="o">|</span><span class="n">Female</span><span class="o">|</span><span class="mi">0</span><span class="w">            </span><span class="o">|</span><span class="n">Yes</span><span class="w">    </span><span class="o">|</span><span class="k">No</span><span class="w">        </span><span class="o">|</span><span class="mi">1</span><span class="w">     </span><span class="o">|</span><span class="k">No</span><span class="w">          </span><span class="o">|</span><span class="k">No</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="n">service</span><span class="o">|</span><span class="n">DSL</span><span class="w">            </span><span class="o">|</span><span class="k">No</span><span class="w">            </span><span class="o">|</span><span class="n">Yes</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">              </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">             </span><span class="o">|</span><span class="k">Month</span><span class="o">-</span><span class="k">to</span><span class="o">-</span><span class="k">month</span><span class="o">|</span><span class="n">Yes</span><span class="w">             </span><span class="o">|</span><span class="n">Electronic</span><span class="w"> </span><span class="k">check</span><span class="w">         </span><span class="o">|</span><span class="mi">29</span><span class="p">.</span><span class="mi">85</span><span class="w">         </span><span class="o">|</span><span class="mi">29</span><span class="p">.</span><span class="mi">85</span><span class="w">       </span><span class="o">|</span><span class="k">No</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="mi">5575</span><span class="o">-</span><span class="n">GNVDE</span><span class="o">|</span><span class="n">Male</span><span class="w">  </span><span class="o">|</span><span class="mi">0</span><span class="w">            </span><span class="o">|</span><span class="k">No</span><span class="w">     </span><span class="o">|</span><span class="k">No</span><span class="w">        </span><span class="o">|</span><span class="mi">34</span><span class="w">    </span><span class="o">|</span><span class="n">Yes</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">              </span><span class="o">|</span><span class="n">DSL</span><span class="w">            </span><span class="o">|</span><span class="n">Yes</span><span class="w">           </span><span class="o">|</span><span class="k">No</span><span class="w">          </span><span class="o">|</span><span class="n">Yes</span><span class="w">             </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">             </span><span class="o">|</span><span class="n">One</span><span class="w"> </span><span class="k">year</span><span class="w">      </span><span class="o">|</span><span class="k">No</span><span class="w">              </span><span class="o">|</span><span class="n">Mailed</span><span class="w"> </span><span class="k">check</span><span class="w">             </span><span class="o">|</span><span class="mi">56</span><span class="p">.</span><span class="mi">95</span><span class="w">         </span><span class="o">|</span><span class="mi">1889</span><span class="p">.</span><span class="mi">5</span><span class="w">      </span><span class="o">|</span><span class="k">No</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="mi">3668</span><span class="o">-</span><span class="n">QPYBK</span><span class="o">|</span><span class="n">Male</span><span class="w">  </span><span class="o">|</span><span class="mi">0</span><span class="w">            </span><span class="o">|</span><span class="k">No</span><span class="w">     </span><span class="o">|</span><span class="k">No</span><span class="w">        </span><span class="o">|</span><span class="mi">2</span><span class="w">     </span><span class="o">|</span><span class="n">Yes</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">              </span><span class="o">|</span><span class="n">DSL</span><span class="w">            </span><span class="o">|</span><span class="n">Yes</span><span class="w">           </span><span class="o">|</span><span class="n">Yes</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">              </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">             </span><span class="o">|</span><span class="k">Month</span><span class="o">-</span><span class="k">to</span><span class="o">-</span><span class="k">month</span><span class="o">|</span><span class="n">Yes</span><span class="w">             </span><span class="o">|</span><span class="n">Mailed</span><span class="w"> </span><span class="k">check</span><span class="w">             </span><span class="o">|</span><span class="mi">53</span><span class="p">.</span><span class="mi">85</span><span class="w">         </span><span class="o">|</span><span class="mi">108</span><span class="p">.</span><span class="mi">15</span><span class="w">      </span><span class="o">|</span><span class="n">Yes</span><span class="w">  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="mi">7795</span><span class="o">-</span><span class="n">CFOCW</span><span class="o">|</span><span class="n">Male</span><span class="w">  </span><span class="o">|</span><span class="mi">0</span><span class="w">            </span><span class="o">|</span><span class="k">No</span><span class="w">     </span><span class="o">|</span><span class="k">No</span><span class="w">        </span><span class="o">|</span><span class="mi">45</span><span class="w">    </span><span class="o">|</span><span class="k">No</span><span class="w">          </span><span class="o">|</span><span class="k">No</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="n">service</span><span class="o">|</span><span class="n">DSL</span><span class="w">            </span><span class="o">|</span><span class="n">Yes</span><span class="w">           </span><span class="o">|</span><span class="k">No</span><span class="w">          </span><span class="o">|</span><span class="n">Yes</span><span class="w">             </span><span class="o">|</span><span class="n">Yes</span><span class="w">        </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">             </span><span class="o">|</span><span class="n">One</span><span class="w"> </span><span class="k">year</span><span class="w">      </span><span class="o">|</span><span class="k">No</span><span class="w">              </span><span class="o">|</span><span class="n">Bank</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="p">(</span><span class="n">automatic</span><span class="p">)</span><span class="o">|</span><span class="mi">42</span><span class="p">.</span><span class="mi">3</span><span class="w">          </span><span class="o">|</span><span class="mi">1840</span><span class="p">.</span><span class="mi">75</span><span class="w">     </span><span class="o">|</span><span class="k">No</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="mi">9237</span><span class="o">-</span><span class="n">HQITU</span><span class="o">|</span><span class="n">Female</span><span class="o">|</span><span class="mi">0</span><span class="w">            </span><span class="o">|</span><span class="k">No</span><span class="w">     </span><span class="o">|</span><span class="k">No</span><span class="w">        </span><span class="o">|</span><span class="mi">2</span><span class="w">     </span><span class="o">|</span><span class="n">Yes</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">              </span><span class="o">|</span><span class="n">Fiber</span><span class="w"> </span><span class="n">optic</span><span class="w">    </span><span class="o">|</span><span class="k">No</span><span class="w">            </span><span class="o">|</span><span class="k">No</span><span class="w">          </span><span class="o">|</span><span class="k">No</span><span class="w">              </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">         </span><span class="o">|</span><span class="k">No</span><span class="w">             </span><span class="o">|</span><span class="k">Month</span><span class="o">-</span><span class="k">to</span><span class="o">-</span><span class="k">month</span><span class="o">|</span><span class="n">Yes</span><span class="w">             </span><span class="o">|</span><span class="n">Electronic</span><span class="w"> </span><span class="k">check</span><span class="w">         </span><span class="o">|</span><span class="mi">70</span><span class="p">.</span><span class="mi">7</span><span class="w">          </span><span class="o">|</span><span class="mi">151</span><span class="p">.</span><span class="mi">65</span><span class="w">      </span><span class="o">|</span><span class="n">Yes</span><span class="w">  </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">----------+------+-------------+-------+----------+------+------------+----------------+---------------+--------------+------------+----------------+-----------+-----------+---------------+--------------+----------------+-------------------------+--------------+------------+-----+</span>
+</code></pre></div>
+<p>Where:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Column</th>
+<th align="left">Description</th>
+<th>Data Type</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>CustomerId</code></td>
+<td align="left">The identification number per customer</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>Gender</code></td>
+<td align="left">The gender of a customer</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>SeniorCitizen</code></td>
+<td align="left">It indicates whether the customer is a senior citizen (1) or not (0)</td>
+<td><code>integer</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>Partner</code></td>
+<td align="left">It indicates whether the customer has a partner (Yes) or not (No)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>Dependents</code></td>
+<td align="left">It indicates whether the customer has dependents (Yes) or not (No)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>Tenure</code></td>
+<td align="left">Number of months the customer has stayed with the company</td>
+<td><code>integer</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>PhoneService</code></td>
+<td align="left">It indicates whether the customer has a phone service (Yes) or not (No)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>MultipleLines</code></td>
+<td align="left">It indicates whether the customer has multiple lines (Yes) or not (No, No phone service)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>InternetService</code></td>
+<td align="left">Customer’s internet service provider (DSL, Fiber optic, No)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>OnlineSecurity</code></td>
+<td align="left">It indicates whether the customer has online security (Yes) or not (No, No internet service)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>OnlineBackup</code></td>
+<td align="left">It indicates whether the customer has online backup (Yes) or not (No, No internet service)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>DeviceProtection</code></td>
+<td align="left">It indicates whether the customer has device protection (Yes) or not (No, No internet service)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>TechSupport</code></td>
+<td align="left">It indicates whether the customer has tech support (Yes) or not (No, No internet service)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>StreamingTv</code></td>
+<td align="left">It indicates whether the customer has streaming TV (Yes) or not (No, No internet service)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>StreamingMovies</code></td>
+<td align="left">It indicates whether the customer has streaming movies (Yes) or not (No, No internet service)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>Contract</code></td>
+<td align="left">The contract term of the customer (Month-to-month, One year, Two year)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>PaperlessBilling</code></td>
+<td align="left">It indicates whether the customer has paperless billinig (Yes) or not (No)</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>PaymentMethod</code></td>
+<td align="left">Customer’s payment method (Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic))</td>
+<td><code>character varying</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>MonthlyCharges</code></td>
+<td align="left">The monthly charge amount</td>
+<td><code>money</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>TotalCharges</code></td>
+<td align="left">The total amount charged to the customer</td>
+<td><code>money</code></td>
+<td>Feature</td>
+</tr>
+<tr>
+<td align="left"><code>Churn</code></td>
+<td align="left">It indicates whether the customer churned (Yes) or not (No)</td>
+<td><code>character varying</code></td>
+<td>Label</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Labels and Features</p>
+<p>A <strong>label</strong> is the thing we're predicting — the y variable in simple linear regression.
+A <strong>feature</strong> is an input variable — the x variable in simple linear regression.</p>
+</div>
+<h2 id="training-a-predictor-via-create-predictor">Training a Predictor Via <a href="/sql/create/predictor"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code></a><a class="headerlink" href="#training-a-predictor-via-create-predictor" title="Permanent link">&para;</a></h2>
+<p>Let's create and train your first machine learning predictor. For that, we are going to use the <a href="/sql/create/predictor"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code></a> syntax where we specify what sub-query to train <code class="highlight"><span class="k">FROM</span><span class="w"></span></code> (features) and what we want to <code class="highlight"><span class="n">PREDICT</span><span class="w"></span></code> (labels).</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">customer_churn_predictor</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="w"></span>
 <span class="w">  </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">churn</span><span class="p">)</span><span class="w"></span>
 <span class="n">PREDICT</span><span class="w"> </span><span class="n">Churn</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="Create predictor" src="/assets/sql/tutorials/customer_churn/create_churn.png" /></p>
-<p>What we did here was to create a predictor called customer_churn to predict the Churn and also ignore the gender column as an irrelevant column for the model.The model training has started. </p>
-<p>You can check the predictors status and will be able to make a prediction once the status shows complete:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;customer_churn&#39;</span><span class="p">;</span><span class="w"></span>
+<p>We use all of the columns as features, except for the <code>Churn</code> column whose value is going to be predicted.</p>
+<h2 id="checking-the-status-of-a-predictor">Checking the Status of a Predictor<a class="headerlink" href="#checking-the-status-of-a-predictor" title="Permanent link">&para;</a></h2>
+<p>A predictor may take a couple of minutes for the training to complete. You can monitor the status of your predictor by using this SQL command:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;customer_churn_predictor&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="select" src="/assets/sql/tutorials/customer_churn/select.png" /></p>
-<p>The next steps would be to query the model and predict the customer churn. Let’s be creative and imagine a customer. Customer will use only DSL service, no phone service and multiple lines, she was with the company for 1 month and has a partner. Add all of this information to the WHERE clause.</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Churn</span><span class="p">,</span><span class="w"> </span><span class="n">Churn_confidence</span><span class="p">,</span><span class="w"> </span><span class="n">Churn_explain</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">customer_churn</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">SeniorCitizen</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Partner</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span>
-<span class="k">AND</span><span class="w"> </span><span class="n">Dependents</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">tenure</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">PhoneService</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">MultipleLines</span><span class="o">=</span><span class="s1">&#39;No phone service&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">InternetService</span><span class="o">=</span><span class="s1">&#39;DSL&#39;</span><span class="p">;</span><span class="w"></span>
+<p>If we run it right after creating a predictor, we'll most probably get this output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">----------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">status</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">----------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">training</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">----------+</span>
 </code></pre></div>
-<p><img alt="customer churn" src="/assets/sql/tutorials/customer_churn/customer_churn.png" /></p>
-<p>With the confidence of around 82% MindsDB predicted that this customer will churn. One important thing to check here is the important_missing_information value, where MindsDB is pointing to the important missing information for giving a more accurate prediction, in this case, Contract, MonthlyCharges, TotalCharges and OnlineBackup. Let’s include those values in the WHERE clause, and run a new query:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Churn</span><span class="p">,</span><span class="w"> </span><span class="n">Churn_confidence</span><span class="p">,</span><span class="w"> </span><span class="n">Churn_explain</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">customer_churn</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">SeniorCitizen</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Partner</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span>
-<span class="k">AND</span><span class="w"> </span><span class="n">Dependents</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">tenure</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">PhoneService</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">MultipleLines</span><span class="o">=</span><span class="s1">&#39;No phone service&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">InternetService</span><span class="o">=</span><span class="s1">&#39;DSL&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">OnlineSecurity</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">OnlineBackup</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">DeviceProtection</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">TechSupport</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">StreamingTV</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">StreamingMovies</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Contract</span><span class="o">=</span><span class="s1">&#39;Month-to-month&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">PaperlessBilling</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">PaymentMethod</span><span class="o">=</span><span class="s1">&#39;Electronic check&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">MonthlyCharges</span><span class="o">=</span><span class="mi">29</span><span class="p">.</span><span class="mi">85</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">TotalCharges</span><span class="o">=</span><span class="mi">29</span><span class="p">.</span><span class="mi">85</span><span class="p">;</span><span class="w"></span>
+<p>But if we wait a couple of minutes, this should be the output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">----------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">status</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">----------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">complete</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">----------+</span>
 </code></pre></div>
-<p><img alt="customer churn2" src="/assets/sql/tutorials/customer_churn/customer_churn2.png" /></p>
+<p>Now, if the status of our predictor says <code>complete</code>, we can start making predictions!</p>
+<h2 id="making-predictions">Making Predictions<a class="headerlink" href="#making-predictions" title="Permanent link">&para;</a></h2>
+<p>You can make predictions by querying the predictor as if it were a table. The <a href="/sql/api/select/"><code>SELECT</code></a> syntax lets you make predictions for the label based on the chosen features.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Churn</span><span class="p">,</span><span class="w"> </span><span class="n">Churn_confidence</span><span class="p">,</span><span class="w"> </span><span class="n">Churn_explain</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">customer_churn_predictor</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">SeniorCitizen</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">Partner</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">Dependents</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">tenure</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">PhoneService</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">MultipleLines</span><span class="o">=</span><span class="s1">&#39;No phone service&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">InternetService</span><span class="o">=</span><span class="s1">&#39;DSL&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, you get the following output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-------+---------------------+-------------------------------------------------------------------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Churn</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Churn_confidence</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">Churn_explain</span><span class="w">                                                                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------+---------------------+-------------------------------------------------------------------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Yes</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">7865168539325843</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;predicted_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Yes&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">7865168539325843</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;anomaly&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;truth&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="err">}</span><span class="w">    </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------+---------------------+-------------------------------------------------------------------------------------------------+</span>
+</code></pre></div>
+<p>Let's try another prediction.</p>
+<p>An important thing to check is the <code>important_missing_information</code> value, where MindsDB points to the important missing information that should be included to give a more accurate prediction. In this case, the <code>Contract</code>, <code>MonthlyCharges</code>, <code>TotalCharges</code>, and <code>OnlineBackup</code> columns are the important missing information. Let’s include those values in the <code>WHERE</code> clause, and run a new query.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Churn</span><span class="p">,</span><span class="w"> </span><span class="n">Churn_confidence</span><span class="p">,</span><span class="w"> </span><span class="n">Churn_explain</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">customer_churn_predictor</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">SeniorCitizen</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">Partner</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">Dependents</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">tenure</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">PhoneService</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">MultipleLines</span><span class="o">=</span><span class="s1">&#39;No phone service&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">InternetService</span><span class="o">=</span><span class="s1">&#39;DSL&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">OnlineSecurity</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">OnlineBackup</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">DeviceProtection</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">TechSupport</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">StreamingTV</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">StreamingMovies</span><span class="o">=</span><span class="s1">&#39;No&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">Contract</span><span class="o">=</span><span class="s1">&#39;Month-to-month&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">PaperlessBilling</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">PaymentMethod</span><span class="o">=</span><span class="s1">&#39;Electronic check&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">MonthlyCharges</span><span class="o">=</span><span class="mi">29</span><span class="p">.</span><span class="mi">85</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">TotalCharges</span><span class="o">=</span><span class="mi">29</span><span class="p">.</span><span class="mi">85</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, you get the following output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-------+---------------------+-------------------------------------------------------------------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Churn</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Churn_confidence</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">Churn_explain</span><span class="w">                                                                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------+---------------------+-------------------------------------------------------------------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Yes</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">8202247191011236</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;predicted_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Yes&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">8202247191011236</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;anomaly&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;truth&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="err">}</span><span class="w">    </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------+---------------------+-------------------------------------------------------------------------------------------------+</span>
+</code></pre></div>
+<p>Here, MindsDB predicted the probability of this customer churning with the confidence of around 82%.</p>
 <h2 id="whats-next">What's Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <p>Have fun while trying it out yourself!</p>
 <ul>

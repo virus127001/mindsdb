@@ -15,7 +15,7 @@
     
     
       
-        <title>AI powered forecasts with MindsDB - MindsDB Documentation</title>
+        <title>Using MindsDB Machine Learning to Solve a Real-World **time series** Problem - MindsDB Documentation</title>
       
     
     
@@ -155,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI powered forecasts with MindsDB
+              Using MindsDB Machine Learning to Solve a Real-World **time series** Problem
             
           </span>
         </div>
@@ -790,7 +790,7 @@
   
     <li class="md-nav__item">
       <a href="../../table-structure/" class="md-nav__link">
-        Table Structure (Schema)
+        MindsDB Tables Structure
       </a>
     </li>
   
@@ -1086,14 +1086,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
       
       
       
@@ -1208,14 +1206,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_3" type="checkbox" id="__nav_11_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_3" type="checkbox" id="__nav_11_3" >
       
       
       
@@ -1236,133 +1232,10 @@
               
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          AI powered forecasts with MindsDB
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        AI powered forecasts with MindsDB
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#set-up-mindsdb" class="md-nav__link">
-    Set Up MindsDB
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-mindsdb-to-the-data-for-model-training" class="md-nav__link">
-    Connect MindsDB to the Data for model training
-  </a>
-  
-    <nav class="md-nav" aria-label="Connect MindsDB to the Data for model training">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-getting-the-training-data" class="md-nav__link">
-    Step 1: Getting the Training Data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-training-the-predictive-model" class="md-nav__link">
-    Step 2: Training the Predictive Model
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-getting-the-forecasts" class="md-nav__link">
-    Step 3: Getting the Forecasts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualizing-the-results-using-apache-superset" class="md-nav__link">
-    Visualizing the Results using Apache Superset
-  </a>
-  
-    <nav class="md-nav" aria-label="Visualizing the Results using Apache Superset">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visualizing-data" class="md-nav__link">
-    Visualizing Data
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusions-powerful-forecasting-with-mindsdb-your-database-and-superset" class="md-nav__link">
-    Conclusions: Powerful forecasting with MindsDB, your database, and Superset
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    What's Next?
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
   
     <li class="md-nav__item">
       <a href="../house-sales-forecasting/" class="md-nav__link">
-        Forecasting house sales
+        House Sales
       </a>
     </li>
   
@@ -1684,6 +1557,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../docs-rules/" class="md-nav__link">
+        Docs style guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../contribute/tests/" class="md-nav__link">
         Testing and improving test coverage
       </a>
@@ -1900,7 +1787,7 @@
 <p>This is a difficult machine learning problem that is common in databases. A timestamp indicates that we are dealing with the time-series problem. The data is further complicated by the type of day (day-type) the row contains and this is called multivariate. Additionally, there is high-cardinality as each route will have multiple row entries each with different timestamps, rides, and day types.</p>
 <p>Let’s see how we can use machine learning with MindsDB to optimize the number of buses per route and visualize the results.</p>
 <h2 id="set-up-mindsdb">Set Up MindsDB<a class="headerlink" href="#set-up-mindsdb" title="Permanent link">&para;</a></h2>
-<p>First things first! You need to connect your database to MindsDB. One of the easy ways to do so is to create a <a href="https://docs.mindsdb.com/deployment/cloud/">MindsDB cloud</a> account. If you prefer to deploy MindsDB locally, please refer to installation instructions via <a href="https://docs.mindsdb.com/deployment/docker/">Docker</a> or <a href="https://docs.mindsdb.com/deployment/pypi/">PyPI</a>.</p>
+<p>First things first! You need to connect your database to MindsDB. One of the easy ways to do so is to create a <a href="https://docs.mindsdb.com/setup/cloud/">MindsDB cloud</a> account. If you prefer to deploy MindsDB locally, please refer to installation instructions via <a href="https://docs.mindsdb.com/setup/self-hosted/docker/">Docker</a> or <a href="https://docs.mindsdb.com/setup/self-hosted/pip/windows/">PyPI</a>.</p>
 <p>Once an account is created you can connect to Snowflake using standard parameters like database name (in this case the Chicago Transit Authority), host, port, username, password, etc.</p>
 <p><img alt="mindsdb connect" src="/assets/sql/tutorials/snowflake-superset/9-connect_to_MindsDB.png" /></p>
 <h2 id="connect-mindsdb-to-the-data-for-model-training">Connect MindsDB to the Data for model training<a class="headerlink" href="#connect-mindsdb-to-the-data-for-model-training" title="Permanent link">&para;</a></h2>
@@ -1924,6 +1811,7 @@
 </code></pre></div>
 <p><img alt="show dbs" src="/assets/sql/tutorials/snowflake-superset/13-info_schema.png" /></p>
 <p>The training data consists of the number of rides per bus route and day. For example, on 2001-07-03, there were 7354 rides on bus route 3.</p>
+<p>You can download the dataset <a href="https://github.com/mindsdb/benchmarks/blob/main/benchmarks/datasets/chicago_transit_ts/CTA_2019_2020.csv">here</a> and execute the SQL commands along with the tutorial!</p>
 <h3 id="step-2-training-the-predictive-model">Step 2: Training the Predictive Model<a class="headerlink" href="#step-2-training-the-predictive-model" title="Permanent link">&para;</a></h3>
 <p>Let’s move on to the next step, which is training the predictive model. For that, we’ll use the MINDSDB database.</p>
 <p><div class="highlight"><pre><span></span><code><span class="n">use</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">;</span><span class="w"></span>

@@ -792,7 +792,7 @@
   
     <li class="md-nav__item">
       <a href="../../table-structure/" class="md-nav__link">
-        Table Structure (Schema)
+        MindsDB Tables Structure
       </a>
     </li>
   
@@ -1409,22 +1409,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/mindsdb-superset-snowflake/" class="md-nav__link">
-        AI powered forecasts with MindsDB
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../tutorials/house-sales-forecasting/" class="md-nav__link">
-        Forecasting house sales
+        House Sales
       </a>
     </li>
   
@@ -1746,6 +1732,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../docs-rules/" class="md-nav__link">
+        Docs style guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../contribute/tests/" class="md-nav__link">
         Testing and improving test coverage
       </a>
@@ -2019,15 +2019,12 @@
 
 <h1 id="create-predictor-statement"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> Statement<a class="headerlink" href="#create-predictor-statement" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>The <code>CREATE PREDICTOR</code> statement is used to train a new model. The basic syntax for training a model is:</p>
+<p>The <code>CREATE PREDICTOR</code> statement is used to train a new model. The basic syntax for training a model is as follows:</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.[</span><span class="n">predictor_name</span><span class="p">]</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="n">integration_name</span><span class="p">]</span><span class="w"></span>
 <span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="p">[</span><span class="k">column_name</span><span class="p">,</span><span class="w"> </span><span class="p">...]</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="k">table_name</span><span class="p">])</span><span class="w"></span>
-<span class="n">PREDICT</span><span class="w"> </span><span class="p">[</span><span class="n">target_column</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-<p>On execution, you should get:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+<span class="n">PREDICT</span><span class="w"> </span><span class="p">[</span><span class="n">target_column</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
 <p>Where:</p>
 <table>
@@ -2056,35 +2053,42 @@
 </tr>
 </tbody>
 </table>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Checking the status of the model</p>
 </div>
-<p>After you run the <code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> statement, you can check the status of the training model, by selecting from the <code class="highlight"><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span></code></p>
-<div class="codehilite"><pre><span></span><code><span class="err">```</span><span class="k">sql</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<p>After you run the <code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> statement, you can check the status of the training model by selecting from the <code class="highlight"><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span></code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;[predictor_name]&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="err">```</span><span class="w"></span>
 </code></pre></div>
-
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code>+------------------------+-----------------------------------+----------------------------------------+-----------------------+-------------+---------------+-----+-----------------+----------------+
+|name                    |status                             |accuracy                                |predict                |update_status|mindsdb_version|error|select_data_query|training_options|
++------------------------+-----------------------------------+----------------------------------------+-----------------------+-------------+---------------+-----+-----------------+----------------+
+|predictor_name          |generating or training or complete |number depending on the accuracy metric |column_to_be_predicted |up_to_date   |22.7.5.0       |     |                 |                |
++------------------------+-----------------------------------+----------------------------------------+-----------------------+-------------+---------------+-----+-----------------+----------------+
+</code></pre></div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>This example shows how you can train a Machine Learning model called home_rentals_model to predict the rental prices for real estate properties inside the dataset.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">db_integration</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">house_rentals_data</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">rentals</span><span class="w"></span>
 <span class="n">PREDICT</span><span class="w"> </span><span class="n">rental_price</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="mi">878</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<p>To check the predictor status query the <a href="/sql/table-structure/#the-predictors-table"><code class="highlight"><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span></code></a> :</p>
+<p>To check the predictor status, query the <a href="/sql/table-structure/#the-predictors-table"><code class="highlight"><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span></code></a> table.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;home_rentals_model&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution,</p>
-<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-----------------+----------+--------------------+--------------+---------------+-----------------+-------+-------------------+------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="n">status</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">accuracy</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="n">predict</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">update_status</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">mindsdb_version</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">select_data_query</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">training_options</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
-<span class="o">+</span><span class="c1">-----------------+----------+--------------------+--------------+---------------+-----------------+-------+-------------------+------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">home_rentals123</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">complete</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">9991920992432087</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">rental_price</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">up_to_date</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">22</span><span class="p">.</span><span class="mi">5</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">  </span><span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">                  </span><span class="o">|</span><span class="w"></span>
-<span class="o">+</span><span class="c1">-----------------+----------+--------------------+--------------+---------------+-----------------+-------+-------------------+------------------+</span>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">--------------------+----------+--------------------+--------------+---------------+-----------------+-------+-------------------+------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="n">status</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">accuracy</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="n">predict</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">update_status</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">mindsdb_version</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">select_data_query</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">training_options</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">--------------------+----------+--------------------+--------------+---------------+-----------------+-------+-------------------+------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">home_rentals_model</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">complete</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">9991920992432087</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">rental_price</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">up_to_date</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">22</span><span class="p">.</span><span class="mi">5</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">  </span><span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">                  </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">--------------------+----------+--------------------+--------------+---------------+-----------------+-------+-------------------+------------------+</span>
 </code></pre></div>
 <h2 id="using-statement"><code class="highlight"><span class="p">...</span><span class="w"> </span><span class="k">USING</span><span class="w"></span></code> Statement<a class="headerlink" href="#using-statement" title="Permanent link">&para;</a></h2>
 <h3 id="using-description"><code class="highlight"><span class="p">...</span><span class="w"> </span><span class="k">USING</span><span class="w"></span></code> Description<a class="headerlink" href="#using-description" title="Permanent link">&para;</a></h3>
@@ -2094,8 +2098,9 @@
 <span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="n">integration_name</span><span class="p">]</span><span class="w"></span>
 <span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="p">[</span><span class="k">column_name</span><span class="p">,</span><span class="w"> </span><span class="p">...]</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="k">table_name</span><span class="p">])</span><span class="w"></span>
 <span class="n">PREDICT</span><span class="w"> </span><span class="p">[</span><span class="n">target_column</span><span class="p">]</span><span class="w"></span>
-<span class="k">USING</span><span class="w"> </span><span class="p">[</span><span class="n">parameter_key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;parameter_value&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="k">USING</span><span class="w"> </span><span class="p">[</span><span class="n">parameter_key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;parameter_value&#39;</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
+<p>Where:</p>
 <table>
 <thead>
 <tr>
@@ -2118,8 +2123,11 @@
 </tr>
 </tbody>
 </table>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 <h3 id="using-encoders-key"><code class="highlight"><span class="p">...</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="n">encoders</span><span class="w"></span></code> Key<a class="headerlink" href="#using-encoders-key" title="Permanent link">&para;</a></h3>
-<p>Grants access to configure how each column is encoded. To learn more about how encoders work and their options, go <a href="https://lightwood.io/encoder.html">here</a>.</p>
+<p>It grants access to configure how each column is encoded. To learn more about how encoders work and their options, go <a href="https://lightwood.io/encoder.html">here</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">...</span><span class="w"></span>
 <span class="k">USING</span><span class="w"></span>
 <span class="n">encoders</span><span class="p">.[</span><span class="k">column_name</span><span class="p">].</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">;</span><span class="w"></span>
@@ -2128,11 +2136,10 @@
 <p class="admonition-title">By default, the AutoML engine will try to get the best match for the data.</p>
 </div>
 <h3 id="using-model-key"><code class="highlight"><span class="p">...</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="n">model</span><span class="w"></span></code> Key<a class="headerlink" href="#using-model-key" title="Permanent link">&para;</a></h3>
-<p>Allows you to specify what type of Machine Learning algorithm to learn from the encoder data.</p>
+<p>It allows you to specify what type of Machine Learning algorithm to learn from the encoder data.</p>
 <div class="highlight"><pre><span></span><code><span class="p">...</span><span class="w"></span>
 <span class="k">USING</span><span class="w"></span>
-<span class="n">model</span><span class="p">.</span><span class="n">args</span><span class="o">=</span><span class="s1">&#39;{&quot;key&quot;: value}&#39;</span><span class="w"></span>
-<span class="p">;</span><span class="w"></span>
+<span class="n">model</span><span class="p">.</span><span class="n">args</span><span class="o">=</span><span class="s1">&#39;{&quot;key&quot;: value}&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>Module options:</p>
 <table>
@@ -2201,10 +2208,13 @@
 <span class="s1">                    }</span>
 <span class="s1">                ]}&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 <h2 id="create-predictor-from-file"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> From file<a class="headerlink" href="#create-predictor-from-file" title="Permanent link">&para;</a></h2>
 <p>In order to create a predictor from a file, you should first upload a file to MindsDB. Follow <a href="https://docs.mindsdb.com/sql/create/file/">this guide</a> to see how to do that.</p>
 <h3 id="create-predictor-description"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> Description<a class="headerlink" href="#create-predictor-description" title="Permanent link">&para;</a></h3>
-<p>To train a model using a file:</p>
+<p>This statement is used to create and train a model using a file or a database table.</p>
 <h3 id="create-predictor-syntax"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> Syntax<a class="headerlink" href="#create-predictor-syntax" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.[</span><span class="n">predictor_name</span><span class="p">]</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="w"></span>
@@ -2238,14 +2248,17 @@
 </tr>
 </tbody>
 </table>
-<p>On execution,</p>
-<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="mi">878</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="create-predictor-example"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> Example<a class="headerlink" href="#create-predictor-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="w"></span>
 <span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">home_rentals</span><span class="p">)</span><span class="w"></span>
 <span class="n">PREDICT</span><span class="w"> </span><span class="n">rental_price</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h2 id="create-predictor-for-time-series-models"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> For Time Series Models<a class="headerlink" href="#create-predictor-for-time-series-models" title="Permanent link">&para;</a></h2>
 <h3 id="create-predictor-for-time-series-models-description"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> For Time Series Models Description<a class="headerlink" href="#create-predictor-for-time-series-models-description" title="Permanent link">&para;</a></h3>
@@ -2289,8 +2302,8 @@
 </tr>
 </tbody>
 </table>
-<p>On execution,</p>
-<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="mi">878</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Getting a prediction of a Time Series model</p>
@@ -2306,7 +2319,10 @@
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">product_id</span><span class="p">,</span><span class="w"></span>
 
 <span class="n">WINDOW</span><span class="w"> </span><span class="mi">20</span><span class="w"></span>
-<span class="n">HORIZON</span><span class="w"> </span><span class="mi">7</span><span class="w"></span>
+<span class="n">HORIZON</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
               

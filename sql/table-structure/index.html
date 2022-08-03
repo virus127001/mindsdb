@@ -15,7 +15,7 @@
     
     
       
-        <title>Table Structure (Schema) - MindsDB Documentation</title>
+        <title>MindsDB Tables Structure - MindsDB Documentation</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#table-structure" class="md-skip">
+        <a href="#mindsdb-tables-structure" class="md-skip">
           Skip to content
         </a>
       
@@ -155,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Table Structure (Schema)
+              MindsDB Tables Structure
             
           </span>
         </div>
@@ -801,12 +801,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Table Structure (Schema)
+          MindsDB Tables Structure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Table Structure (Schema)
+        MindsDB Tables Structure
       </a>
       
         
@@ -825,23 +825,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-structure" class="md-nav__link">
-    General Structure
+  <a href="#mindsdb-default-tables" class="md-nav__link">
+    MindsDB Default Tables
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#the-predictors-table" class="md-nav__link">
-    The predictors TABLE
+    The predictors Table
   </a>
+  
+    <nav class="md-nav" aria-label="The predictors Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-datasource-table" class="md-nav__link">
-    The datasource TABLE
+  <a href="#the-databases-table" class="md-nav__link">
+    The databases Table
   </a>
+  
+    <nav class="md-nav" aria-label="The databases Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1305,22 +1331,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/mindsdb-superset-snowflake/" class="md-nav__link">
-        AI powered forecasts with MindsDB
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../tutorials/house-sales-forecasting/" class="md-nav__link">
-        Forecasting house sales
+        House Sales
       </a>
     </li>
   
@@ -1642,6 +1654,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../docs-rules/" class="md-nav__link">
+        Docs style guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../contribute/tests/" class="md-nav__link">
         Testing and improving test coverage
       </a>
@@ -1759,23 +1785,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-structure" class="md-nav__link">
-    General Structure
+  <a href="#mindsdb-default-tables" class="md-nav__link">
+    MindsDB Default Tables
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#the-predictors-table" class="md-nav__link">
-    The predictors TABLE
+    The predictors Table
   </a>
+  
+    <nav class="md-nav" aria-label="The predictors Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-datasource-table" class="md-nav__link">
-    The datasource TABLE
+  <a href="#the-databases-table" class="md-nav__link">
+    The databases Table
   </a>
+  
+    <nav class="md-nav" aria-label="The databases Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1811,23 +1863,33 @@
 
 
 
-<h1 id="table-structure">Table Structure<a class="headerlink" href="#table-structure" title="Permanent link">&para;</a></h1>
-<h2 id="general-structure">General Structure<a class="headerlink" href="#general-structure" title="Permanent link">&para;</a></h2>
-<p>On startup the mindsdb database will contain 2 tables: <code>predictors</code> and <code>datasources</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span><span class="w"></span>
+<h1 id="mindsdb-tables-structure">MindsDB Tables Structure<a class="headerlink" href="#mindsdb-tables-structure" title="Permanent link">&para;</a></h1>
+<h2 id="mindsdb-default-tables">MindsDB Default Tables<a class="headerlink" href="#mindsdb-default-tables" title="Permanent link">&para;</a></h2>
+<p>On start-up, the MindsDB database consists of 2 tables: <code>predictors</code> and <code>databases</code>.</p>
+<p>You can verify it by running the following SQL command:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SHOW</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution, you should get:</p>
-<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">---------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">Tables_in_mindsdb</span><span class="w">         </span><span class="o">|</span><span class="w"></span>
-<span class="o">+</span><span class="c1">---------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">predictors</span><span class="w">                </span><span class="o">|</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">databases</span><span class="w">                 </span><span class="o">|</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">integration_name</span><span class="w">          </span><span class="o">|</span><span class="w"></span>
-<span class="o">+</span><span class="c1">---------------------------+</span>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">----------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Tables_in_mindsdb</span><span class="w">    </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">----------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">predictors</span><span class="w">           </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">databases</span><span class="w">            </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">----------------------+</span>
 </code></pre></div>
-<h2 id="the-predictors-table">The predictors TABLE<a class="headerlink" href="#the-predictors-table" title="Permanent link">&para;</a></h2>
-<p>All of the newly trained machine learning models will be visible as a new record inside the <code>predictors</code> table.
-The <code>predictors</code> columns contains information about each model as:</p>
+<h2 id="the-predictors-table">The <code>predictors</code> Table<a class="headerlink" href="#the-predictors-table" title="Permanent link">&para;</a></h2>
+<p>At first, the <code>predictors</code> table is empty. But, as soon as you create your first machine learning model, you'll see it as a new record in the <code>predictors</code> table.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-------+---------+-----------+----------+----------------+------------------+--------+--------------------+-------------------+</span>
+<span class="o">|</span><span class="n">name</span><span class="w">   </span><span class="o">|</span><span class="n">status</span><span class="w">   </span><span class="o">|</span><span class="n">accuracy</span><span class="w">   </span><span class="o">|</span><span class="n">predict</span><span class="w">   </span><span class="o">|</span><span class="n">update_status</span><span class="w">   </span><span class="o">|</span><span class="n">mindsdb_version</span><span class="w">   </span><span class="o">|</span><span class="n">error</span><span class="w">   </span><span class="o">|</span><span class="n">select_data_query</span><span class="w">   </span><span class="o">|</span><span class="n">training_options</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------+---------+-----------+----------+----------------+------------------+--------+--------------------+-------------------+</span>
+<span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">         </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w">                </span><span class="o">|</span><span class="w">                  </span><span class="o">|</span><span class="w">        </span><span class="o">|</span><span class="w">                    </span><span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------+---------+-----------+----------+----------------+------------------+--------+--------------------+-------------------+</span>
+</code></pre></div>
+<p>Where:</p>
 <table>
 <thead>
 <tr>
@@ -1838,31 +1900,31 @@ The <code>predictors</code> columns contains information about each model as:</p
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td>The name of the model.</td>
+<td>The name of the ML model.</td>
 </tr>
 <tr>
 <td><code>status</code></td>
-<td>Training status(training, complete, error).</td>
-</tr>
-<tr>
-<td><code>predict</code></td>
-<td>The name of the target variable column.</td>
+<td>Training status having one of the values: generating, training, complete, error.</td>
 </tr>
 <tr>
 <td><code>accuracy</code></td>
-<td>The model accuracy.</td>
+<td>The accuracy of the ML model.</td>
+</tr>
+<tr>
+<td><code>predict</code></td>
+<td>The name of the target variable column to be predicted.</td>
 </tr>
 <tr>
 <td><code>update_status</code></td>
-<td>Training update status(up_to_date, updating).</td>
+<td>Training update status (up_to_date, or updating).</td>
 </tr>
 <tr>
 <td><code>mindsdb_version</code></td>
-<td>The mindsdb version used.</td>
+<td>The version of MindsDB under which this ML model was created.</td>
 </tr>
 <tr>
 <td><code>error</code></td>
-<td>Error message info in case of an error.</td>
+<td>In the case of an error, it contains an error message.</td>
 </tr>
 <tr>
 <td><code>select_data_query</code></td>
@@ -1874,10 +1936,86 @@ The <code>predictors</code> columns contains information about each model as:</p
 </tr>
 </tbody>
 </table>
-<h2 id="the-datasource-table">The datasource TABLE<a class="headerlink" href="#the-datasource-table" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">This is a work in progress</p>
-</div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>To create a predictor, follow <a href="https://docs.mindsdb.com/sql/create/predictor/">this guide</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-----------------+--------+------------------+-------+-------------+---------------+-----+-----------------+----------------+</span>
+<span class="o">|</span><span class="n">name</span><span class="w">             </span><span class="o">|</span><span class="n">status</span><span class="w">  </span><span class="o">|</span><span class="n">accuracy</span><span class="w">          </span><span class="o">|</span><span class="n">predict</span><span class="o">|</span><span class="n">update_status</span><span class="o">|</span><span class="n">mindsdb_version</span><span class="o">|</span><span class="n">error</span><span class="o">|</span><span class="n">select_data_query</span><span class="o">|</span><span class="n">training_options</span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-----------------+--------+------------------+-------+-------------+---------------+-----+-----------------+----------------+</span>
+<span class="o">|</span><span class="n">house_sales_model</span><span class="o">|</span><span class="n">complete</span><span class="o">|</span><span class="mi">0</span><span class="p">.</span><span class="mi">4658770134240238</span><span class="o">|</span><span class="n">ma</span><span class="w">     </span><span class="o">|</span><span class="n">up_to_date</span><span class="w">   </span><span class="o">|</span><span class="mi">22</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">5</span><span class="p">.</span><span class="mi">1</span><span class="w">       </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-----------------+--------+------------------+-------+-------------+---------------+-----+-----------------+----------------+</span>
+</code></pre></div>
+<h2 id="the-databases-table">The <code>databases</code> Table<a class="headerlink" href="#the-databases-table" title="Permanent link">&para;</a></h2>
+<p>At first, the <code>databases</code> table contains two records:</p>
+<ul>
+<li>
+<p><code>files</code> is one of the default databases within the <code>mindsdb</code> database.
+It stores all the files uploaded to the MindsDB Cloud editor. Following <a href="https://docs.mindsdb.com/sql/create/file/">this guide</a>, you can find out how to upload files to MindsDB.</p>
+</li>
+<li>
+<p><code>views</code> is one of the default databases within the <code>mindsdb</code> database.
+It stores all the views. <a href="https://docs.mindsdb.com/sql/create/view/">Here</a> is how you can create a view in MindsDB.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">databases</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-------+----------------+-------+-------+-------+</span>
+<span class="o">|</span><span class="n">name</span><span class="w">   </span><span class="o">|</span><span class="n">database_type</span><span class="w">   </span><span class="o">|</span><span class="k">host</span><span class="w">   </span><span class="o">|</span><span class="n">port</span><span class="w">   </span><span class="o">|</span><span class="k">user</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------+----------------+-------+-------+-------+</span>
+<span class="o">|</span><span class="n">files</span><span class="w">  </span><span class="o">|</span><span class="n">files</span><span class="w">           </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="n">views</span><span class="w">  </span><span class="o">|</span><span class="n">views</span><span class="w">           </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------+----------------+-------+-------+-------+</span>
+</code></pre></div>
+<p>Where:</p>
+<table>
+<thead>
+<tr>
+<th>Column name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>The name of the database.</td>
+</tr>
+<tr>
+<td><code>database_type</code></td>
+<td>The type or engine of the database.</td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>The host of the database connected to MindsDB.</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>The port of the database connected to MindsDB.</td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td>The user of the database connected to MindsDB.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<p>To create a database within MindsDB, follow <a href="https://docs.mindsdb.com/sql/create/databases/">this guide</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">databases</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-------------+----------------+---------------+-------+------------+</span>
+<span class="o">|</span><span class="n">name</span><span class="w">         </span><span class="o">|</span><span class="n">database_type</span><span class="w">   </span><span class="o">|</span><span class="k">host</span><span class="w">           </span><span class="o">|</span><span class="n">port</span><span class="w">   </span><span class="o">|</span><span class="k">user</span><span class="w">        </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------------+----------------+---------------+-------+------------+</span>
+<span class="o">|</span><span class="n">files</span><span class="w">        </span><span class="o">|</span><span class="n">files</span><span class="w">           </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w">         </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w">      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="n">views</span><span class="w">        </span><span class="o">|</span><span class="n">views</span><span class="w">           </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w">         </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="p">[</span><span class="k">NULL</span><span class="p">]</span><span class="w">      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="n">example_db</span><span class="w">   </span><span class="o">|</span><span class="n">postgres</span><span class="w">        </span><span class="o">|</span><span class="mi">3</span><span class="p">.</span><span class="mi">220</span><span class="p">.</span><span class="mi">66</span><span class="p">.</span><span class="mi">106</span><span class="w">   </span><span class="o">|</span><span class="mi">5432</span><span class="w">   </span><span class="o">|</span><span class="n">demo_user</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------------+----------------+---------------+-------+------------+</span>
+</code></pre></div>
 <h2 id="the-integration_name-table">The <code>[integration_name]</code> TABLE<a class="headerlink" href="#the-integration_name-table" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">This is a work in progress</p>
@@ -1887,14 +2025,40 @@ The <code>predictors</code> columns contains information about each model as:</p
 <p class="admonition-title">This is a work in progress</p>
 </div>
 <p>The below list contains the column names of the model table. Note that <code>target_variable_</code> will be the name of the target variable column.</p>
-<ul>
-<li>target_variable_original - The original value of the target variable.</li>
-<li>target_variable_min - Lower bound of the predicted value.</li>
-<li>target_variable_max - Upper bound of the predicted value.</li>
-<li>target_variable_confidence - Model confidence score.</li>
-<li>target_variable_explain - JSON object that contains additional information as <code>confidence_lower_bound</code>, <code>confidence_upper_bound</code>, <code>anomaly</code>, <code>truth</code>.</li>
-<li>select_data_query - SQL select query to create the datasource.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Column name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target_variable_original</code></td>
+<td>The original value of the target variable.</td>
+</tr>
+<tr>
+<td><code>target_variable_min</code></td>
+<td>Lower bound of the predicted value.</td>
+</tr>
+<tr>
+<td><code>target_variable_max</code></td>
+<td>Upper bound of the predicted value.</td>
+</tr>
+<tr>
+<td><code>target_variable_confidence</code></td>
+<td>Model confidence score.</td>
+</tr>
+<tr>
+<td><code>target_variable_explain</code></td>
+<td>JSON object that contains additional information as <code>confidence_lower_bound</code>, <code>confidence_upper_bound</code>, <code>anomaly</code>, <code>truth</code>.</td>
+</tr>
+<tr>
+<td><code>select_data_query</code></td>
+<td>SQL select query to create the datasource.</td>
+</tr>
+</tbody>
+</table>
 
               
             </article>

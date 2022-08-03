@@ -792,7 +792,7 @@
   
     <li class="md-nav__item">
       <a href="../../table-structure/" class="md-nav__link">
-        Table Structure (Schema)
+        MindsDB Tables Structure
       </a>
     </li>
   
@@ -1291,22 +1291,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/mindsdb-superset-snowflake/" class="md-nav__link">
-        AI powered forecasts with MindsDB
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../tutorials/house-sales-forecasting/" class="md-nav__link">
-        Forecasting house sales
+        House Sales
       </a>
     </li>
   
@@ -1628,6 +1614,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../docs-rules/" class="md-nav__link">
+        Docs style guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../contribute/tests/" class="md-nav__link">
         Testing and improving test coverage
       </a>
@@ -1785,14 +1785,17 @@
 
 <h1 id="insert-into-statement">INSERT INTO Statement<a class="headerlink" href="#insert-into-statement" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>The <code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"></span></code> statement is used to fill a table with the result of subselect. commonly used to persist predictions into the database</p>
+<p>The <code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"></span></code> statement is used to insert data into a table. This inserted data comes from the subselect statement. It is commonly used to input predictions into the database.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="p">[</span><span class="n">integration_name</span><span class="p">].[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="p">[</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="p">[</span><span class="n">integration_name</span><span class="p">].[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
 </code></pre></div>
-<p>It performs a subselect <code class="highlight"><span class="p">[</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...]</span><span class="w"></span></code> and gets data from it there after it performs <code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span></code> of integration [integration_name]</p>
+<p>It performs a subselect <code class="highlight"><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...)</span><span class="w"></span></code> and gets data from there. Then, this data is inserted into a table of integration <code class="highlight"><span class="p">[</span><span class="n">integration_name</span><span class="p">]</span><span class="w"></span></code> using <code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span></code> statement.</p>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">updated</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">xxxs</span><span class="w"></span>
+</code></pre></div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>In this example we want to persist the predictions into a table <code class="highlight"><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"></span></code>. Given the following schema:</p>
+<p>In this example, we want to input the predictions into a table <code class="highlight"><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"></span></code>. Given is the following schema:</p>
 <div class="highlight"><pre><span></span><code>int1
 └── tbl1
 mindsdb
@@ -1811,15 +1814,15 @@ int2
 <tbody>
 <tr>
 <td><code>int1</code></td>
-<td>Integration for the table to be created in</td>
+<td>Integration name where the table <code>tbl1</code> resides</td>
 </tr>
 <tr>
 <td><code>tbl1</code></td>
-<td>Table to be created</td>
+<td>Table where data will be inserted</td>
 </tr>
 <tr>
 <td><code>predictor_name</code></td>
-<td>Name of the model to be used</td>
+<td>Name of the ML model</td>
 </tr>
 <tr>
 <td><code>int2</code></td>
@@ -1827,17 +1830,20 @@ int2
 </tr>
 <tr>
 <td><code>tbl2</code></td>
-<td>Table to be used as a source.</td>
+<td>Table to be used as a source</td>
 </tr>
 </tbody>
 </table>
-<p>In order to achieve the desired result we could execute the following query:</p>
+<p>In order to achieve the desired result, we execute the following query:</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">int2</span><span class="p">.</span><span class="n">tbl2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ta</span><span class="w"></span>
 <span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictor_name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tb</span><span class="w"></span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ta</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">&#39;2015-12-31&#39;</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">updated</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">xxxs</span><span class="w"></span>
 </code></pre></div>
 
               
