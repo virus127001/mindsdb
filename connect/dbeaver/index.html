@@ -622,40 +622,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          DBeaver
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         DBeaver
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mindsdb-database" class="md-nav__link">
-    MindsDB Database
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1724,21 +1693,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mindsdb-database" class="md-nav__link">
-    MindsDB Database
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1788,28 +1742,21 @@
 </ul>
 </li>
 <li>
+<p>Click on <code>Test Connection...</code> to check if all the provided data allows you to connect to MindsDB</p>
+<p><img alt="Test" src="/assets/sql/test_connection_dbeaver.png" /></p>
+</li>
+<li>
 <p>Click on <code>OK</code>.</p>
 <p><img alt="Connect" src="/assets/sql/connectcloud.png" /></p>
 </li>
 </ol>
-<h2 id="mindsdb-database">MindsDB Database<a class="headerlink" href="#mindsdb-database" title="Permanent link">&para;</a></h2>
-<p>At startup mindsdb database will contain 3 tables <code>predictors</code>, <code>commands</code> and <code>databases</code>. </p>
-<p><img alt="Connect" src="/assets/sql/show.png" /></p>
-<p>All of the newly trained machine learning models will be visible as a new record inside the <code>predictors</code> table. The <code>predictors</code> columns contains information about each model as:</p>
-<ul>
-<li>name - The name of the model.</li>
-<li>status - Training status(training, complete, error).</li>
-<li>predict - The name of the target variable column.</li>
-<li>accuracy - The model accuracy.</li>
-<li>update_status - Training update status(up_to_date, updating).</li>
-<li>mindsdb_version - The MindsDB version used.</li>
-<li>error - Error message info in case of an error.</li>
-<li>select_data_query - SQL select query to create the datasource.</li>
-<li>training options - Additional training parameters.</li>
-</ul>
 <div class="admonition tip">
 <p class="admonition-title">Whitelist MindsDB Cloud IP address</p>
 <p>If you need to whitelist MindsDB Cloud IP address to have access to your database, reach out to MindsDB team so we can share the Cloud static IP with you.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">What is next?</p>
+<p>We recommend you to follow one of our tutorials or learn more about the <a href="/sql/table-structure/">MindsDB Database</a>.</p>
 </div>
 
               

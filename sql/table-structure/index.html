@@ -871,20 +871,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#the-integration_name-table" class="md-nav__link">
-    The [integration_name] TABLE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-model-table" class="md-nav__link">
-    The model table
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1831,20 +1817,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#the-integration_name-table" class="md-nav__link">
-    The [integration_name] TABLE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-model-table" class="md-nav__link">
-    The model table
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2016,49 +1988,6 @@ It stores all the views. <a href="https://docs.mindsdb.com/sql/create/view/">Her
 <span class="o">|</span><span class="n">example_db</span><span class="w">   </span><span class="o">|</span><span class="n">postgres</span><span class="w">        </span><span class="o">|</span><span class="mi">3</span><span class="p">.</span><span class="mi">220</span><span class="p">.</span><span class="mi">66</span><span class="p">.</span><span class="mi">106</span><span class="w">   </span><span class="o">|</span><span class="mi">5432</span><span class="w">   </span><span class="o">|</span><span class="n">demo_user</span><span class="w">   </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">-------------+----------------+---------------+-------+------------+</span>
 </code></pre></div>
-<h2 id="the-integration_name-table">The <code>[integration_name]</code> TABLE<a class="headerlink" href="#the-integration_name-table" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">This is a work in progress</p>
-</div>
-<h2 id="the-model-table">The model table<a class="headerlink" href="#the-model-table" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">This is a work in progress</p>
-</div>
-<p>The below list contains the column names of the model table. Note that <code>target_variable_</code> will be the name of the target variable column.</p>
-<table>
-<thead>
-<tr>
-<th>Column name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>target_variable_original</code></td>
-<td>The original value of the target variable.</td>
-</tr>
-<tr>
-<td><code>target_variable_min</code></td>
-<td>Lower bound of the predicted value.</td>
-</tr>
-<tr>
-<td><code>target_variable_max</code></td>
-<td>Upper bound of the predicted value.</td>
-</tr>
-<tr>
-<td><code>target_variable_confidence</code></td>
-<td>Model confidence score.</td>
-</tr>
-<tr>
-<td><code>target_variable_explain</code></td>
-<td>JSON object that contains additional information as <code>confidence_lower_bound</code>, <code>confidence_upper_bound</code>, <code>anomaly</code>, <code>truth</code>.</td>
-</tr>
-<tr>
-<td><code>select_data_query</code></td>
-<td>SQL select query to create the datasource.</td>
-</tr>
-</tbody>
-</table>
 
               
             </article>

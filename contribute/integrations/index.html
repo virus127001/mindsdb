@@ -2221,7 +2221,7 @@ In both cases we need 7 core methods:</p>
 <h4 id="step-14-implement-check_connection">Step 1.4: Implement <code>check_connection</code><a class="headerlink" href="#step-14-implement-check_connection" title="Permanent link">&para;</a></h4>
 <p>The check_connection method is used to perform the health check for the connection:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_connection</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HandlerStatusResponse</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot; Cehck connection to the handler</span>
+        <span class="sd">&quot;&quot;&quot; Check connection to the handler</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            HandlerStatusResponse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -2305,11 +2305,13 @@ In both cases we need 7 core methods:</p>
     <span class="s1">&#39;Handler&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;icon_path&#39;</span>
 <span class="p">]</span>
 </code></pre></div>
-<p>For real examples, we encourage you to inspect the following handlers inside the MindsDB repository:
-* MySQL
-* Postgres
-* MLflow
-* Lightwood</p>
+<p>For real examples, we encourage you to inspect the following handlers inside the MindsDB repository:</p>
+<ul>
+<li><a href="https://github.com/mindsdb/mindsdb/tree/staging/mindsdb/integrations/handlers/mysql_handler">MySQL</a></li>
+<li><a href="https://github.com/mindsdb/mindsdb/tree/staging/mindsdb/integrations/handlers/postgres_handler">Postgres</a></li>
+<li><a href="https://github.com/mindsdb/mindsdb/tree/staging/mindsdb/integrations/handlers/mlflow_handler">MLflow</a></li>
+<li><a href="https://github.com/mindsdb/mindsdb/tree/staging/mindsdb/integrations/handlers/lightwood_handler">Lightwood</a></li>
+</ul>
 
               
             </article>

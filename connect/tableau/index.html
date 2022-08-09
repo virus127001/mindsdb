@@ -692,9 +692,74 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tableau
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Tableau
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connect-mindsdb-in-tableau" class="md-nav__link">
+    Connect MindsDB in Tableau
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-mindsdb-in-tableau" class="md-nav__link">
+    Overview of MindsDB in Tableau
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1693,6 +1758,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connect-mindsdb-in-tableau" class="md-nav__link">
+    Connect MindsDB in Tableau
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-mindsdb-in-tableau" class="md-nav__link">
+    Overview of MindsDB in Tableau
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1710,10 +1824,56 @@
 
 
 <h1 id="mindsdb-and-tableau">MindsDB and Tableau<a class="headerlink" href="#mindsdb-and-tableau" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Work in progress</p>
-<p>Tableau requires the MySQL binary protocol, which we are in the process of supporting. If you want to collaborate on this part, please connect with us on <a href="https://join.slack.com/t/mindsdbcommunity/shared_invite/zt-o8mrmx3l-5ai~5H66s6wlxFfBMVI6wQ">Slack</a>.</p>
-</div>
+<p>Tableau lets you visualize your data easily and intuitively. Now that MindsDB supports the MySQL binary protocol, you can connect it to Tableau and see the forecasts.</p>
+<h2 id="connect-mindsdb-in-tableau">Connect MindsDB in Tableau<a class="headerlink" href="#connect-mindsdb-in-tableau" title="Permanent link">&para;</a></h2>
+<p>Follow the steps below to connect your MindsDB to Tableau.</p>
+<p>First, create a new workbook in Tableau and open the <em>Connectors</em> tab in the <em>Connect to Data</em> window.</p>
+<p align="center">
+  <img src="/assets/connect_tableau.png" />
+</p>
+
+<p>Next, choose <em>MySQL</em> and provide the details of your MindsDB connection, such as the IP, port, and database name. Optionally, you can provide a username and password. Then, click <em>Sign In</em>.</p>
+<p align="center">
+  <img src="/assets/connect_tableau_2.png" />
+</p>
+
+<p>Now you're connected!</p>
+<h2 id="overview-of-mindsdb-in-tableau">Overview of MindsDB in Tableau<a class="headerlink" href="#overview-of-mindsdb-in-tableau" title="Permanent link">&para;</a></h2>
+<p>The content of your MindsDB is visible in the right-side pane.</p>
+<p align="center">
+  <img src="/assets/connect_tableau_3.png" />
+</p>
+
+<p>All the predictors are listed under the <em>Table</em> section. You can also switch between the integrations, such as <em>mindsdb</em> or <em>files</em>, in the <em>Database</em> section using the drop-down.</p>
+<p align="center">
+  <img src="/assets/connect_tableau_4.png" />
+</p>
+
+<p>Now, let's run some examples!</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1">Example 1<a class="headerlink" href="#example-1" title="Permanent link">&para;</a></h3>
+<p>Previewing one of the tables from the <em>mysql</em> integration:</p>
+<p align="center">
+  <img src="/assets/connect_tableau_5.png" />
+</p>
+
+<h3 id="example-2">Example 2<a class="headerlink" href="#example-2" title="Permanent link">&para;</a></h3>
+<p>There is one technical limitation. Namely, we cannot join tables from different databases/integrations in Tableau. To overcome this challenge, you can use either views or custom SQL queries.</p>
+<ul>
+<li>Previewing a view that joins a data table with a predictor table:</li>
+</ul>
+<p align="center">
+  <img src="/assets/connect_tableau_6.png" />
+</p>
+
+<ul>
+<li>Using a custom SQL query by clicking the <em>New Custom SQL</em> button in the right-side pane:</li>
+</ul>
+<p align="center">
+  <img src="/assets/connect_tableau_7.png" />
+</p>
+
+<p>Go ahead and try it out yourself!</p>
 
               
             </article>
