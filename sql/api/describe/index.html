@@ -1940,7 +1940,7 @@
 <h3 id="describe-features-syntax"><code class="highlight"><span class="k">DESCRIBE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">FEATURES</span><span class="w"></span></code> Syntax<a class="headerlink" href="#describe-features-syntax" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.[</span><span class="n">name_of_your_predictor</span><span class="p">].</span><span class="n">features</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution:</p>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">--------------+-------------+--------------+-------------+</span>
 <span class="o">|</span><span class="w"> </span><span class="k">column</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="k">type</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">encoder</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="k">role</span><span class="w">        </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">--------------+-------------+--------------+-------------+</span>
@@ -1951,7 +1951,7 @@
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Name</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1981,7 +1981,7 @@
 <h3 id="describe-features-example"><code class="highlight"><span class="k">DESCRIBE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">FEATURES</span><span class="w"></span></code> Example<a class="headerlink" href="#describe-features-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="p">.</span><span class="n">features</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution:</p>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">---------------------+-------------+----------------+---------+</span>
 <span class="o">|</span><span class="w"> </span><span class="k">column</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="k">type</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">encoder</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="k">role</span><span class="w">    </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">---------------------+-------------+----------------+---------+</span>
@@ -1999,18 +1999,18 @@
 <h3 id="describe-model-syntax"><code class="highlight"><span class="k">DESCRIBE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">MODEL</span><span class="w"></span></code> Syntax<a class="headerlink" href="#describe-model-syntax" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.[</span><span class="n">name_of_your_predictor</span><span class="p">].</span><span class="n">model</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution:</p>
-<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-----------------+-------------+---------------+----------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="n">performance</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">training_time</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
-<span class="o">+</span><span class="c1">-----------------+-------------+---------------+----------+</span>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-----------------+-------------+---------------+-----------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="n">performance</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">training_time</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">selected</span><span class="w">  </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-----------------+-------------+---------------+-----------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">candidate_model</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">performance</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">training_time</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
-<span class="o">+</span><span class="c1">-----------------+-------------+---------------+----------+</span>
+<span class="o">+</span><span class="c1">-----------------+-------------+---------------+-----------+</span>
 </code></pre></div>
 <p>Where:</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Name</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -2040,7 +2040,7 @@
 <h3 id="describe-model-example"><code class="highlight"><span class="k">DESCRIBE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">MODEL</span><span class="w"></span></code> Example<a class="headerlink" href="#describe-model-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="p">.</span><span class="n">model</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution:</p>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">------------+--------------------+----------------------+----------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="n">performance</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">training_time</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------------+--------------------+----------------------+----------+</span>
@@ -2053,7 +2053,7 @@
 <h3 id="describe-ensemble-syntax"><code class="highlight"><span class="k">DESCRIBE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">ENSEMBLE</span><span class="w"></span></code> Syntax<a class="headerlink" href="#describe-ensemble-syntax" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.[</span><span class="n">name_of_your_predictor</span><span class="p">].</span><span class="n">ensemble</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution:</p>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-----------------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">ensemble</span><span class="w">        </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">-----------------+</span>
@@ -2064,7 +2064,7 @@
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Name</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -2078,120 +2078,120 @@
 <h3 id="describe-ensemble-example"><code class="highlight"><span class="k">DESCRIBE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">ENSEMBLE</span><span class="w"></span></code> Example<a class="headerlink" href="#describe-ensemble-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="p">.</span><span class="n">ensemble</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>On execution:</p>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">----------------------------------------------------------------------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">ensemble</span><span class="w">                                                             </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">----------------------------------------------------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">  </span><span class="ss">&quot;encoders&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;rental_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;NumericEncoder&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">        </span><span class="ss">&quot;is_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;True&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="ss">&quot;positive_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$statistical_analysis.positive_domain&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="err">}</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;number_of_rooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;OneHotEncoder&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;number_of_bathrooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;BinaryEncoder&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;sqft&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;NumericEncoder&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;OneHotEncoder&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;days_on_market&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;NumericEncoder&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;neighborhood&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;OneHotEncoder&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="w"></span>
-<span class="w">  </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="ss">&quot;dtype_dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;number_of_rooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;categorical&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;number_of_bathrooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;binary&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;sqft&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;categorical&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;days_on_market&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;neighborhood&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;categorical&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;rental_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="ss">&quot;dependency_dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="ss">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;BestOf&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;submodels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="err">{</span><span class="w"></span>
-<span class="w">          </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Neural&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">            </span><span class="ss">&quot;fit_on_dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="ss">&quot;stop_after&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$problem_definition.seconds_per_mixer&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="ss">&quot;search_hyperparameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="w"></span>
-<span class="w">          </span><span class="err">}</span><span class="w"></span>
-<span class="w">        </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="err">{</span><span class="w"></span>
-<span class="w">          </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;LightGBM&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">            </span><span class="ss">&quot;stop_after&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$problem_definition.seconds_per_mixer&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="ss">&quot;fit_on_dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="w"></span>
-<span class="w">          </span><span class="err">}</span><span class="w"></span>
-<span class="w">        </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="err">{</span><span class="w"></span>
-<span class="w">          </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Regression&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">            </span><span class="ss">&quot;stop_after&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$problem_definition.seconds_per_mixer&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="err">}</span><span class="w"></span>
-<span class="w">        </span><span class="err">}</span><span class="w"></span>
-<span class="w">      </span><span class="p">],</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$pred_args&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;accuracy_functions&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$accuracy_functions&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;ts_analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="w"></span>
-<span class="w">  </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="ss">&quot;problem_definition&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;rental_price&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;pct_invalid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;unbias_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;seconds_per_mixer&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57024</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;seconds_per_encoder&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;expected_additional_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">.</span><span class="mi">687719106674194</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;time_aim&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">259200</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;target_weights&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;positive_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;timeseries_settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;is_timeseries&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;order_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;window&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;group_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;use_previous_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;horizon&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;historical_columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;target_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;allow_incomplete_history&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;eval_cold_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="ss">&quot;interval_periods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;anomaly_detection&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;use_default_analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;ignore_features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;fit_on_all&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;strict_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;seed_nr&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="w"></span>
-<span class="w">  </span><span class="err">}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="ss">&quot;identifiers&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="ss">&quot;accuracy_functions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="ss">&quot;r2_score&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="p">]</span><span class="w"></span>
-<span class="err">}</span><span class="w">                                                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">{</span><span class="w">                                                                    </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="ss">&quot;encoders&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                        </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;rental_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;NumericEncoder&quot;</span><span class="p">,</span><span class="w">                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                        </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">       </span><span class="ss">&quot;is_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;True&quot;</span><span class="p">,</span><span class="w">                                           </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">       </span><span class="ss">&quot;positive_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$statistical_analysis.positive_domain&quot;</span><span class="w">     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="err">}</span><span class="w">                                                                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;number_of_rooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                               </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;OneHotEncoder&quot;</span><span class="p">,</span><span class="w">                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w">                                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;number_of_bathrooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                           </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;BinaryEncoder&quot;</span><span class="p">,</span><span class="w">                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w">                                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;sqft&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                          </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;NumericEncoder&quot;</span><span class="p">,</span><span class="w">                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w">                                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;OneHotEncoder&quot;</span><span class="p">,</span><span class="w">                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w">                                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;days_on_market&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;NumericEncoder&quot;</span><span class="p">,</span><span class="w">                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w">                                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;neighborhood&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;OneHotEncoder&quot;</span><span class="p">,</span><span class="w">                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="w">                                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="w">                                                                  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="ss">&quot;dtype_dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;number_of_rooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;categorical&quot;</span><span class="p">,</span><span class="w">                                  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;number_of_bathrooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;binary&quot;</span><span class="p">,</span><span class="w">                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;sqft&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="p">,</span><span class="w">                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;categorical&quot;</span><span class="p">,</span><span class="w">                                         </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;days_on_market&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="p">,</span><span class="w">                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;neighborhood&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;categorical&quot;</span><span class="p">,</span><span class="w">                                     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;rental_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="w">                                          </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="ss">&quot;dependency_dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w">                                               </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="ss">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                           </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;BestOf&quot;</span><span class="p">,</span><span class="w">                                                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                          </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;submodels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">       </span><span class="err">{</span><span class="w">                                                              </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Neural&quot;</span><span class="p">,</span><span class="w">                                          </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                    </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">           </span><span class="ss">&quot;fit_on_dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w">                                        </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">           </span><span class="ss">&quot;stop_after&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$problem_definition.seconds_per_mixer&quot;</span><span class="p">,</span><span class="w">     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">           </span><span class="ss">&quot;search_hyperparameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="w">                             </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="err">}</span><span class="w">                                                            </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">       </span><span class="err">}</span><span class="p">,</span><span class="w">                                                             </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">       </span><span class="err">{</span><span class="w">                                                              </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;LightGBM&quot;</span><span class="p">,</span><span class="w">                                        </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                    </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">           </span><span class="ss">&quot;stop_after&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$problem_definition.seconds_per_mixer&quot;</span><span class="p">,</span><span class="w">     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">           </span><span class="ss">&quot;fit_on_dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="w">                                         </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="err">}</span><span class="w">                                                            </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">       </span><span class="err">}</span><span class="p">,</span><span class="w">                                                             </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">       </span><span class="err">{</span><span class="w">                                                              </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="ss">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Regression&quot;</span><span class="p">,</span><span class="w">                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                    </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">           </span><span class="ss">&quot;stop_after&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$problem_definition.seconds_per_mixer&quot;</span><span class="w">      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">         </span><span class="err">}</span><span class="w">                                                            </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">       </span><span class="err">}</span><span class="w">                                                              </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="p">],</span><span class="w">                                                               </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$pred_args&quot;</span><span class="p">,</span><span class="w">                                            </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;accuracy_functions&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;$accuracy_functions&quot;</span><span class="p">,</span><span class="w">                     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;ts_analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="w">                                              </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="w">                                                                  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="ss">&quot;problem_definition&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                              </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;rental_price&quot;</span><span class="p">,</span><span class="w">                                          </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;pct_invalid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">                                                  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;unbias_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w">                                             </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;seconds_per_mixer&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57024</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w">                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;seconds_per_encoder&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">                                       </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;expected_additional_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">.</span><span class="mi">687719106674194</span><span class="p">,</span><span class="w">                     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;time_aim&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">259200</span><span class="p">,</span><span class="w">                                                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;target_weights&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">                                            </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;positive_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w">                                          </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;timeseries_settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                           </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;is_timeseries&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w">                                          </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;order_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">                                                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;window&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">                                                  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;group_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">                                                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;use_previous_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w">                                     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;horizon&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;historical_columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;target_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;&quot;</span><span class="p">,</span><span class="w">                                               </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;allow_incomplete_history&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w">                                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;eval_cold_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w">                                         </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="ss">&quot;interval_periods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">                                           </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                 </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;anomaly_detection&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w">                                        </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;use_default_analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w">                                      </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;ignore_features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">                                             </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;fit_on_all&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w">                                                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;strict_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w">                                               </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;seed_nr&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="w">                                                     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="ss">&quot;identifiers&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w">                                                   </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="ss">&quot;accuracy_functions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                                              </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">   </span><span class="ss">&quot;r2_score&quot;</span><span class="w">                                                         </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="p">]</span><span class="w">                                                                    </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="err">}</span><span class="w">                                                                     </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">----------------------------------------------------------------------+</span>
 </code></pre></div>
 <div class="admonition tip">

@@ -1831,7 +1831,8 @@
 <p>Make sure to <a href="#upload-file-to-mindsdb-editor">upload the file via the MindsDB Editor</a></p>
 </div>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="p">.[</span><span class="n">file_name</span><span class="p">];</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="p">.[</span><span class="n">file_name</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">--------+--------+--------+--------+</span>
@@ -1844,7 +1845,7 @@
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Name</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1866,7 +1867,9 @@
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>This example shows how to use an uploaded file and create a predictor. But first, follow <a href="https://docs.mindsdb.com/sql/create/file/">this guide</a> to upload a file to MindsDB Cloud.</p>
 <h3 id="select-the-file-as-datasource">Select the file as datasource<a class="headerlink" href="#select-the-file-as-datasource" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="n">home_rentals</span><span class="w"> </span><span class="k">Limit</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="n">home_rentals</span><span class="w"></span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-----------------+---------------------+-------+----------+----------------+---------------+--------------+--------------+</span>

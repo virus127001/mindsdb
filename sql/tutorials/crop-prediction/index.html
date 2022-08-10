@@ -1806,7 +1806,8 @@ Alternatively, you can also use MindsDB's local deployment and access the GUI in
 </ul>
 <p>Once the dataset has been successfully uploaded into a table, you can query the dataset directly from the table.</p>
 <p>In the SQL Editor,type in the following syntax and select the button <code>Run</code> or Shift+Enter to execute the code:</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="n">crops</span><span class="p">;</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="n">crops</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <img alt="file_select" src="/assets/tutorials/crops/selectfromfiles.png" /></p>
 <p>This confirms that the dataset has been successfully uploaded with all its rows.</p>
@@ -1814,14 +1815,16 @@ Alternatively, you can also use MindsDB's local deployment and access the GUI in
 <p>Now we can create a machine learning model with <code>crops</code> columns serving as features, and MindsDB takes care of the rest of the ML workflow automatically. There is a way to get your hands into the insides of the model to fine tune it, but we will not cover it in this tutorial.</p>
 <p>In the SQL Editor, type in the below syntax to create and train a machine learning predictive model:</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">crop_predictor</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">crops</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span><span class="n">PREDICT</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">crop_type</span><span class="p">;</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">files</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">crops</span><span class="p">)</span><span class="w"></span>
+<span class="n">PREDICT</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">crop_type</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>Select the button <code>Run</code> or Shift+Enter to execute the code. If the predictor is successfully created the console will display a message <code>Query successfully completed</code>.</p>
 <p><img alt="create_predictor" src="/assets/tutorials/crops/createcropspredictor.png" /></p>
 <p>Now the predictor will begin training. You can check the status of the predictor with the following query.</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;crop_predictor&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;crop_predictor&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>After the predictor has finished training, you will see a similar output. Note that MindsDB does model testing for you automatically, so you will immediately see if the predictor is accurate enough.</p>
 <p><img alt="statuscheck" src="/assets/tutorials/crops/statuscheck.png" /></p>
@@ -1831,7 +1834,13 @@ Alternatively, you can also use MindsDB's local deployment and access the GUI in
 <p>To run a prediction against new or existing data, you can use the following query.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">label</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">crop_predictor</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">77</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">52</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">17</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">humidity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">.</span><span class="mi">74</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">ph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">.</span><span class="mi">71</span><span class="w"> </span><span class="k">and</span><span class="w">  </span><span class="n">rainfall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">75</span><span class="p">.</span><span class="mi">82</span><span class="p">;</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">77</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">52</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">17</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">humidity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">.</span><span class="mi">74</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">ph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">.</span><span class="mi">71</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">rainfall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">75</span><span class="p">.</span><span class="mi">82</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p><img alt="statuscheck" src="/assets/tutorials/crops/cropprediction.png" /></p>
 <p>As we have used a real data point from our dataset we can verify the prediction.
@@ -1850,7 +1859,7 @@ Alternatively, you can also use MindsDB's local deployment and access the GUI in
 <span class="w">    </span><span class="n">collected_data</span><span class="p">.</span><span class="n">humidity</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">collected_data</span><span class="p">.</span><span class="n">ph</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">collected_data</span><span class="p">.</span><span class="n">rainfall</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">predictions</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">predicted_crop_type</span><span class="w"></span>
+<span class="w">    </span><span class="n">predictions</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">predicted_crop_type</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">crops_integration</span><span class="p">.</span><span class="n">crops</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">collected_data</span><span class="w"></span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">crop_predictor</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">predictions</span><span class="w"></span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>

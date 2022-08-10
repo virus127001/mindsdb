@@ -1983,7 +1983,8 @@
 <span class="w">        </span><span class="err">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">)</span><span class="w"></span>
 <span class="err">}}</span><span class="w"></span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">stores</span><span class="w"></span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">stores</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="create-predictions-table">Create predictions table<a class="headerlink" href="#create-predictions-table" title="Permanent link">&para;</a></h3>
 <p>Create <em>table_name</em>.sql (If you need to specify schema, you can do it with a dot separator: <em><strong>schema_name.</strong>table_name</em>.sql):</p>
@@ -2024,7 +2025,9 @@
 <span class="w">        </span><span class="n">integration</span><span class="o">=</span><span class="s1">&#39;photorep&#39;</span><span class="w"></span>
 <span class="w">    </span><span class="p">)</span><span class="w"></span>
 <span class="err">}}</span><span class="w"></span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">bc</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ddd</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">latest</span><span class="w"></span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">bc</span><span class="w"></span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">ddd</span><span class="w"></span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">latest</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Note that each time dbt is run, the results table will be rewritten.</p>

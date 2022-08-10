@@ -1901,6 +1901,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">income</span><span class="p">,</span><span class="w"> </span><span class="n">debt</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">income_table</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">------+-----+</span>
 <span class="o">|</span><span class="n">income</span><span class="o">|</span><span class="n">debt</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------+-----+</span>
@@ -1920,6 +1921,7 @@
 <span class="k">FROM</span><span class="w"> </span><span class="n">income_table</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">income</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80000</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">------+-----+</span>
 <span class="o">|</span><span class="n">income</span><span class="o">|</span><span class="n">debt</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------+-----+</span>
@@ -1935,6 +1937,7 @@
 <span class="k">FROM</span><span class="w"> </span><span class="n">income</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">income</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90000</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Empty</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>In other words, Nothing! no valuable information at all.</p>
@@ -1962,6 +1965,7 @@
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">debt_model</span><span class="w"> </span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">income</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90000</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
+<p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">------+-----+</span>
 <span class="o">|</span><span class="n">income</span><span class="o">|</span><span class="n">debt</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------+-----+</span>

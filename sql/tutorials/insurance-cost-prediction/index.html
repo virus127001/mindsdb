@@ -1922,8 +1922,8 @@ resulting from mass in kilograms and height in meters (float)</li>
 To train a new machine learning model we will need to CREATE PREDICTOR as a new record inside the predictors table, and using this command:</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictor_name</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">integration_name</span><span class="w"></span>
-<span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="p">,</span><span class="w"> </span><span class="n">column_name2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ds_name</span><span class="w"></span>
-<span class="n">PREDICT</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">column_alias</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="p">,</span><span class="w"> </span><span class="n">column_name2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ds_name</span><span class="w"></span>
+<span class="n">PREDICT</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">column_alias</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>The values that we need to provide are:</p>
 <ul>
@@ -1936,25 +1936,31 @@ To train a new machine learning model we will need to CREATE PREDICTOR as a new 
 <p>So, use this command to create the models:</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">insurance_cost_predictor</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">insurance_costs</span><span class="w"></span>
-<span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">insurance</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">insurance</span><span class="p">)</span><span class="w"></span>
 <span class="n">PREDICT</span><span class="w"> </span><span class="n">charges</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p><img alt="Create model" src="/assets/sql/tutorials/insurance-cost/insurance_predictor.png" /></p>
 <p>If there's no error, that means your model is created and training has started. To see if your model is finished, use this command:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predictor_name</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predictor_name</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>And values that we need to provide are:</p>
 <ul>
 <li>predictor_name (string) - The name of the model.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;insurance_cost_predictor&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;insurance_cost_predictor&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p><img alt="Show model" src="/assets/sql/tutorials/insurance-cost/select_insurance.png" /></p>
 <p>If the predictor is ready, it will look like this. The model has been created and trained! The reported accuracy is 75%. If you want to have more control over the model, head to lightwood.io to see how that can be customized.</p>
 <h2 id="make-prediction">Make prediction<a class="headerlink" href="#make-prediction" title="Permanent link">&para;</a></h2>
 <p>Now you are in the last step of this tutorial, making the prediction. To make a prediction you can use this command:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">target_variable</span><span class="p">,</span><span class="w"> </span><span class="n">target_variable_explain</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">model_table</span><span class="w"> </span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">column3</span><span class="o">=</span><span class="ss">&quot;value&quot;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">column2</span><span class="o">=</span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">target_variable</span><span class="p">,</span><span class="w"> </span><span class="n">target_variable_explain</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">model_table</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">column3</span><span class="o">=</span><span class="ss">&quot;value&quot;</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">column2</span><span class="o">=</span><span class="n">value</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>You need to set these values:</p>
 <ul>
@@ -1963,9 +1969,14 @@ To train a new machine learning model we will need to CREATE PREDICTOR as a new 
 <li>target_variable_explain - JSON object that contains additional information as confidence_lower_bound, confidence_upper_bound, anomaly, truth.</li>
 <li>when_data - The data to make the predictions from(WHERE clause params).</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">charges</span><span class="p">,</span><span class="w"> </span><span class="n">charges_confidence</span><span class="p">,</span><span class="w"> </span><span class="n">charges_explain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">info</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">charges</span><span class="p">,</span><span class="w"> </span><span class="n">charges_confidence</span><span class="p">,</span><span class="w"> </span><span class="n">charges_explain</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">info</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">insurance_cost_predictor</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="o">=</span><span class="mi">20</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">sex</span><span class="o">=</span><span class="s1">&#39;male&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">bmi</span><span class="o">=</span><span class="mi">33</span><span class="p">.</span><span class="mi">20</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">children</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">smoker</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">region</span><span class="o">=</span><span class="s1">&#39;southeast&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="o">=</span><span class="mi">20</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">sex</span><span class="o">=</span><span class="s1">&#39;male&#39;</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">bmi</span><span class="o">=</span><span class="mi">33</span><span class="p">.</span><span class="mi">20</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">children</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">smoker</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">region</span><span class="o">=</span><span class="s1">&#39;southeast&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p><img alt="Query model" src="/assets/sql/tutorials/insurance-cost/prediction_insurance.png" /></p>
 <p>Finally, we have trained an insurance model using SQL and MindsDB.</p>

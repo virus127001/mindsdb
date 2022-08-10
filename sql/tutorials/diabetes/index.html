@@ -1900,14 +1900,16 @@ PARAMETERS = </li>
 <p>The predictor we will create will be trained to determine negative and positive cases for diabetes.</p>
 <p>Use the following query to create a predictor that will predict the <code>Class</code> (<em>positive or negative</em>) for the specific field parameters.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">diabetes_predictor</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb_prediction</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">diabetes</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span><span class="n">PREDICT</span><span class="w"> </span><span class="k">class</span><span class="p">;</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb_prediction</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">diabetes</span><span class="p">)</span><span class="w"></span>
+<span class="n">PREDICT</span><span class="w"> </span><span class="k">class</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>Select the <code>RUN</code> button,alternatively select Shift+Enter to execute the query. You will receive the message 'Query successfully completed' if the machine learning model is successfully created.</p>
 <p><img alt="create_predictor" src="/assets/tutorials/diabetes/create_predictor.png" /></p>
 <p>The predictor was created successfully and has started training. To check the status of the model, use the below query.</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;diabetes_predictor&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;diabetes_predictor&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>After the predictor has finished training, you will see a similar output. Note that MindsDB does model testing for you automatically, so you will immediately see if the predictor is accurate enough.</p>
 <p><img alt="select_predictor" src="/assets/tutorials/diabetes/select_predictor.png" /></p>
@@ -1918,11 +1920,16 @@ You can revisit training new predictors to increase accuracy by changing the que
 <p>In this section you will learn how to make predictions using your trained model.
 Now we will use the trained model to make predictions using a SQL query</p>
 <p>Use the following query using mock data with the predictor.</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">Class</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">diabetes_predictor</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">number_of_times_pregnant</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">plasma_glucose_concentration</span><span class="o">=</span><span class="mi">135</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span>
-<span class="k">AND</span><span class="w"> </span><span class="n">diastolic_blood_pressure</span><span class="o">=</span><span class="mi">65</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">triceps_skin_fold_thickness</span><span class="o">=</span><span class="mi">30</span><span class="w"> </span>
-<span class="k">AND</span><span class="w"> </span><span class="n">two_Hour_serum_insulin</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">body_mass_index</span><span class="o">=</span><span class="mi">23</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span>
-<span class="k">AND</span><span class="w"> </span><span class="n">diabetes_pedigree_function</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">366</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">age</span><span class="o">=</span><span class="mi">31</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">Class</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">diabetes_predictor</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">number_of_times_pregnant</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">plasma_glucose_concentration</span><span class="o">=</span><span class="mi">135</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">diastolic_blood_pressure</span><span class="o">=</span><span class="mi">65</span><span class="p">.</span><span class="mi">0</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">triceps_skin_fold_thickness</span><span class="o">=</span><span class="mi">30</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">two_Hour_serum_insulin</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">body_mass_index</span><span class="o">=</span><span class="mi">23</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">diabetes_pedigree_function</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">366</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">age</span><span class="o">=</span><span class="mi">31</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>MindsDB will provide you with results similar to below:</p>
 <p><img alt="prediction" src="/assets/tutorials/diabetes/prediction.png" /></p>
