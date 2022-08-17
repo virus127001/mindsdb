@@ -382,14 +382,14 @@
       
       
         <label class="md-nav__link" for="__nav_3">
-          Setup
+          Deployment
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Setup" data-md-level="1">
+      <nav class="md-nav" aria-label="Deployment" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Setup
+          Deployment
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -551,6 +551,62 @@
     <li class="md-nav__item">
       <a href="../../setup/cloud/" class="md-nav__link">
         MindsDB Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/digital-ocean/" class="md-nav__link">
+        Digital Ocean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/gcp/" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/vultr/" class="md-nav__link">
+        Vultr Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/civo/" class="md-nav__link">
+        Civo Cloud
       </a>
     </li>
   
@@ -1806,29 +1862,27 @@
 <p><img alt="Choose database engine" src="/assets/sql/dbeaver_2.png" /></p>
 <p>Now it's the time to fill in the connection details.</p>
 <p><img alt="Connection details" src="/assets/sql/dbeaver_3.png" /></p>
-<p>There are two options as follows:</p>
-<ul>
-<li>
-<p>You can connect to your MindsDB Cloud account. To do that, please use the connection details below:</p>
-<ul>
-<li>Hostname: <code>cloud-mysql.mindsdb.com</code></li>
-<li>Port: <code>3306</code></li>
-<li>Username: <em>your MindsDB Cloud username</em></li>
-<li>Password: <em>your MindsDB Cloud password</em></li>
-<li>Database: <em>leave it empty</em></li>
-</ul>
-</li>
-<li>
-<p>You can connect to your local MindsDB. To do that, please use the connection details below:</p>
-<ul>
-<li>Hostname: <code>127.0.0.1</code></li>
-<li>Port: <code>47334</code></li>
-<li>Username: <em>mindsdb</em></li>
-<li>Password: <em>leave it empty</em></li>
-<li>Database: <em>leave it empty</em></li>
-</ul>
-</li>
-</ul>
+<p>There are two options, as below.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Connecting to your MindsDB Cloud account</label><label for="__tabbed_1_2">Connecting to your local MindsDB</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>You can connect to your MindsDB Cloud account. To do that, please use the connection details below:<br/></p>
+<p>&emsp;&emsp;Hostname: <code>cloud-mysql.mindsdb.com</code><br/>
+&emsp;&emsp;Port: <code>3306</code><br/>
+&emsp;&emsp;Username: <em>your MindsDB Cloud username</em><br/>
+&emsp;&emsp;Password: <em>your MindsDB Cloud password</em><br/>
+&emsp;&emsp;Database: <em>leave it empty</em><br/></p>
+</div>
+<div class="tabbed-block">
+<p>You can connect to your local MindsDB. To do that, please use the connection details below:<br/></p>
+<p>&emsp;&emsp;Hostname: <code>127.0.0.1</code><br/>
+&emsp;&emsp;Port: <code>47334</code><br/>
+&emsp;&emsp;Username: <code>mindsdb</code><br/>
+&emsp;&emsp;Password: <em>leave it empty</em><br/>
+&emsp;&emsp;Database: <em>leave it empty</em><br/></p>
+</div>
+</div>
+</div>
 <p>Now we are ready to test the connection.</p>
 <h2 id="testing-the-connection">Testing the Connection<a class="headerlink" href="#testing-the-connection" title="Permanent link">&para;</a></h2>
 <p>Click on the <code>Test Connection...</code> button to check if all the provided data allows you to connect to MindsDB</p>
@@ -1836,7 +1890,20 @@
 <p>On success, you should see the message, as shown above.</p>
 <h2 id="lets-run-some-queries">Let's Run Some Queries<a class="headerlink" href="#lets-run-some-queries" title="Permanent link">&para;</a></h2>
 <p>To finally make sure that our MinsdDB database connection works, let's run some queries.</p>
-<p><img alt="Query" src="/assets/sql/dbeaver_5.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">-------------------------+--------+------------------+------------------+-------------+---------------+-----+-----------------+----------------+</span>
+<span class="o">|</span><span class="n">name</span><span class="w">                     </span><span class="o">|</span><span class="n">status</span><span class="w">  </span><span class="o">|</span><span class="n">accuracy</span><span class="w">          </span><span class="o">|</span><span class="n">predict</span><span class="w">           </span><span class="o">|</span><span class="n">update_status</span><span class="o">|</span><span class="n">mindsdb_version</span><span class="o">|</span><span class="n">error</span><span class="o">|</span><span class="n">select_data_query</span><span class="o">|</span><span class="n">training_options</span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------------------------+--------+------------------+------------------+-------------+---------------+-----+-----------------+----------------+</span>
+<span class="o">|</span><span class="n">house_sales_model</span><span class="w">        </span><span class="o">|</span><span class="n">complete</span><span class="o">|</span><span class="mi">0</span><span class="p">.</span><span class="mi">4658770134240238</span><span class="o">|</span><span class="n">ma</span><span class="w">                </span><span class="o">|</span><span class="n">up_to_date</span><span class="w">   </span><span class="o">|</span><span class="mi">22</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">5</span><span class="p">.</span><span class="mi">1</span><span class="w">       </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="n">process_quality_predictor</span><span class="o">|</span><span class="n">complete</span><span class="o">|</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="w">               </span><span class="o">|</span><span class="n">silica_concentrate</span><span class="o">|</span><span class="n">up_to_date</span><span class="w">   </span><span class="o">|</span><span class="mi">22</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">5</span><span class="p">.</span><span class="mi">1</span><span class="w">       </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="n">home_rentals_model</span><span class="w">       </span><span class="o">|</span><span class="n">complete</span><span class="o">|</span><span class="mi">0</span><span class="p">.</span><span class="mi">9991920992432087</span><span class="o">|</span><span class="n">rental_price</span><span class="w">      </span><span class="o">|</span><span class="n">up_to_date</span><span class="w">   </span><span class="o">|</span><span class="mi">22</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">0</span><span class="w">       </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">-------------------------+--------+------------------+------------------+-------------+---------------+-----+-----------------+----------------+</span>
+</code></pre></div>
+<p>Here is how it looks in DBeaver:</p>
+<p><img alt="Query test" src="/assets/sql/dbeaver_5.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Whitelist MindsDB Cloud IP address</p>
 <p>If you need to whitelist MindsDB Cloud IP address to have access to your database, reach out to MindsDB team so we can share the Cloud static IP with you.</p>

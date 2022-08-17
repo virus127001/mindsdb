@@ -382,14 +382,14 @@
       
       
         <label class="md-nav__link" for="__nav_3">
-          Setup
+          Deployment
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Setup" data-md-level="1">
+      <nav class="md-nav" aria-label="Deployment" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Setup
+          Deployment
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -557,6 +557,62 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/digital-ocean/" class="md-nav__link">
+        Digital Ocean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/gcp/" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/vultr/" class="md-nav__link">
+        Vultr Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/civo/" class="md-nav__link">
+        Civo Cloud
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -664,47 +720,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          SQL Alchemy
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         SQL Alchemy
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-mindsdb-cloud-to-sqlalchemy" class="md-nav__link">
-    Connecting MindsDB Cloud to SQLAlchemy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-local-mindsdb-to-sqlalchemy" class="md-nav__link">
-    Connecting Local MindsDB to SQLAlchemy
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1745,28 +1763,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-mindsdb-cloud-to-sqlalchemy" class="md-nav__link">
-    Connecting MindsDB Cloud to SQLAlchemy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-local-mindsdb-to-sqlalchemy" class="md-nav__link">
-    Connecting Local MindsDB to SQLAlchemy
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1784,9 +1780,12 @@
 
 
 <h1 id="sql-alchemy-and-mindsdb">SQL Alchemy and MindsDB<a class="headerlink" href="#sql-alchemy-and-mindsdb" title="Permanent link">&para;</a></h1>
-<p>SQLAlchemy is a Python package, or a Python SQL toolkit, that provides object-relational mapping features for the Python programming language. It facilitates working with databases and Python. You can download it <a href="https://www.sqlalchemy.org/">here</a> or run a <code>pip install sqlalchemy</code> command if you use a Linux system.</p>
-<h2 id="connecting-mindsdb-cloud-to-sqlalchemy">Connecting MindsDB Cloud to SQLAlchemy<a class="headerlink" href="#connecting-mindsdb-cloud-to-sqlalchemy" title="Permanent link">&para;</a></h2>
-<p>You can use the Python code below to connect your Cloud MindsDB database to SQLAlchemy.</p>
+<p>SQL Alchemy is a Python package, or a Python SQL toolkit, that provides object-relational mapping features for the Python programming language. It facilitates working with databases and Python. You can download it <a href="https://www.sqlalchemy.org/">here</a> or run a <code>pip install sqlalchemy</code> command if you use a Linux system.</p>
+<p>Please follow the instructions below to connect your MindsDB to SQL Alchemy.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Connecting MindsDB Cloud to SQL Alchemy</label><label for="__tabbed_1_2">Connecting Local MindsDB to SQL Alchemy</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>You can use the Python code below to connect your Cloud MindsDB database to SQL Alchemy.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
 
 <span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;MindsDB Cloud username&#39;</span> <span class="c1"># replace this value</span>
@@ -1796,16 +1795,16 @@
 <span class="n">database</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
 <span class="k">def</span> <span class="nf">get_connection</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">create_engine</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{0}</span><span class="s2">:</span><span class="si">{1}</span><span class="s2">@</span><span class="si">{2}</span><span class="s2">:</span><span class="si">{3}</span><span class="s2">/</span><span class="si">{4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">database</span><span class="p">)</span>
-    <span class="p">)</span>
+        <span class="k">return</span> <span class="n">create_engine</span><span class="p">(</span>
+                <span class="n">url</span><span class="o">=</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{0}</span><span class="s2">:</span><span class="si">{1}</span><span class="s2">@</span><span class="si">{2}</span><span class="s2">:</span><span class="si">{3}</span><span class="s2">/</span><span class="si">{4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">database</span><span class="p">)</span>
+        <span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">engine</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connection to the </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2"> for user </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2"> created successfully.&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection could not be made due to the following error: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ex</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">engine</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connection to the </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2"> for user </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2"> created successfully.&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection could not be made due to the following error: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ex</span><span class="p">)</span>
 </code></pre></div>
 <p>Please note that we use the following connection details:</p>
 <ul>
@@ -1818,9 +1817,9 @@
 <p>To create a database connection, execute the code above. On success, the following output is expected:</p>
 <div class="highlight"><pre><span></span><code>Connection to the cloud-mysql.mindsdb.com <span class="k">for</span> user MindsDB-Cloud-Username created successfully.
 </code></pre></div>
-<p>Let's try the same for the local MindsDB installation.</p>
-<h2 id="connecting-local-mindsdb-to-sqlalchemy">Connecting Local MindsDB to SQLAlchemy<a class="headerlink" href="#connecting-local-mindsdb-to-sqlalchemy" title="Permanent link">&para;</a></h2>
-<p>You can use the Python code below to connect your local MindsDB database to SQLAlchemy.</p>
+</div>
+<div class="tabbed-block">
+<p>You can use the Python code below to connect your local MindsDB database to SQL Alchemy.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
 
 <span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;mindsdb&#39;</span>
@@ -1852,6 +1851,9 @@
 <p>To create a database connection, execute the code above. On success, the following output is expected:</p>
 <div class="highlight"><pre><span></span><code>Connection to the <span class="m">127</span>.0.0.1 <span class="k">for</span> user mindsdb created successfully.
 </code></pre></div>
+</div>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">What is next?</p>
 <p>We recommend you to follow one of our tutorials or learn more about the <a href="/sql/table-structure/">MindsDB Database</a>.</p>
