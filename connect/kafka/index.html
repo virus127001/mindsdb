@@ -535,6 +535,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../setup/custom-config/" class="md-nav__link">
+        Extend the Default MindsDB Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../setup/cloud/" class="md-nav__link">
         MindsDB Cloud
       </a>
@@ -703,30 +717,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#setting-up-kafka-in-docker" class="md-nav__link">
+    Setting up Kafka in Docker
   </a>
   
-    <nav class="md-nav" aria-label="Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
-    Prerequisites:
+    Prerequisites
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#create-the-connector-instance" class="md-nav__link">
-    Create the connector instance:
+    Create the Connector Instance
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#send-source-data-and-receive-prediction-results" class="md-nav__link">
-    Send source data and receive prediction results:
+    Send Source Data and Receive Prediction Results
   </a>
   
 </li>
@@ -1758,30 +1779,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#setting-up-kafka-in-docker" class="md-nav__link">
+    Setting up Kafka in Docker
   </a>
   
-    <nav class="md-nav" aria-label="Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
-    Prerequisites:
+    Prerequisites
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#create-the-connector-instance" class="md-nav__link">
-    Create the connector instance:
+    Create the Connector Instance
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#send-source-data-and-receive-prediction-results" class="md-nav__link">
-    Send source data and receive prediction results:
+    Send Source Data and Receive Prediction Results
   </a>
   
 </li>
@@ -1810,31 +1838,46 @@
 
 
 <h1 id="mindsdb-and-kafka">MindsDB and Kafka<a class="headerlink" href="#mindsdb-and-kafka" title="Permanent link">&para;</a></h1>
-<p>MindsDB provides a kafka connector plugin to connect to kafka cluster.</p>
-<p>At first, please visit <ins><a href="https://www.confluent.io/hub/mindsdb/mindsdb-kafka-connector">Kafka Connect Mindsdb</a></ins> page on official confluent site. It contains all instructions how to install the connector from the confluent hub.</p>
-<p>In addition it wouldn't be a mistake to briefly review instructions described below.</p>
-<p>You may use official connector docker image:</p>
+<p>MindsDB provides the Kafka connector plugin to connect to the Kafka cluster.</p>
+<p>Please visit the <a href="https://www.confluent.io/hub/mindsdb/mindsdb-kafka-connector">Kafka Connect MindsDB page</a> on the official Confluent site. It contains all the instructions on how to install the connector from the Confluent hub.</p>
+<h2 id="setting-up-kafka-in-docker">Setting up Kafka in Docker<a class="headerlink" href="#setting-up-kafka-in-docker" title="Permanent link">&para;</a></h2>
+<p>Let's review the instructions here as well.</p>
+<p>You may use the official connector docker image:</p>
 <div class="highlight"><pre><span></span><code>docker pull mindsdb/mindsdb-kafka-connector
 </code></pre></div>
-<p>Also a source code of the connector is located <ins><a href="https://github.com/mindsdb/kafka_connector">here</a></ins>. Please read the <ins><a href="https://github.com/mindsdb/kafka_connector/blob/main/README.md">instruction</a></ins> first before building the connector from scratch.</p>
-<p>It is possible to integrate and use the connector as part of your own kafka cluster or you may try this one in our test docker <ins><a href="https://github.com/mindsdb/kafka_connector/blob/main/docker-compose.yml">environment</a></ins>. Just execute:</p>
+<p>The source code of the Kafka connector is in the <a href="https://github.com/mindsdb/kafka_connector">kafka_connector GitHub repository</a>. Please read the <a href="https://github.com/mindsdb/kafka_connector/blob/main/README.md">instructions</a> before building the connector from scratch.</p>
+<p>It is possible to integrate and use the Kafka connector as part of your own Kafka cluster, or you may use our test docker environment.</p>
+<p>To try out our <a href="https://github.com/mindsdb/kafka_connector/blob/main/docker-compose.yml">test docker environment</a>, follow the steps below.</p>
+<p>Before you bring the docker container up, please note that there are two types of connector configuration:</p>
+<ul>
+<li>For <a href="https://github.com/mindsdb/kafka_connector/blob/main/examples/kafkaConfig.json">MindsDB Cloud</a></li>
+<li>For a separate <a href="https://github.com/mindsdb/kafka_connector/blob/main/examples/kafkaConfigSeparateMindsdbInstance.json">MindsDB installation</a></li>
+</ul>
+<p>No matter which option you choose, these files require real values to be set in place of a username, password, Kafka connection details, etc. The SASL mechanism details are optional, as local Kafka installation may not have this mechanism configured - or you can use <a href="https://github.com/mindsdb/kafka_connector/blob/main/kafka_server_jaas.conf#L11,L12">this data</a> for the SASL username and password.</p>
+<p>Now that your config files store real data, you can execute the command below from the root of the <a href="https://github.com/mindsdb/kafka_connector">kafka_connector GitHub repository</a> to build the connector and launch it in the test environment locally.</p>
 <div class="highlight"><pre><span></span><code>docker-compose up -d
 </code></pre></div>
-<p>from the root of repository to build the connector and launch it in the test environment locally.</p>
-<p>Please note, there are two types of connector config (do not forget to set a real value for each parameter before using it):</p>
+<p>Let's go over some examples.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>For <ins><a href="https://github.com/mindsdb/kafka_connector/blob/main/examples/kafkaConfig.json">MindsDB Cloud</a></ins></li>
-<li>For a separate <ins><a href="https://github.com/mindsdb/kafka_connector/blob/main/examples/kafkaConfigSeparateMindsdbInstance.json">MindsDB installation</a></ins></li>
+<li>
+<p>Launch MindsDB instance where HTTP API interface runs on <code>docker network interface inet ip</code>. Usually, the IP address is <code>172.17.0.1</code>, and the port is <code>47334</code>.</p>
+<p>You can modify the HTTP API interface details in the <a href="https://github.com/mindsdb/mindsdb/blob/staging/mindsdb/utilities/config.py#L50,L52">MindsDB config file</a>.</p>
+<p>Now, to launch your MindsDB, run the following command:</p>
+<div class="highlight"><pre><span></span><code>python -m mindsdb --config<span class="o">=</span>YOURCONFIGFILE.JSON
+</code></pre></div>
+<p>Please note that the config file must be in the JSON format. It must include <a href="https://github.com/mindsdb/mindsdb/blob/staging/mindsdb/utilities/config.py#L35,L72">this part</a> of the config file from the MindsDB repository in a proper JSON format.</p>
+</li>
+<li>
+<p>Train a new model. You may use <a href="/sql/tutorials/bodyfat">this tutorial</a> as an example.</p>
+</li>
+<li>
+<p>Run the test environment as instructed in the <a href="#setting-up-kafka-in-docker">Setting up Kafka in Docker</a> section above.</p>
+</li>
 </ul>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<h3 id="prerequisites">Prerequisites:<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Launch MindsDB instance where HTTP API interface is running on <code>docker network interface inet ip</code> (it is <code>172.17.0.1</code> in general)</li>
-<li>Train a new model. You may use <ins><a href="/sql/tutorials/bodyfat">this</a></ins> tutorial as example</li>
-<li>run test kafka environment - <code>docker-compose up -d</code> (see details above)</li>
-</ul>
-<h3 id="create-the-connector-instance">Create the connector instance:<a class="headerlink" href="#create-the-connector-instance" title="Permanent link">&para;</a></h3>
-<p>To create a connector need to send POST request to specific <code>connectors</code> url with connector configuration in JSON format:
+<h3 id="create-the-connector-instance">Create the Connector Instance<a class="headerlink" href="#create-the-connector-instance" title="Permanent link">&para;</a></h3>
+<p>To create a connector, you need to send a POST request to a specific <code>connectors</code> URL with connector configuration in JSON format, as below.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">MINDSDB_URL</span> <span class="o">=</span> <span class="s2">&quot;http://172.17.0.1:47334&quot;</span>
@@ -1868,10 +1911,11 @@
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">CONNECTORS_URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-</code></pre></div></p>
-<p>The code above creates a MindsDB Kafka connector which uses <code>PREDICTOR_NAME</code> model, receives source data from <code>STREAM_IN</code> kafka topic and sends prediction results to <code>STREAM_OUT</code> kafka topic.</p>
-<h3 id="send-source-data-and-receive-prediction-results">Send source data and receive prediction results:<a class="headerlink" href="#send-source-data-and-receive-prediction-results" title="Permanent link">&para;</a></h3>
-<p>There are many kafka clients <ins><a href="https://docs.confluent.io/platform/current/clients/index.html">implementations</a></ins>, and you may find the best one for your goals.</p>
+</code></pre></div>
+<p>This code creates a MindsDB Kafka connector that uses the <code>PREDICTOR_NAME</code> model, receives source data from the <code>STREAM_IN</code> Kafka topic, and sends prediction results to the <code>STREAM_OUT</code> Kafka topic.</p>
+<h3 id="send-source-data-and-receive-prediction-results">Send Source Data and Receive Prediction Results<a class="headerlink" href="#send-source-data-and-receive-prediction-results" title="Permanent link">&para;</a></h3>
+<p>There are many <a href="https://docs.confluent.io/platform/current/clients/index.html">Kafka client implementations</a> - choose the most suitable one depending on your goals.</p>
+<p>The code below generates and sends the source records to <code>topic_in</code> by default. You can use any other Kafka topic by providing its name as a CMD parameter.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>                                                                                                                                                  
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">kafka</span>
@@ -1893,7 +1937,7 @@
         <span class="n">producer</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">to_send</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
     <span class="n">producer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-<p>This piece of code generates and sends for source records to <code>topic_in</code> (by default) or any other topic (if it is provided and cmd parameter).</p>
+<p>And the following code shows how to read prediction results from <code>topic_out</code> by default. Again, you can use any other Kafka topic by providing its name as a CMD parameter.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">kafka</span>
@@ -1908,7 +1952,6 @@
 
 <span class="n">consumer</span> <span class="o">=</span> <span class="n">kafka</span><span class="o">.</span><span class="n">KafkaConsumer</span><span class="p">(</span><span class="o">**</span><span class="n">connection_info</span><span class="p">)</span>
 
-
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">connection_info</span><span class="p">))</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -1920,7 +1963,10 @@
         <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
 </code></pre></div>
-<p>While this one shows how to read prediction results from <code>topic_out</code> (by default) or any other topic (if it is provided and cmd parameter).</p>
+<div class="admonition tip">
+<p class="admonition-title">What's next?</p>
+<p>We recommend you to follow one of our tutorials or learn more about the <a href="/sql/table-structure/">MindsDB Database</a>.</p>
+</div>
 
               
             </article>

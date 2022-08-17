@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#connect-from-dbeaver" class="md-skip">
+        <a href="#connect-to-mindsdb-from-dbeaver" class="md-skip">
           Skip to content
         </a>
       
@@ -535,6 +535,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../setup/custom-config/" class="md-nav__link">
+        Extend the Default MindsDB Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../setup/cloud/" class="md-nav__link">
         MindsDB Cloud
       </a>
@@ -622,9 +636,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DBeaver
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         DBeaver
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-setup" class="md-nav__link">
+    Data Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-connection" class="md-nav__link">
+    Testing the Connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-run-some-queries" class="md-nav__link">
+    Let's Run Some Queries
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1693,6 +1752,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-setup" class="md-nav__link">
+    Data Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-connection" class="md-nav__link">
+    Testing the Connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-run-some-queries" class="md-nav__link">
+    Let's Run Some Queries
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1709,47 +1797,46 @@
 
 
 
-<h1 id="connect-from-dbeaver">Connect from DBeaver<a class="headerlink" href="#connect-from-dbeaver" title="Permanent link">&para;</a></h1>
-<ol>
-<li>From the navigation menu, click <code>Connect to database</code></li>
+<h1 id="connect-to-mindsdb-from-dbeaver">Connect to MindsDB from DBeaver<a class="headerlink" href="#connect-to-mindsdb-from-dbeaver" title="Permanent link">&para;</a></h1>
+<p>DBeaver is a database tool that allows you to connect to and work with various database engines. You can download it <a href="https://dbeaver.io/">here</a>.</p>
+<h2 id="data-setup">Data Setup<a class="headerlink" href="#data-setup" title="Permanent link">&para;</a></h2>
+<p>First, you create a new database connection in DBeaver by clicking the icon, as shown below.</p>
+<p><img alt="New Database Connection" src="/assets/sql/dbeaver_1.png" /></p>
+<p>Next, choose the MySQL database engine and click the <em>Next</em> button.</p>
+<p><img alt="Choose database engine" src="/assets/sql/dbeaver_2.png" /></p>
+<p>Now it's the time to fill in the connection details.</p>
+<p><img alt="Connection details" src="/assets/sql/dbeaver_3.png" /></p>
+<p>There are two options as follows:</p>
+<ul>
 <li>
-<p>Search <code>MySQL 8+</code></p>
-<p><img alt="Connect mysql 8" src="/assets/sql/dbeaver8.png" /></p>
-</li>
-<li>
-<p>Select the <code>MySQL 8+</code> or <code>MySQL</code></p>
-</li>
-<li>Click on <code>Next</code></li>
-<li>Add the Hostname:<ul>
-<li>cloud.mindsdb.com - for MindsDB cloud</li>
-<li>127.0.0.1 - for local deployment</li>
-</ul>
-</li>
-<li>Add the Database name (leave empty)</li>
-<li>Add Port <ul>
-<li>3306 - for MindsDB cloud</li>
-<li>47335 - for local deployment</li>
-</ul>
-</li>
-<li>Add the database user<ul>
-<li>MindsDB Cloud username</li>
-<li>mindsdb - for local deployment</li>
-</ul>
-</li>
-<li>Add Password for the user <ul>
-<li>MindsDB Cloud password</li>
-<li>empty - for local deployment</li>
+<p>You can connect to your MindsDB Cloud account. To do that, please use the connection details below:</p>
+<ul>
+<li>Hostname: <code>cloud-mysql.mindsdb.com</code></li>
+<li>Port: <code>3306</code></li>
+<li>Username: <em>your MindsDB Cloud username</em></li>
+<li>Password: <em>your MindsDB Cloud password</em></li>
+<li>Database: <em>leave it empty</em></li>
 </ul>
 </li>
 <li>
-<p>Click on <code>Test Connection...</code> to check if all the provided data allows you to connect to MindsDB</p>
-<p><img alt="Test" src="/assets/sql/test_connection_dbeaver.png" /></p>
+<p>You can connect to your local MindsDB. To do that, please use the connection details below:</p>
+<ul>
+<li>Hostname: <code>127.0.0.1</code></li>
+<li>Port: <code>47334</code></li>
+<li>Username: <em>mindsdb</em></li>
+<li>Password: <em>leave it empty</em></li>
+<li>Database: <em>leave it empty</em></li>
+</ul>
 </li>
-<li>
-<p>Click on <code>OK</code>.</p>
-<p><img alt="Connect" src="/assets/sql/connectcloud.png" /></p>
-</li>
-</ol>
+</ul>
+<p>Now we are ready to test the connection.</p>
+<h2 id="testing-the-connection">Testing the Connection<a class="headerlink" href="#testing-the-connection" title="Permanent link">&para;</a></h2>
+<p>Click on the <code>Test Connection...</code> button to check if all the provided data allows you to connect to MindsDB</p>
+<p><img alt="Connection test" src="/assets/sql/dbeaver_4.png" /></p>
+<p>On success, you should see the message, as shown above.</p>
+<h2 id="lets-run-some-queries">Let's Run Some Queries<a class="headerlink" href="#lets-run-some-queries" title="Permanent link">&para;</a></h2>
+<p>To finally make sure that our MinsdDB database connection works, let's run some queries.</p>
+<p><img alt="Query" src="/assets/sql/dbeaver_5.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Whitelist MindsDB Cloud IP address</p>
 <p>If you need to whitelist MindsDB Cloud IP address to have access to your database, reach out to MindsDB team so we can share the Cloud static IP with you.</p>

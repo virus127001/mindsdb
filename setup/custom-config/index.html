@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://docs.mindsdb.com/getting-started/">
+        <link rel="canonical" href="https://docs.mindsdb.com/setup/custom-config/">
       
-      <link rel="icon" href="../assets/mdb_logo.png">
+      <link rel="icon" href="../../assets/mdb_logo.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
-        <title>Getting Started - MindsDB Documentation</title>
+        <title>Extend the Default MindsDB Configuration - MindsDB Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.e411adfe.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -37,9 +37,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 
 <!--iubenda privacy policy-->
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getting-started" class="md-skip">
+        <a href="#extend-the-default-mindsdb-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -128,14 +128,14 @@
 
     <!-- Link to home -->
     <a
-      href=".."
+      href="../.."
       title="MindsDB Documentation"
       class="md-header__button md-logo"
       aria-label="MindsDB Documentation"
       data-md-component="logo"
     >
       
-  <img src="../assets/mdb_logo_w2.svg" alt="logo">
+  <img src="../../assets/mdb_logo_w2.svg" alt="logo">
 
     </a>
 
@@ -155,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Extend the Default MindsDB Configuration
             
           </span>
         </div>
@@ -313,9 +313,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="MindsDB Documentation" class="md-nav__button md-logo" aria-label="MindsDB Documentation" data-md-component="logo">
+    <a href="../.." title="MindsDB Documentation" class="md-nav__button md-logo" aria-label="MindsDB Documentation" data-md-component="logo">
       
-  <img src="../assets/mdb_logo_w2.svg" alt="logo">
+  <img src="../../assets/mdb_logo_w2.svg" alt="logo">
 
     </a>
     MindsDB Documentation
@@ -343,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Quickstart
       </a>
     </li>
@@ -358,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../what-is-mindsdb/" class="md-nav__link">
+      <a href="../../what-is-mindsdb/" class="md-nav__link">
         What is MindsDB?
       </a>
     </li>
@@ -371,12 +371,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -425,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/self-hosted/docker/" class="md-nav__link">
+      <a href="../self-hosted/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -465,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/self-hosted/pip/windows/" class="md-nav__link">
+      <a href="../self-hosted/pip/windows/" class="md-nav__link">
         Windows via pip
       </a>
     </li>
@@ -479,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/self-hosted/pip/linux/" class="md-nav__link">
+      <a href="../self-hosted/pip/linux/" class="md-nav__link">
         Linux via pip
       </a>
     </li>
@@ -493,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/self-hosted/pip/macos/" class="md-nav__link">
+      <a href="../self-hosted/pip/macos/" class="md-nav__link">
         MacOS via pip
       </a>
     </li>
@@ -507,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/self-hosted/pip/source/" class="md-nav__link">
+      <a href="../self-hosted/pip/source/" class="md-nav__link">
         Sourcecode via pip
       </a>
     </li>
@@ -533,11 +535,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../setup/custom-config/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Extend the Default MindsDB Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Extend the Default MindsDB Configuration
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-mindsdb-with-default-configuration" class="md-nav__link">
+    Starting MindsDB with Default Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-mindsdb-with-extended-configuration" class="md-nav__link">
+    Starting MindsDB with Extended Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -549,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/cloud/" class="md-nav__link">
+      <a href="../cloud/" class="md-nav__link">
         MindsDB Cloud
       </a>
     </li>
@@ -597,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/mindsdb_editor/" class="md-nav__link">
+      <a href="../../connect/mindsdb_editor/" class="md-nav__link">
         MindsDB SQL Editor
       </a>
     </li>
@@ -611,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/mysql-client/" class="md-nav__link">
+      <a href="../../connect/mysql-client/" class="md-nav__link">
         MySQL CLI
       </a>
     </li>
@@ -625,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/dbeaver/" class="md-nav__link">
+      <a href="../../connect/dbeaver/" class="md-nav__link">
         DBeaver
       </a>
     </li>
@@ -639,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/deepnote/" class="md-nav__link">
+      <a href="../../connect/deepnote/" class="md-nav__link">
         Deepnote
       </a>
     </li>
@@ -653,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/sql-alchemy/" class="md-nav__link">
+      <a href="../../connect/sql-alchemy/" class="md-nav__link">
         SQL Alchemy
       </a>
     </li>
@@ -667,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/dbt/" class="md-nav__link">
+      <a href="../../connect/dbt/" class="md-nav__link">
         DBT
       </a>
     </li>
@@ -681,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/kafka/" class="md-nav__link">
+      <a href="../../connect/kafka/" class="md-nav__link">
         Kafka
       </a>
     </li>
@@ -695,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/tableau/" class="md-nav__link">
+      <a href="../../connect/tableau/" class="md-nav__link">
         Tableau
       </a>
     </li>
@@ -717,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/create/databases/" class="md-nav__link">
+      <a href="../../sql/create/databases/" class="md-nav__link">
         Data Setup in MindsDB
       </a>
     </li>
@@ -732,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/create/file/" class="md-nav__link">
+      <a href="../../sql/create/file/" class="md-nav__link">
         Upload a File to MindsDB
       </a>
     </li>
@@ -747,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/create/predictor/" class="md-nav__link">
+      <a href="../../sql/create/predictor/" class="md-nav__link">
         Train a Predictor
       </a>
     </li>
@@ -762,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/api/select/" class="md-nav__link">
+      <a href="../../sql/api/select/" class="md-nav__link">
         Get a Prediction
       </a>
     </li>
@@ -803,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/table-structure/" class="md-nav__link">
+      <a href="../../sql/table-structure/" class="md-nav__link">
         MindsDB Tables Structure
       </a>
     </li>
@@ -843,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/create/databases/" class="md-nav__link">
+      <a href="../../sql/create/databases/" class="md-nav__link">
         DATABASE
       </a>
     </li>
@@ -857,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/create/predictor/" class="md-nav__link">
+      <a href="../../sql/create/predictor/" class="md-nav__link">
         PREDICTOR
       </a>
     </li>
@@ -871,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/create/table/" class="md-nav__link">
+      <a href="../../sql/create/table/" class="md-nav__link">
         TABLE
       </a>
     </li>
@@ -885,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/create/view/" class="md-nav__link">
+      <a href="../../sql/create/view/" class="md-nav__link">
         VIEW
       </a>
     </li>
@@ -906,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/api/insert/" class="md-nav__link">
+      <a href="../../sql/api/insert/" class="md-nav__link">
         INSERT INTO
       </a>
     </li>
@@ -920,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/api/describe/" class="md-nav__link">
+      <a href="../../sql/api/describe/" class="md-nav__link">
         DESCRIBE
       </a>
     </li>
@@ -934,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/api/retrain/" class="md-nav__link">
+      <a href="../../sql/api/retrain/" class="md-nav__link">
         RETRAIN
       </a>
     </li>
@@ -948,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/api/drop/" class="md-nav__link">
+      <a href="../../sql/api/drop/" class="md-nav__link">
         DROP PREDICTOR
       </a>
     </li>
@@ -962,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/api/select/" class="md-nav__link">
+      <a href="../../sql/api/select/" class="md-nav__link">
         SELECT
       </a>
     </li>
@@ -976,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/api/select_files/" class="md-nav__link">
+      <a href="../../sql/api/select_files/" class="md-nav__link">
         SELECT from files
       </a>
     </li>
@@ -990,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/api/join/" class="md-nav__link">
+      <a href="../../sql/api/join/" class="md-nav__link">
         JOIN
       </a>
     </li>
@@ -1038,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-model/mlflow/" class="md-nav__link">
+      <a href="../../custom-model/mlflow/" class="md-nav__link">
         MLFlow
       </a>
     </li>
@@ -1052,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-model/ray-serve/" class="md-nav__link">
+      <a href="../../custom-model/ray-serve/" class="md-nav__link">
         Ray Serve
       </a>
     </li>
@@ -1066,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-model/huggingface/" class="md-nav__link">
+      <a href="../../custom-model/huggingface/" class="md-nav__link">
         HuggingFace
       </a>
     </li>
@@ -1080,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-model/openai/" class="md-nav__link">
+      <a href="../../custom-model/openai/" class="md-nav__link">
         OpenAI
       </a>
     </li>
@@ -1154,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/home-rentals/" class="md-nav__link">
+      <a href="../../sql/tutorials/home-rentals/" class="md-nav__link">
         Home Rentals
       </a>
     </li>
@@ -1201,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/customer-churn/" class="md-nav__link">
+      <a href="../../sql/tutorials/customer-churn/" class="md-nav__link">
         Customer Churn
       </a>
     </li>
@@ -1248,7 +1298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/house-sales-forecasting/" class="md-nav__link">
+      <a href="../../sql/tutorials/house-sales-forecasting/" class="md-nav__link">
         House Sales
       </a>
     </li>
@@ -1329,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/insurance-cost-prediction/" class="md-nav__link">
+      <a href="../../sql/tutorials/insurance-cost-prediction/" class="md-nav__link">
         Insurance Cost
       </a>
     </li>
@@ -1343,7 +1393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/bodyfat/" class="md-nav__link">
+      <a href="../../sql/tutorials/bodyfat/" class="md-nav__link">
         Body Fat Prediction
       </a>
     </li>
@@ -1357,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/process-quality/" class="md-nav__link">
+      <a href="../../sql/tutorials/process-quality/" class="md-nav__link">
         Process Quality
       </a>
     </li>
@@ -1404,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/crop-prediction/" class="md-nav__link">
+      <a href="../../sql/tutorials/crop-prediction/" class="md-nav__link">
         Crop Recommendation
       </a>
     </li>
@@ -1418,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/diabetes/" class="md-nav__link">
+      <a href="../../sql/tutorials/diabetes/" class="md-nav__link">
         Diabetes
       </a>
     </li>
@@ -1432,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/spam_emails_tutorial/" class="md-nav__link">
+      <a href="../../sql/tutorials/spam_emails_tutorial/" class="md-nav__link">
         Email spam
       </a>
     </li>
@@ -1446,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/mushrooms/" class="md-nav__link">
+      <a href="../../sql/tutorials/mushrooms/" class="md-nav__link">
         Mushrooms Hunting
       </a>
     </li>
@@ -1460,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql/tutorials/heart-disease/" class="md-nav__link">
+      <a href="../../sql/tutorials/heart-disease/" class="md-nav__link">
         Heart Disease
       </a>
     </li>
@@ -1515,7 +1565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/install/" class="md-nav__link">
+      <a href="../../contribute/install/" class="md-nav__link">
         Installing for development
       </a>
     </li>
@@ -1529,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/issues/" class="md-nav__link">
+      <a href="../../contribute/issues/" class="md-nav__link">
         Bug reports and Feature requests
       </a>
     </li>
@@ -1543,7 +1593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/integrations/" class="md-nav__link">
+      <a href="../../contribute/integrations/" class="md-nav__link">
         Building a new integration
       </a>
     </li>
@@ -1557,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/docs/" class="md-nav__link">
+      <a href="../../contribute/docs/" class="md-nav__link">
         Writing documentation
       </a>
     </li>
@@ -1571,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs-rules/" class="md-nav__link">
+      <a href="../../docs-rules/" class="md-nav__link">
         Docs style guide
       </a>
     </li>
@@ -1585,7 +1635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/tests/" class="md-nav__link">
+      <a href="../../contribute/tests/" class="md-nav__link">
         Testing and improving test coverage
       </a>
     </li>
@@ -1599,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/tutorials/" class="md-nav__link">
+      <a href="../../contribute/tutorials/" class="md-nav__link">
         Writing tutorials
       </a>
     </li>
@@ -1647,7 +1697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/" class="md-nav__link">
+      <a href="../../contribute/" class="md-nav__link">
         How to contribute
       </a>
     </li>
@@ -1661,7 +1711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../community/" class="md-nav__link">
+      <a href="../../community/" class="md-nav__link">
         Join our community
       </a>
     </li>
@@ -1695,6 +1745,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-mindsdb-with-default-configuration" class="md-nav__link">
+    Starting MindsDB with Default Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-mindsdb-with-extended-configuration" class="md-nav__link">
+    Starting MindsDB with Extended Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1705,172 +1777,73 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/getting-started.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/setup/custom-config.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>MindsDB integrates with the most popular databases and also with the DBT and MLflow workflow you already have.</p>
-<p><sup><sub>To try MindsDB right away, without bringing your own data or model, check out our <a href="/">Quick Start Guide</a>.</sub></sup></p>
-<ol>
-<li>
-<p>Choose your MindsDB installation path.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">MindsDB Cloud</label><label for="__tabbed_1_2">Docker</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="admonition example">
-<p>Create your <a href="https://cloud.mindsdb.com/signup">free MindsDB Cloud account</a>.</p>
-<p><img alt="Cloud Signup" src="/assets/cloud-signup.png" /></p>
-</div>
-</div>
-<div class="tabbed-block">
-<div class="admonition example">
-<p>To get started with a Docker installation, begin with our <a href="/deployment/docker">Docker instructions</a>.</p>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Open your SQL client and connect to MindsDB.</p>
-<p><sup><sub>If you do not already have a preferred SQL client, we recommend <a href="https://dbeaver.io/download/">DBeaver Community Edition</a></sub></sup></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">MindsDB Cloud</label><label for="__tabbed_2_2">Docker</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="admonition example">
-<ol>
-<li>
-<p>Create a new MySQL connection.</p>
-<p><img alt="DBeaver Create Connection" src="/assets/dbeaver-create-connection.png" /></p>
-</li>
-<li>
-<p>Configure it using the following parameters, as well as the username and password you created above:</p>
-<div class="highlight"><pre><span></span><code>    Host: mysql.mindsdb.com
-    Port: 3306
-    Database: mindsdb
+<h1 id="extend-the-default-mindsdb-configuration">Extend the Default MindsDB Configuration<a class="headerlink" href="#extend-the-default-mindsdb-configuration" title="Permanent link">&para;</a></h1>
+<p>To follow this guide, please make sure you have a local installation of MindsDB. <a href="https://docs.mindsdb.com/setup/self-hosted/pip/source/">Here</a>, you can find out how to install MindsDB locally.</p>
+<h2 id="starting-mindsdb-with-default-configuration">Starting MindsDB with Default Configuration<a class="headerlink" href="#starting-mindsdb-with-default-configuration" title="Permanent link">&para;</a></h2>
+<p>It is very straightforward to start MindsDB locally with the default config file - just run the commands below.</p>
+<p>First, activate the virtual environment with this command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> mindsdb/bin/activate
 </code></pre></div>
-<p><img alt="DBeaver Configure Connection" src="/assets/dbeaver-configure-cloud-connection.png" /></p>
-</li>
-</ol>
-</div>
-</div>
-<div class="tabbed-block">
-<div class="admonition example">
-<ol>
-<li>
-<p>Create a new MySQL connection.</p>
-<p><img alt="DBeaver Create Connection" src="/assets/dbeaver-create-connection.png" /></p>
-</li>
-<li>
-<p>Configure it using the following parameters.  Password remains empty.</p>
-<div class="highlight"><pre><span></span><code>    Host: localhost
-    Port: 47335
-    Database: mindsdb
-    Username: mindsdb
+<p>And then, start MindsDB using this command:</p>
+<div class="highlight"><pre><span></span><code>python -m mindsdb
 </code></pre></div>
-<p><img alt="DBeaver Configure Connection" src="/assets/dbeaver-configure-docker-connection.png" /></p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Connect your data to MindsDB using the <a href="https://docs.mindsdb.com/sql/create/databases/"><code>CREATE DATABASE</code> syntax</a>.</p>
-<p><sup><sub>Example taken from our <a href="/quickstart/#connect-your-data">Quick Start Guide</a>.</sub></sup></p>
-<p><img alt="DBeaver Create Database" src="/assets/dbeaver-create-database.png" /></p>
-</li>
-<li>
-<p>You can now preview the available data with a standard <code>SELECT</code>.</p>
-<p><sup><sub>Example taken from our <a href="/quickstart/#preview-your-data">Quick Start Guide</a>.</sub></sup></p>
-<p><img alt="DBeaver Preview Data" src="/assets/dbeaver-preview-data.png" /></p>
-</li>
-<li>
-<p>Now you are ready to create your model, using the <a href="https://docs.mindsdb.com/sql/create/predictor/"><code>CREATE PREDICTOR</code> syntax</a>.  If you already have a model in MLFlow, you can connect to your model as well.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">MindsDB is creating my model</label><label for="__tabbed_3_2">My model is in MLflow</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="admonition example">
-<p>Example taken from our <a href="/quickstart/#connect-your-data">Quick Start Guide</a>.</p>
-<p><img alt="DBeaver Create Predictor" src="/assets/dbeaver-create-predictor-simple.png" /></p>
-</div>
-</div>
-<div class="tabbed-block">
-<div class="admonition example">
-<p>Example taken from our <a href="/deployment/docker">Docker Guide</a>.</p>
-<p><div id="create-predictor">
-  <style>
-    #create-predictor code { background-color: #353535; color: #f5f5f5 }
-  </style>
-<div class="highlight"><pre><span></span><code>mysql&gt; CREATE PREDICTOR mindsdb.home_rentals_predictor
-    -&gt; FROM example_data (select * from demo_data.home_rentals)
-    -&gt; PREDICT rental_price
-    -&gt; USING url.predict=&#39;http://host.docker.internal:1234/invocations&#39;,
-    -&gt; format=&#39;mlflow&#39;,
-    -&gt; dtype_dict={&quot;alcohol&quot;: &quot;integer&quot;, &quot;chlorides&quot;: &quot;integer&quot;, &quot;citric acid&quot;: &quot;integer&quot;, &quot;density&quot;: &quot;integer&quot;, &quot;fixed acidity&quot;: &quot;integer&quot;, &quot;free sulfur dioxide&quot;: &quot;integer&quot;, &quot;pH&quot;: &quot;integer&quot;, &quot;residual sugar&quot;: &quot;integer&quot;, &quot;sulphates&quot;: &quot;integer&quot;, &quot;total sulfur dioxide&quot;: &quot;integer&quot;, &quot;volatile acidity&quot;: &quot;integer&quot;};
-Query OK, 0 rows affected (0.21 sec)
+<p>Now you can access your MindsDB locally at <code>127.0.0.1:47334</code>.</p>
+<h2 id="starting-mindsdb-with-extended-configuration">Starting MindsDB with Extended Configuration<a class="headerlink" href="#starting-mindsdb-with-extended-configuration" title="Permanent link">&para;</a></h2>
+<p>First, you should prepare a <code>config.json</code> file based on <a href="https://github.com/mindsdb/mindsdb/blob/staging/mindsdb/utilities/config.py#L35,L72">the config file from the MindsDB GitHub repository</a>.</p>
+<p>Or you can use the template below and substitute your custom configuration values.</p>
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+    <span class="s2">&quot;permanent_storage&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;location&quot;</span>: <span class="s2">&quot;local&quot;</span>
+    <span class="o">}</span>,
+    <span class="s2">&quot;paths&quot;</span>: <span class="o">{}</span>,
+    <span class="s2">&quot;log&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;level&quot;</span>: <span class="o">{</span>
+            <span class="s2">&quot;console&quot;</span>: <span class="s2">&quot;INFO&quot;</span>,
+            <span class="s2">&quot;file&quot;</span>: <span class="s2">&quot;DEBUG&quot;</span>,
+            <span class="s2">&quot;db&quot;</span>: <span class="s2">&quot;WARNING&quot;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>,
+    <span class="s2">&quot;debug&quot;</span>: false, 
+    <span class="s2">&quot;integrations&quot;</span>: <span class="o">{}</span>,
+    <span class="s2">&quot;api&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;http&quot;</span>: <span class="o">{</span>
+            <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;127.0.0.1&quot;</span>,
+            <span class="s2">&quot;port&quot;</span>: <span class="s2">&quot;47334&quot;</span>
+        <span class="o">}</span>,
+        <span class="s2">&quot;mysql&quot;</span>: <span class="o">{</span>
+            <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;127.0.0.1&quot;</span>,
+            <span class="s2">&quot;password&quot;</span>: <span class="s2">&quot;&quot;</span>,
+            <span class="s2">&quot;port&quot;</span>: <span class="s2">&quot;47335&quot;</span>,
+            <span class="s2">&quot;user&quot;</span>: <span class="s2">&quot;mindsdb&quot;</span>,
+            <span class="s2">&quot;database&quot;</span>: <span class="s2">&quot;mindsdb&quot;</span>,
+            <span class="s2">&quot;ssl&quot;</span>: <span class="nb">true</span>
+        <span class="o">}</span>,
+        <span class="s2">&quot;mongodb&quot;</span>: <span class="o">{</span>
+            <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;127.0.0.1&quot;</span>,
+            <span class="s2">&quot;port&quot;</span>: <span class="s2">&quot;47336&quot;</span>,
+            <span class="s2">&quot;database&quot;</span>: <span class="s2">&quot;mindsdb&quot;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>,
+    <span class="s2">&quot;cache&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;local&quot;</span>
+    <span class="o">}</span>,
+    <span class="s2">&quot;force_dataset_removing&quot;</span>: <span class="nb">false</span>
+<span class="o">}</span>
 </code></pre></div>
-</div></p>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>The <a href="/sql/api/select"><code>SELECT</code> syntax</a> will allow you to make a prediction based on features.</p>
-<p><sup><sub>Example taken from our <a href="/quickstart/#preview-your-data">Quick Start Guide</a>.</sub></sup></p>
-<p><img alt="DBeaver Home Rentals Prediction" src="/assets/dbeaver-home-rentals-prediction.png" />
-<img alt="DBeaver Home Rentals Prediction Results" src="/assets/dbeaver-home-rentals-prediction-results.png" /></p>
-</li>
-<li>
-<p>To integrate your predictions into your DBT workflow, you will need to make four changes:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">profiles.yml</label><label for="__tabbed_4_2">schema.yml</label><label for="__tabbed_4_3">predicted_rentals.sql</label><label for="__tabbed_4_4">dbt_project.yml</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>mindsdb:
-    type: mysql
-    host: mysql.mindsdb.com
-    user: mindsdb.user@example.com
-    password: mindsdbpassword
-    port: 3306
-    dbname: mindsdb
-    schema: example_data
-    threads: 1
-    keepalives_idle: 0 # default 0, indicating the system default
-    connect_timeout: 10 # default 10 seconds
+<p>Now that your <code>config.json</code> file is ready, run the command below to start MindsDB locally with your custom configuration.</p>
+<div class="highlight"><pre><span></span><code>python -m mindsdb --config<span class="o">=</span>/path-to-the-extended-config-file/config-file.json
 </code></pre></div>
+<p>You can access your MindsDB locally at <code>127.0.0.1:47334</code>, or any other IP address and port combination if you altered them.</p>
+<div class="admonition tip">
+<p class="admonition-title">What's next?</p>
+<p>We recommend you to follow one of our tutorials or learn more about the <a href="/sql/table-structure/">MindsDB Database</a>.</p>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>version: 2
-
-models:
-      - name: predicted_rentals
-        description: &quot;Integrating MindsDB predictions and historical   data&quot;
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>with predictions as (
-    SELECT hrp.rental_price as predicted_price, hr.rental_price as actual_price
-    FROM mindsdb.home_rentals_predictor hrp
-    JOIN exampleData.demo_data.home_rentals hr
-    WHERE hr.number_of_bathrooms=2 AND hr.sqft=1000;
-)
-select * from predictions;
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>models:
-    home_rentals:
-        +materialized: view
-</code></pre></div>
-</div>
-</div>
-</div>
-</li>
-</ol>
 
               
             </article>
@@ -1885,10 +1858,10 @@ select * from predictions;
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "header.autohide"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "header.autohide"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ed9748b7.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
   </body>

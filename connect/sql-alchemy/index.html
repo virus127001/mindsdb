@@ -535,6 +535,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../setup/custom-config/" class="md-nav__link">
+        Extend the Default MindsDB Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../setup/cloud/" class="md-nav__link">
         MindsDB Cloud
       </a>
@@ -675,15 +689,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#connect-to-mindsdb-cloud" class="md-nav__link">
-    Connect to MindsDB cloud
+  <a href="#connecting-mindsdb-cloud-to-sqlalchemy" class="md-nav__link">
+    Connecting MindsDB Cloud to SQLAlchemy
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-premise-deployment" class="md-nav__link">
-    On premise Deployment
+  <a href="#connecting-local-mindsdb-to-sqlalchemy" class="md-nav__link">
+    Connecting Local MindsDB to SQLAlchemy
   </a>
   
 </li>
@@ -1738,15 +1752,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#connect-to-mindsdb-cloud" class="md-nav__link">
-    Connect to MindsDB cloud
+  <a href="#connecting-mindsdb-cloud-to-sqlalchemy" class="md-nav__link">
+    Connecting MindsDB Cloud to SQLAlchemy
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-premise-deployment" class="md-nav__link">
-    On premise Deployment
+  <a href="#connecting-local-mindsdb-to-sqlalchemy" class="md-nav__link">
+    Connecting Local MindsDB to SQLAlchemy
   </a>
   
 </li>
@@ -1770,42 +1784,78 @@
 
 
 <h1 id="sql-alchemy-and-mindsdb">SQL Alchemy and MindsDB<a class="headerlink" href="#sql-alchemy-and-mindsdb" title="Permanent link">&para;</a></h1>
-<p>Note: MindsDB has a working integration with SQL Alchemy.</p>
-<p>To connect to MindsDB, please proceed as you would if you were connecting to a standard MySQL Database.</p>
-<h2 id="connect-to-mindsdb-cloud">Connect to MindsDB cloud<a class="headerlink" href="#connect-to-mindsdb-cloud" title="Permanent link">&para;</a></h2>
-<p>If you have a MindsDB cloud, please use the following information:</p>
-<ol>
-<li>Hostname:<ul>
-<li>cloud.mindsdb.com </li>
+<p>SQLAlchemy is a Python package, or a Python SQL toolkit, that provides object-relational mapping features for the Python programming language. It facilitates working with databases and Python. You can download it <a href="https://www.sqlalchemy.org/">here</a> or run a <code>pip install sqlalchemy</code> command if you use a Linux system.</p>
+<h2 id="connecting-mindsdb-cloud-to-sqlalchemy">Connecting MindsDB Cloud to SQLAlchemy<a class="headerlink" href="#connecting-mindsdb-cloud-to-sqlalchemy" title="Permanent link">&para;</a></h2>
+<p>You can use the Python code below to connect your Cloud MindsDB database to SQLAlchemy.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;MindsDB Cloud username&#39;</span> <span class="c1"># replace this value</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;MindsDB Cloud password&#39;</span> <span class="c1"># replace this value</span>
+<span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;cloud-mysql.mindsdb.com&#39;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">get_connection</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">create_engine</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{0}</span><span class="s2">:</span><span class="si">{1}</span><span class="s2">@</span><span class="si">{2}</span><span class="s2">:</span><span class="si">{3}</span><span class="s2">/</span><span class="si">{4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">database</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connection to the </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2"> for user </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2"> created successfully.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection could not be made due to the following error: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ex</span><span class="p">)</span>
+</code></pre></div>
+<p>Please note that we use the following connection details:</p>
+<ul>
+<li>Username is your MindsDB Cloud username</li>
+<li>Password is your MindsDB Cloud password</li>
+<li>Host is <code>cloud-mysql.mindsdb.com</code></li>
+<li>Port is <code>3306</code></li>
+<li>Database name is left empty</li>
 </ul>
-</li>
-<li>Database name (leave empty)</li>
-<li>Port: <ul>
-<li>3306 </li>
+<p>To create a database connection, execute the code above. On success, the following output is expected:</p>
+<div class="highlight"><pre><span></span><code>Connection to the cloud-mysql.mindsdb.com <span class="k">for</span> user MindsDB-Cloud-Username created successfully.
+</code></pre></div>
+<p>Let's try the same for the local MindsDB installation.</p>
+<h2 id="connecting-local-mindsdb-to-sqlalchemy">Connecting Local MindsDB to SQLAlchemy<a class="headerlink" href="#connecting-local-mindsdb-to-sqlalchemy" title="Permanent link">&para;</a></h2>
+<p>You can use the Python code below to connect your local MindsDB database to SQLAlchemy.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;mindsdb&#39;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">47334</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">get_connection</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">create_engine</span><span class="p">(</span>
+                <span class="n">url</span><span class="o">=</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{0}</span><span class="s2">:</span><span class="si">{1}</span><span class="s2">@</span><span class="si">{2}</span><span class="s2">:</span><span class="si">{3}</span><span class="s2">/</span><span class="si">{4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">database</span><span class="p">)</span>
+        <span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">engine</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connection to the </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2"> for user </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2"> created successfully.&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection could not be made due to the following error: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ex</span><span class="p">)</span>
+</code></pre></div>
+<p>Please note that we use the following connection details:</p>
+<ul>
+<li>Username is <code>mindsdb</code></li>
+<li>Password is left empty</li>
+<li>Host is <code>127.0.0.1</code></li>
+<li>Port is <code>47334</code></li>
+<li>Database name is left empty</li>
 </ul>
-</li>
-<li>Credentials:<ul>
-<li>MindsDB Cloud username and password</li>
-</ul>
-</li>
-</ol>
-<h2 id="on-premise-deployment">On premise Deployment<a class="headerlink" href="#on-premise-deployment" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Hostname:<ul>
-<li>127.0.0.1 or the IP address where you are hosting your MindsDB server.</li>
-</ul>
-</li>
-<li>Database name (leave empty)</li>
-<li>Port: <ul>
-<li>47335 </li>
-</ul>
-</li>
-<li>Credentials:<ul>
-<li>user: mindsdb </li>
-<li>password: empty</li>
-</ul>
-</li>
-</ol>
+<p>To create a database connection, execute the code above. On success, the following output is expected:</p>
+<div class="highlight"><pre><span></span><code>Connection to the <span class="m">127</span>.0.0.1 <span class="k">for</span> user mindsdb created successfully.
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">What is next?</p>
+<p>We recommend you to follow one of our tutorials or learn more about the <a href="/sql/table-structure/">MindsDB Database</a>.</p>
+</div>
 
               
             </article>
