@@ -1009,6 +1009,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#amazon-redshift" class="md-nav__link">
+    Amazon Redshift
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-query" class="md-nav__link">
+    Big Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cassandra" class="md-nav__link">
     Cassandra
   </a>
@@ -1025,6 +1039,20 @@
           <li class="md-nav__item">
   <a href="#cockroach-labs" class="md-nav__link">
     Cockroach Labs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databricks" class="md-nav__link">
+    Databricks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firebird" class="md-nav__link">
+    Firebird
   </a>
   
 </li>
@@ -1088,6 +1116,13 @@
           <li class="md-nav__item">
   <a href="#snowflake" class="md-nav__link">
     Snowflake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supabase" class="md-nav__link">
+    Supabase
   </a>
   
 </li>
@@ -2172,6 +2207,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#amazon-redshift" class="md-nav__link">
+    Amazon Redshift
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-query" class="md-nav__link">
+    Big Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cassandra" class="md-nav__link">
     Cassandra
   </a>
@@ -2188,6 +2237,20 @@
           <li class="md-nav__item">
   <a href="#cockroach-labs" class="md-nav__link">
     Cockroach Labs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databricks" class="md-nav__link">
+    Databricks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firebird" class="md-nav__link">
+    Firebird
   </a>
   
 </li>
@@ -2251,6 +2314,13 @@
           <li class="md-nav__item">
   <a href="#snowflake" class="md-nav__link">
     Snowflake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supabase" class="md-nav__link">
+    Supabase
   </a>
   
 </li>
@@ -2380,6 +2450,37 @@
 <span class="o">+</span><span class="c1">------------+---------------+--------------+------+-----------+</span>
 </code></pre></div>
 <h2 id="supported-integrations">Supported Integrations<a class="headerlink" href="#supported-integrations" title="Permanent link">&para;</a></h2>
+<h3 id="amazon-redshift">Amazon Redshift<a class="headerlink" href="#amazon-redshift" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">amazonredshift_datasource</span><span class="w"></span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="s1">&#39;amazonredshift&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="k">PARAMETERS</span><span class="o">=</span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;user&quot;</span><span class="p">:</span><span class="ss">&quot;amazonredshift&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5439</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;amazonredshift&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;test&quot;</span><span class="w"></span>
+<span class="err">}</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="big-query">Big Query<a class="headerlink" href="#big-query" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">bigquery_datasource</span><span class="w"></span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;bigquery&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="k">PARAMETERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">   </span><span class="ss">&quot;project_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;badger-345908&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="ss">&quot;service_account_keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="ss">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;/home/Downloads/badger-345908.json&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+Or if you are using MindsDB Cloud, provide the <code>service_account_keys</code> as url:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">bigquery_datasource</span><span class="w"></span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;bigquery&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="k">PARAMETERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">   </span><span class="ss">&quot;project_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;badger-345908&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="ss">&quot;service_account_keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="ss">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;https://url/badger-345908.json&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
 <h3 id="cassandra">Cassandra<a class="headerlink" href="#cassandra" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">psql_datasource</span><span class="w"></span>
 <span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="s1">&#39;cassandra&#39;</span><span class="p">,</span><span class="w"></span>
@@ -2411,6 +2512,28 @@
 <span class="w">  </span><span class="ss">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Mimzo3i-mxt@9CpThpBj&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="ss">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="ss">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;cockroachdb&quot;</span><span class="w"></span>
+<span class="err">}</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="databricks">Databricks<a class="headerlink" href="#databricks" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">databricks_datasource</span><span class="w"></span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="s1">&#39;databricks&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="k">PARAMETERS</span><span class="o">=</span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;user&quot;</span><span class="p">:</span><span class="ss">&quot;databricks&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15001</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;databricks&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;test&quot;</span><span class="w"></span>
+<span class="err">}</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="firebird">Firebird<a class="headerlink" href="#firebird" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">firebird_datasource</span><span class="w"></span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="s1">&#39;firebird&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="k">PARAMETERS</span><span class="o">=</span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;user&quot;</span><span class="p">:</span><span class="ss">&quot;firebird&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3050</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;firebird&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;test&quot;</span><span class="w"></span>
 <span class="err">}</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="mariadb">MariaDB<a class="headerlink" href="#mariadb" title="Permanent link">&para;</a></h3>
@@ -2505,6 +2628,17 @@
 <span class="w">  </span><span class="ss">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;public&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="ss">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;https&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="ss">&quot;warehouse&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;warehouse&quot;</span><span class="w"></span>
+<span class="err">}</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="supabase">Supabase<a class="headerlink" href="#supabase" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">supabase_datasource</span><span class="w"></span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="s1">&#39;supabase&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="k">PARAMETERS</span><span class="o">=</span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;user&quot;</span><span class="p">:</span><span class="ss">&quot;supabase&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">54321</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;supabase&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ss">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;test&quot;</span><span class="w"></span>
 <span class="err">}</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="tidb">TiDB<a class="headerlink" href="#tidb" title="Permanent link">&para;</a></h3>
