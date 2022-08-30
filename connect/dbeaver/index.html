@@ -2050,38 +2050,52 @@
 <h1 id="mindsdb-and-dbeaver">MindsDB and DBeaver<a class="headerlink" href="#mindsdb-and-dbeaver" title="Permanent link">&para;</a></h1>
 <p>DBeaver is a database tool that allows you to connect to and work with various database engines. You can download it <a href="https://dbeaver.io/">here</a>.</p>
 <h2 id="data-setup">Data Setup<a class="headerlink" href="#data-setup" title="Permanent link">&para;</a></h2>
-<p>First, you create a new database connection in DBeaver by clicking the icon, as shown below.</p>
-<p><img alt="New Database Connection" src="/assets/sql/dbeaver_1.png" /></p>
+<p>First, create a new database connection in DBeaver by clicking the icon, as shown below.</p>
+<p align="center">
+  <img src="/assets/sql/dbeaver_1.png" />
+</p>
+
 <p>Next, choose the MySQL database engine and click the <em>Next</em> button.</p>
-<p><img alt="Choose database engine" src="/assets/sql/dbeaver_2.png" /></p>
-<p>Now it's the time to fill in the connection details.</p>
-<p><img alt="Connection details" src="/assets/sql/dbeaver_3.png" /></p>
+<p align="center">
+  <img src="/assets/sql/dbeaver_2.png" />
+</p>
+
+<p>Now it's time to fill in the connection details.</p>
+<p align="center">
+  <img src="/assets/sql/dbeaver_3.png" />
+</p>
+
 <p>There are two options, as below.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Connecting to your MindsDB Cloud account</label><label for="__tabbed_1_2">Connecting to your local MindsDB</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>You can connect to your MindsDB Cloud account. To do that, please use the connection details below:<br/></p>
-<p>&emsp;&emsp;Hostname: <code>cloud-mysql.mindsdb.com</code><br/>
-&emsp;&emsp;Port: <code>3306</code><br/>
-&emsp;&emsp;Username: <em>your MindsDB Cloud username</em><br/>
-&emsp;&emsp;Password: <em>your MindsDB Cloud password</em><br/>
-&emsp;&emsp;Database: <em>leave it empty</em><br/></p>
+<div class="highlight"><pre><span></span><code>Hostname: `cloud-mysql.mindsdb.com`
+Port: `3306`
+Username: *your MindsDB Cloud username*
+Password: *your MindsDB Cloud password*
+Database: *leave it empty*
+</code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>You can connect to your local MindsDB. To do that, please use the connection details below:<br/></p>
-<p>&emsp;&emsp;Hostname: <code>127.0.0.1</code><br/>
-&emsp;&emsp;Port: <code>47334</code><br/>
-&emsp;&emsp;Username: <code>mindsdb</code><br/>
-&emsp;&emsp;Password: <em>leave it empty</em><br/>
-&emsp;&emsp;Database: <em>leave it empty</em><br/></p>
+<div class="highlight"><pre><span></span><code>Hostname: `127.0.0.1`
+Port: `47334`
+Username: `mindsdb`
+Password: *leave it empty*
+Database: *leave it empty*
+</code></pre></div>
 </div>
 </div>
 </div>
 <p>Now we are ready to test the connection.</p>
 <h2 id="testing-the-connection">Testing the Connection<a class="headerlink" href="#testing-the-connection" title="Permanent link">&para;</a></h2>
-<p>Click on the <code>Test Connection...</code> button to check if all the provided data allows you to connect to MindsDB</p>
-<p><img alt="Connection test" src="/assets/sql/dbeaver_4.png" /></p>
-<p>On success, you should see the message, as shown above.</p>
+<p>Click on the <code>Test Connection...</code> button to check if all the provided data allows you to connect to MindsDB.</p>
+<p>On success, you should see the message, as below.</p>
+<p align="center">
+  <img src="/assets/sql/dbeaver_4.png" />
+</p>
+
 <h2 id="lets-run-some-queries">Let's Run Some Queries<a class="headerlink" href="#lets-run-some-queries" title="Permanent link">&para;</a></h2>
 <p>To finally make sure that our MinsdDB database connection works, let's run some queries.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
@@ -2097,7 +2111,10 @@
 <span class="o">+</span><span class="c1">-------------------------+--------+------------------+------------------+-------------+---------------+-----+-----------------+----------------+</span>
 </code></pre></div>
 <p>Here is how it looks in DBeaver:</p>
-<p><img alt="Query test" src="/assets/sql/dbeaver_5.png" /></p>
+<p align="center">
+  <img src="/assets/sql/dbeaver_5.png" />
+</p>
+
 <div class="admonition tip">
 <p class="admonition-title">Whitelist MindsDB Cloud IP address</p>
 <p>If you need to whitelist the MindsDB Cloud IP address to gain access to your database, reach out to the MindsDB team, and we'll share the MindsDB Cloud static IP address with you.</p>

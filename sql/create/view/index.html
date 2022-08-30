@@ -2087,6 +2087,9 @@
 <span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">house_rentals_data</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rentals</span><span class="w"></span>
 <span class="n">PREDICT</span><span class="w"> </span><span class="n">rental_price</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 <p>Once trained, we can <a href="/sql/api/join/"><code class="highlight"><span class="k">JOIN</span><span class="w"></span></code></a> any input data with the trained model and store the results as an AI Table using the <code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"></span></code> syntax.</p>
 <p>Let's pass some of the expected input columns (in this case, <code>sqft</code>, <code>number_of_bathrooms</code>, <code>location</code>) to the model and join the predicted <code>rental_price</code> values:</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">home_rentals</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
@@ -2098,6 +2101,9 @@
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">mysql_db</span><span class="p">.</span><span class="n">home_rentals</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
 <span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
 <span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>Note that in this example, we pass part of the same data that was used to train as a test query, but usually you would create an AI table to store predictions for new data.</p>
 
