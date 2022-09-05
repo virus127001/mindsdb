@@ -2115,9 +2115,9 @@
 <p>Launch MindsDB instance where HTTP API interface runs on <code>docker network interface inet ip</code>. Usually, the IP address is <code>172.17.0.1</code>, and the port is <code>47334</code>.</p>
 <p>You can modify the HTTP API interface details in the <a href="https://github.com/mindsdb/mindsdb/blob/staging/mindsdb/utilities/config.py#L50,L52">MindsDB config file</a>.</p>
 <p>Now, to launch your MindsDB, run the following command:</p>
-<div class="highlight"><pre><span></span><code>python -m mindsdb --config<span class="o">=</span>YOURCONFIGFILE.JSON
+<div class="highlight"><pre><span></span><code>python -m mindsdb --config<span class="o">=</span>/path-to-the-config-file/your-config-file.json
 </code></pre></div>
-<p>Please note that the config file must be in the JSON format. It must include <a href="https://github.com/mindsdb/mindsdb/blob/staging/mindsdb/utilities/config.py#L35,L72">this part</a> of the config file from the MindsDB repository in a proper JSON format.</p>
+<p>Please note that the config file must be in JSON format. It must include <a href="https://github.com/mindsdb/mindsdb/blob/staging/mindsdb/utilities/config.py#L35,L72">this part</a> of the config file from the MindsDB repository in a proper JSON format.</p>
 </li>
 <li>
 <p>Train a new model. You may use <a href="/sql/tutorials/bodyfat">this tutorial</a> as an example.</p>
@@ -2127,7 +2127,7 @@
 </li>
 </ul>
 <h3 id="create-the-connector-instance">Create the Connector Instance<a class="headerlink" href="#create-the-connector-instance" title="Permanent link">&para;</a></h3>
-<p>To create a connector, you need to send a POST request to a specific <code>connectors</code> URL with connector configuration in JSON format, as below.</p>
+<p>To create a connector, you need to send a POST request to a specific <code>CONNECTORS_URL</code> with connector configuration in JSON format, as below.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">MINDSDB_URL</span> <span class="o">=</span> <span class="s2">&quot;http://172.17.0.1:47334&quot;</span>

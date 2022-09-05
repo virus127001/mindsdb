@@ -745,22 +745,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#set-up-both-platforms" class="md-nav__link">
-    Set up both platforms
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindsdb" class="md-nav__link">
+    MindsDB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metabase" class="md-nav__link">
+    Metabase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-connect" class="md-nav__link">
+    How to Connect
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect-mindsdb-in-metabase" class="md-nav__link">
-    Connect MindsDB in Metabase
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-that-everything-works" class="md-nav__link">
-    Testing that everything works
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
   
 </li>
@@ -2002,22 +2022,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#set-up-both-platforms" class="md-nav__link">
-    Set up both platforms
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindsdb" class="md-nav__link">
+    MindsDB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metabase" class="md-nav__link">
+    Metabase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-connect" class="md-nav__link">
+    How to Connect
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect-mindsdb-in-metabase" class="md-nav__link">
-    Connect MindsDB in Metabase
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-that-everything-works" class="md-nav__link">
-    Testing that everything works
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
   
 </li>
@@ -2048,52 +2088,68 @@
 
 
 <h1 id="mindsdb-and-metabase">MindsDB and Metabase<a class="headerlink" href="#mindsdb-and-metabase" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.metabase.com/">Metabase</a> is the easy, open source way to help everyone in your company work with data like an analyst. It lets you visualize your data easily and intuitively. Now that MindsDB supports the MySQL binary protocol, you can connect it to Metabase and train and explore there your models.</p>
+<p>Metabase is open-source software that facilitates data analysis. It lets you visualize your data easily and intuitively. Now that MindsDB supports the MySQL binary protocol, you can connect it to Metabase and see the forecasts by creating and training the models.</p>
+<p>For more information, visit <a href="https://www.metabase.com/">Metabase</a>.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h3 id="mindsdb">MindsDB<a class="headerlink" href="#mindsdb" title="Permanent link">&para;</a></h3>
+<p>Let's set up the MindsDB following one of the guides from the <strong>Deployment</strong> section. Please note that the MindsDB Cloud is not yet supported.</p>
 <div class="admonition warning">
-<p class="admonition-title">For the time being, only local and on premise installations are stable.</p>
+<p class="admonition-title">Currently, only local and on-premise installations are stable.</p>
 </div>
-<h2 id="set-up-both-platforms">Set up both platforms<a class="headerlink" href="#set-up-both-platforms" title="Permanent link">&para;</a></h2>
-<p>Refer to these guides to get both platforms up and running:</p>
+<p>You can choose one of the following approaches to set up the MindsDB locally:</p>
 <ul>
-<li>MindsDB: head over the <strong>Deployment</strong> section on the left hand side navigation and choose one of the approaches listed there. Recall that MindsDB Cloud is not supported yet.  </li>
-<li>Metabase: <a href="https://www.metabase.com/start/oss/">Metabase Open Source Edition</a></li>
+<li><a href="/setup/self-hosted/docker">Docker</a></li>
+<li><a href="/setup/self-hosted/pip/windows">Windows via pip</a></li>
+<li><a href="/setup/self-hosted/pip/linux">Linux via pip</a></li>
+<li><a href="/setup/self-hosted/pip/macos">MacOS via pip</a></li>
+<li><a href="/setup/self-hosted/pip/source">Sourcecode via pip</a></li>
 </ul>
-<p>In this guide, we will be using the <a href="/setup/self-hosted/docker/">docker approach</a> for MindsDB and the <a href="https://www.metabase.com/docs/latest/installation-and-operation/running-the-metabase-jar-file.html">jar approach</a> for Metabase.</p>
-<h2 id="connect-mindsdb-in-metabase">Connect MindsDB in Metabase<a class="headerlink" href="#connect-mindsdb-in-metabase" title="Permanent link">&para;</a></h2>
-<p>Follow the steps below to connect together your MindsDB &amp; Metabase installations.</p>
-<p>In metabase: </p>
-<ul>
-<li>Navigate to the <em>Admin settings</em> by clicking the cog in the bottom left corner.  </li>
-<li>Once there, in the navigation top bar, click on <em>Databases</em>  </li>
-<li>Click on <em>Add database</em> in top right corner  </li>
-<li>Fill the following data in the form:  <ul>
-<li>Database type: MySQL  </li>
-<li>Display name: MindsDB    </li>
-<li>Host: localhost  </li>
-<li>Port: 47335  </li>
-<li>Database name: mindsdb  </li>
-<li>Username: mindsdb  </li>
-<li>Password: <em>leave it empty</em>  </li>
-</ul>
+<p>Here, we use the <a href="/setup/self-hosted/docker">Docker</a> setup for MindsDB.</p>
+<h3 id="metabase">Metabase<a class="headerlink" href="#metabase" title="Permanent link">&para;</a></h3>
+<p>Now, let's set up the Metabase by following one of the approaches presented on <a href="https://www.metabase.com/start/oss/">the Metabase Open Source Edition page</a>.</p>
+<p>Here, we use the <a href="https://www.metabase.com/docs/latest/installation-and-operation/running-the-metabase-jar-file.html">.jar approach</a> for Metabase.</p>
+<h2 id="how-to-connect">How to Connect<a class="headerlink" href="#how-to-connect" title="Permanent link">&para;</a></h2>
+<p>Follow the steps below to connect your MindsDB to Metabase.</p>
+<ol>
+<li>Open your Metabase and navigate to the <em>Admin settings</em> by clicking the cog in the bottom left corner.</li>
+<li>Once there, click on <em>Databases</em> in the top navigation bar.</li>
+<li>Click on <em>Add database</em> in the top right corner.</li>
+<li>
+<p>Fill in the form using the following data:
+    <div class="highlight"><pre><span></span><code>Database type: `MySQL`  
+Display name: `MindsDB`   
+Host: `localhost`
+Port: `47335`
+Database name: `mindsdb`
+Username: `mindsdb`
+Password: *leave it empty* 
+</code></pre></div></p>
+<p><p align="center">
+<img src="/assets/metabase_add_database.png" />
+</p></p>
 </li>
-</ul>
-<p><img src="/assets/metabase_add_database.png" /></p>
-<ul>
-<li>Click on save</li>
-</ul>
+<li>
+<p>Click on <em>Save</em>.</p>
+</li>
+</ol>
 <p>Now you're connected!</p>
-<p><img src="/assets/metabase_connected.png" /></p>
-<h2 id="testing-that-everything-works">Testing that everything works<a class="headerlink" href="#testing-that-everything-works" title="Permanent link">&para;</a></h2>
-<p>Now that you have the connection, most of the SQL statements that you usually perform on your <a href="/connect/mindsdb_editor/">MindsDB SQL Editor</a> can be run on Metabase. For example, let's try something easy:</p>
-<ul>
-<li>In your Metabase's home page, click on <em>New &gt; SQL query</em> in the top right corner.  </li>
-<li>Select your MindsDB database</li>
-<li>In the editor type the following</li>
-</ul>
+<p align="center">
+    <img src="/assets/metabase_connected.png" />
+</p>
+
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>Now that the connection between MindsDB and Metabase is established, let's do some examples.</p>
+<p>Most of the SQL statements that you usually run in your <a href="/connect/mindsdb_editor/">MindsDB SQL Editor</a> can be run in Metabase as well. Let's start with something easy.</p>
+<p>On your Metabase's home page, click on <em>New &gt; SQL query</em> in the top right corner and then, select your MindsDB database.</p>
+<p>Let's execute the following command in the editor.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p><img src="/assets/metabase_run_query_show_tables.png" /></p>
-<p>However, creating a <a href="sql/tutorials/home-rentals/#connecting-the-data">database connection</a> will fail as <code>{}</code> are used by JDBC as escape sequences.</p>
+<p>On execution, we get:</p>
+<p align="center">
+    <img src="/assets/metabase_run_query_show_tables.png" />
+</p>
+
+<p>Please note that creating a <a href="/sql/tutorials/home-rentals/#connecting-the-data">database connection</a> using the <code>CREATE DATABASE</code> statement fails because of the curly braces (<code>{}</code>) being used by JDBC as the escape sequences.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">example_db</span><span class="w"></span>
 <span class="w">    </span><span class="k">WITH</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;postgres&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="k">PARAMETERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
@@ -2104,13 +2160,22 @@
 <span class="w">        </span><span class="ss">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;demo&quot;</span><span class="w"></span>
 <span class="err">}</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p><img src="/assets/metabase_run_query_failure.png" /></p>
-<p>Still, once above table is created, for example through the <a href="/connect/mindsdb_editor/">MindsDB SQL Editor</a>, running queries against that database should be fine:</p>
+<p>On execution, we get:</p>
+<p align="center">
+    <img src="/assets/metabase_run_query_failure.png" />
+</p>
+
+<p>You can overcome this issue using the <a href="/connect/mindsdb_editor/">MindsDB SQL Editor</a> to create a database.</p>
+<p>Now, getting back to the Metabase, let's run some queries on the database created with the help of the <a href="/connect/mindsdb_editor/">MindsDB SQL Editor</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">example_db</span><span class="p">.</span><span class="n">demo_data</span><span class="p">.</span><span class="n">home_rentals</span><span class="w"> </span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p><img src="/assets/metabase_run_query_home_rentals.png" /></p>
+<p>On execution, we get:</p>
+<p align="center">
+    <img src="/assets/metabase_run_query_home_rentals.png" />
+</p>
+
 <h2 id="whats-next">What's Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <p>Now that you are all set, we recommend you check out our <strong>Tutorials</strong> and <strong>Community Tutorials</strong> sections, where you'll find various examples of regression, classification, and time series predictions with MindsDB.</p>
 <p>To learn more about MindsDB itself, follow the guide on <a href="/sql/table-structure/">MindsDB database structure</a>. Also, don't miss out on the remaining pages from the <strong>SQL API</strong> section, as they explain a common SQL syntax with examples.</p>
