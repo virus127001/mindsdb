@@ -2033,19 +2033,26 @@
 
 
 
-<h1 id="insert-into-statement">INSERT INTO Statement<a class="headerlink" href="#insert-into-statement" title="Permanent link">&para;</a></h1>
+<h1 id="insert-into-statement"><code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"></span></code> Statement<a class="headerlink" href="#insert-into-statement" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>The <code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"></span></code> statement is used to insert data into a table. This inserted data comes from the subselect statement. It is commonly used to input predictions into the database.</p>
+<p>The <code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"></span></code> statement inserts data into a table. The data comes from a subselect query. It is commonly used to input prediction results into a database table.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<p>Here is the syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="p">[</span><span class="n">integration_name</span><span class="p">].[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span>
 <span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
 </code></pre></div>
-<p>It performs a subselect <code class="highlight"><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...)</span><span class="w"></span></code> and gets data from there. Then, this data is inserted into a table of integration <code class="highlight"><span class="p">[</span><span class="n">integration_name</span><span class="p">]</span><span class="w"></span></code> using <code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span></code> statement.</p>
+<p>Please note that the destination table (<code>[integration_name].[table_name]</code>) must exist and contain all the columns where the data is to be inserted.</p>
+<p>And the steps followed by the syntax:</p>
+<ul>
+<li>It executes a subselect query to get the output dataset.</li>
+<li>It uses the <code>INSERT INTO</code> statement to insert the output of the <code>(SELECT ...)</code> query into the <code>[integration_name].[table_name]</code> table.</li>
+</ul>
 <p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">updated</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">xxxs</span><span class="w"></span>
 </code></pre></div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>In this example, we want to input the predictions into a table <code class="highlight"><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"></span></code>. Given is the following schema:</p>
+<p>We want to save the prediction results into the <code class="highlight"><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"></span></code> table.</p>
+<p>Here is the schema structure used throughout this example:</p>
 <div class="highlight"><pre><span></span><code>int1
 └── tbl1
 mindsdb
@@ -2057,34 +2064,34 @@ int2
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Name</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>int1</code></td>
-<td>Integration name where the table <code>tbl1</code> resides</td>
+<td>Integration where the table that stores prediction results resides.</td>
 </tr>
 <tr>
 <td><code>tbl1</code></td>
-<td>Table where data will be inserted</td>
+<td>Table that stores prediction results.</td>
 </tr>
 <tr>
 <td><code>predictor_name</code></td>
-<td>Name of the ML model</td>
+<td>Name of the model.</td>
 </tr>
 <tr>
 <td><code>int2</code></td>
-<td>Database to be used as a source in the inner <code class="highlight"><span class="k">SELECT</span><span class="w"></span></code></td>
+<td>Integration where the data source table used in the inner <code class="highlight"><span class="k">SELECT</span><span class="w"></span></code> statement resides.</td>
 </tr>
 <tr>
 <td><code>tbl2</code></td>
-<td>Table to be used as a source</td>
+<td>Data source table used in the inner <code class="highlight"><span class="k">SELECT</span><span class="w"></span></code> statement.</td>
 </tr>
 </tbody>
 </table>
-<p>In order to achieve the desired result, we execute the following query:</p>
+<p>Let's execute the query.</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">int2</span><span class="p">.</span><span class="n">tbl2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ta</span><span class="w"></span>

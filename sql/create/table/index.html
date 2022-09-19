@@ -2037,7 +2037,7 @@
 
 <h1 id="create-table-statement"><code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"></span></code> Statement<a class="headerlink" href="#create-table-statement" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>The <code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"></span></code> is used to create a table and fill it with the result of a subselect, usually used to materialize predictions into tables.</p>
+<p>The <code class="highlight"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"></span></code> statement creates a table and fills it with a subselect query output. It is usually used to materialize prediction results as tables.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <p>You can use the usual <code>CREATE TABLE</code> statement:</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">integration_name</span><span class="p">].[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span>
@@ -2047,16 +2047,19 @@
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">integration_name</span><span class="p">].[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span>
 <span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
 </code></pre></div>
-<p>It performs a subselect <code class="highlight"><span class="p">[</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...]</span><span class="w"></span></code> and gets data from it, thereafter it creates a table <code class="highlight"><span class="p">[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span></code> in <code class="highlight"><span class="p">[</span><span class="n">integration_name</span><span class="p">]</span><span class="w"></span></code>. lastly it performs an <code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="p">[</span><span class="n">integration_name</span><span class="p">].[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span></code> with the contents of the <code class="highlight"><span class="p">[</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...]</span><span class="w"></span></code>.</p>
+<p>Here are the steps followed by the syntax:</p>
+<ul>
+<li>It executes a subselect query to get the output dataset.</li>
+<li>In the case of the <code>CREATE OR REPLACE TABLE</code> statement, the <code>[integration_name].[table_name]</code> table is dropped before recreating it.</li>
+<li>It (re)creates the <code>[integration_name].[table_name]</code> table inside the <code class="highlight"><span class="p">[</span><span class="n">integration_name</span><span class="p">]</span><span class="w"></span></code> integration.</li>
+<li>It uses the <a href="/sql/api/insert/"><code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"></span></code></a> statement to insert the output of the <code class="highlight"><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="p">...)</span><span class="w"></span></code> query into the <code>[integration_name].[table_name]</code>.</li>
+</ul>
 <p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">xxx</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title"><code class="highlight"><span class="k">REPLACE</span><span class="w"></span></code></p>
-<p>If <code class="highlight"><span class="k">REPLACE</span><span class="w"></span></code> is indicated then <code class="highlight"><span class="p">[</span><span class="n">integration_name</span><span class="p">].[</span><span class="k">table_name</span><span class="p">]</span><span class="w"></span></code> will be <strong>Dropped</strong></p>
-</div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>In this example we want to persist the predictions into a table <code class="highlight"><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"></span></code>. Given the following schema:</p>
+<p>We want to save the prediction results into the <code class="highlight"><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"></span></code> table.</p>
+<p>Here is the schema structure used throughout this example:</p>
 <div class="highlight"><pre><span></span><code>int1
 └── tbl1
 mindsdb
@@ -2068,35 +2071,35 @@ int2
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Name</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>int1</code></td>
-<td>Integration for the table to be created in</td>
+<td>Integration where the table that stores prediction results resides.</td>
 </tr>
 <tr>
 <td><code>tbl1</code></td>
-<td>Table to be created</td>
+<td>Table that stores prediction results.</td>
 </tr>
 <tr>
 <td><code>predictor_name</code></td>
-<td>Name of the model to be used</td>
+<td>Name of the model.</td>
 </tr>
 <tr>
 <td><code>int2</code></td>
-<td>Database to be used as a source in the inner <code class="highlight"><span class="k">SELECT</span><span class="w"></span></code></td>
+<td>Integration where the data source table used in the inner <code class="highlight"><span class="k">SELECT</span><span class="w"></span></code> statement resides.</td>
 </tr>
 <tr>
 <td><code>tbl2</code></td>
-<td>Table to be used as a source.</td>
+<td>Data source table used in the inner <code class="highlight"><span class="k">SELECT</span><span class="w"></span></code> statement.</td>
 </tr>
 </tbody>
 </table>
-<p>In order to achieve the desired result we could execute the following query:</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<p>Let's execute the query.</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">int1</span><span class="p">.</span><span class="n">tbl1</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">int2</span><span class="p">.</span><span class="n">tbl2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ta</span><span class="w"></span>
 <span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictor_name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tb</span><span class="w"></span>

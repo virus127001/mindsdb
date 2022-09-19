@@ -1083,13 +1083,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    Validation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     Example
   </a>
@@ -2016,13 +2009,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    Validation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     Example
   </a>
@@ -2049,8 +2035,9 @@
 
 <h1 id="drop-predictor-statement"><code class="highlight"><span class="k">DROP</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> Statement<a class="headerlink" href="#drop-predictor-statement" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>The <code class="highlight"><span class="k">DROP</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> statement is used to delete the model table:</p>
+<p>The <code class="highlight"><span class="k">DROP</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> statement deletes the model table.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<p>Here is the syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="p">[</span><span class="n">predictor_name</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
@@ -2067,20 +2054,12 @@
 <tbody>
 <tr>
 <td><code>[predictor_name]</code></td>
-<td>Name of the model to be deleted</td>
+<td>Name of the model to be deleted.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;[predictor_name]&#39;</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-<p>On execution, we get:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Empty</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">026</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>The following SQL statement drops the model table called <code>home_rentals_model</code>. Given the following query to list all predictors by name</p>
+<p>Let's list all the available predictor tables.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
@@ -2089,17 +2068,16 @@
 <span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">                </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">---------------------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">other_model</span><span class="w">         </span><span class="o">|</span><span class="w"></span>
-<span class="o">+</span><span class="c1">---------------------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">home_rentals_model</span><span class="w">  </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">---------------------+</span>
 </code></pre></div>
-<p>Execute the <code class="highlight"><span class="k">DROP</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"></span></code> statement as:</p>
+<p>Now we delete the <code>home_rentals_model</code> table.</p>
 <div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">home_rentals_model</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">058</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<p>Validate that the model has been deleted by listing again all predictors by name:</p>
+<p>We can check if the deletion was successful by querying the <code>mindsdb.predictors</code> table again.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
