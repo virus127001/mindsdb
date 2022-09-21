@@ -1277,7 +1277,7 @@
   
     <li class="md-nav__item">
       <a href="../mlflow/" class="md-nav__link">
-        MLFlow
+        MLflow
       </a>
     </li>
   
@@ -1324,16 +1324,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#simple-example-logistic-regression" class="md-nav__link">
-    Simple example - Logistic regression
+  <a href="#simple-example-of-logistic-regression" class="md-nav__link">
+    Simple Example of Logistic Regression
   </a>
   
-    <nav class="md-nav" aria-label="Simple example - Logistic regression">
+    <nav class="md-nav" aria-label="Simple Example of Logistic Regression">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-keras-nlp-model" class="md-nav__link">
-    Example - Keras NLP model
+  <a href="#creating-the-ray-serve-model" class="md-nav__link">
+    Creating the Ray Serve Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringing-the-ray-serve-model-to-mindsdb" class="md-nav__link">
+    Bringing the Ray Serve Model to MindsDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-keras-nlp-model" class="md-nav__link">
+    Example of Keras NLP Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Example of Keras NLP Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-ray-serve-model_1" class="md-nav__link">
+    Creating the Ray Serve Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringing-the-ray-serve-model-to-mindsdb_1" class="md-nav__link">
+    Bringing the Ray Serve Model to MindsDB
   </a>
   
 </li>
@@ -1994,16 +2028,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#simple-example-logistic-regression" class="md-nav__link">
-    Simple example - Logistic regression
+  <a href="#simple-example-of-logistic-regression" class="md-nav__link">
+    Simple Example of Logistic Regression
   </a>
   
-    <nav class="md-nav" aria-label="Simple example - Logistic regression">
+    <nav class="md-nav" aria-label="Simple Example of Logistic Regression">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-keras-nlp-model" class="md-nav__link">
-    Example - Keras NLP model
+  <a href="#creating-the-ray-serve-model" class="md-nav__link">
+    Creating the Ray Serve Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringing-the-ray-serve-model-to-mindsdb" class="md-nav__link">
+    Bringing the Ray Serve Model to MindsDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-keras-nlp-model" class="md-nav__link">
+    Example of Keras NLP Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Example of Keras NLP Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-ray-serve-model_1" class="md-nav__link">
+    Creating the Ray Serve Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringing-the-ray-serve-model-to-mindsdb_1" class="md-nav__link">
+    Bringing the Ray Serve Model to MindsDB
   </a>
   
 </li>
@@ -2032,8 +2100,11 @@
 
 
 <h1 id="mindsdb-and-ray-serve">MindsDB and Ray Serve<a class="headerlink" href="#mindsdb-and-ray-serve" title="Permanent link">&para;</a></h1>
-<h2 id="simple-example-logistic-regression">Simple example - Logistic regression<a class="headerlink" href="#simple-example-logistic-regression" title="Permanent link">&para;</a></h2>
-<p>Ray serve is a simple high-throughput service that can wrap over your own ml models. In this example, we will train and predict with an external scikit-learn model. First, let's look at the actual model wrapped inside a class that complies with the above requirements:</p>
+<p>Ray Serve is a simple high-throughput model serving library that can wrap around your ML model.</p>
+<h2 id="simple-example-of-logistic-regression">Simple Example of Logistic Regression<a class="headerlink" href="#simple-example-of-logistic-regression" title="Permanent link">&para;</a></h2>
+<p>In this example, we train an external scikit-learn model to use for making predictions.</p>
+<h3 id="creating-the-ray-serve-model">Creating the Ray Serve Model<a class="headerlink" href="#creating-the-ray-serve-model" title="Permanent link">&para;</a></h3>
+<p>Let's look at an actual model wrapped by a class that complies with the requirements.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ray</span>
 <span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">FastAPI</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
@@ -2084,14 +2155,20 @@
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<p>The important bits here are having train and predict endpoints.</p>
-<p>The <code>train</code> endpoint accept two parameters in the JSON sent via POST:
-- <code>df</code> -- a serialized dictionary that can be converted into a pandas dataframe
-- <code>target</code> -- the name of the target column</p>
-<p>The <code>predict</code> endpoint needs only one parameter:
-- <code>df</code> -- a serialized dictionary that can be converted into a pandas dataframe</p>
-<p>The training endpoints must return a JSON that contains the keys <code>status</code> set to <code>ok</code>. The predict endpoint must return a dictionary containing the <code>prediction</code> key, storing the predictions. Additional keys can be returned for confidence and confidence intervals.</p>
-<p>Once you start this RayServe-wrapped model you can train it using a query like this one:</p>
+<p>It is important to have the <code>/train</code> and <code>/predict</code> endpoints.</p>
+<p>The <code>/train</code> endpoint accepts two parameters to be sent via POST:</p>
+<ul>
+<li><code>df</code> is a serialized dictionary that can be converted into a pandas dataframe.</li>
+<li><code>target</code> is the name of the target column to be predicted.</li>
+</ul>
+<p>It returns a JSON object containing the <code>status</code> key and the <code>ok</code> value.</p>
+<p>The <code>/predict</code> endpoint requires one parameter to be sent via POST:</p>
+<ul>
+<li><code>df</code> is a serialized dictionary that can be converted into a pandas dataframe.</li>
+</ul>
+<p>It returns a dictionary containing the <code>prediction</code> key. It stores the predictions. Additional keys can be returned for confidence and confidence intervals.</p>
+<h3 id="bringing-the-ray-serve-model-to-mindsdb">Bringing the Ray Serve Model to MindsDB<a class="headerlink" href="#bringing-the-ray-serve-model-to-mindsdb" title="Permanent link">&para;</a></h3>
+<p>Once you start the RayServe-wrapped model, you can create and train it in MindsDB.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">byom_ray_serve</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mydb</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number_of_rooms</span><span class="p">,</span><span class="w"> </span><span class="n">initial_price</span><span class="p">,</span><span class="w"> </span><span class="n">rental_price</span><span class="w"> </span>
@@ -2104,22 +2181,27 @@
 <span class="w">    </span><span class="n">dtype_dict</span><span class="o">=</span><span class="err">{</span><span class="ss">&quot;number_of_rooms&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;categorical&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;initial_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;rental_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">format</span><span class="o">=</span><span class="s1">&#39;ray_server&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>And you can query predictions as usual, either by conditioning on a subset of input columns:</p>
+<p>Now, you can fetch predictions using the standard MindsDB syntax. Follow the guide on the <a href="/sql/api/select/"><code>SELECT</code></a> statement to learn more.</p>
+<p>You can directly pass input data in the <code>WHERE</code> clause to get a single prediction.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">byom_ray_serve</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">initial_price</span><span class="o">=</span><span class="mi">3000</span><span class="w"></span>
 <span class="k">AND</span><span class="w"> </span><span class="n">rental_price</span><span class="o">=</span><span class="mi">3000</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>Or by <code>JOINING</code> to do batch predictions:</p>
+<p>Or you can <code>JOIN</code> the model wth a data table to get bulk predictions.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">tb</span><span class="p">.</span><span class="n">number_of_rooms</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">rental_price</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mydb</span><span class="p">.</span><span class="n">test_data</span><span class="p">.</span><span class="n">home_rentals</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span><span class="w"></span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">byom_ray_serve</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tb</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">rental_price</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5300</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p><em>Please note that, if your model is behind a reverse proxy (e.g. nginx) you might have to increase the maximum limit for POST requests in order to receive the training data. MindsDB itself can send as much as you'd like and has been stress-tested with over a billion rows.</em></p>
-<h3 id="example-keras-nlp-model">Example - Keras NLP model<a class="headerlink" href="#example-keras-nlp-model" title="Permanent link">&para;</a></h3>
-<p>For this example, we will consider a natural language processing (NLP) <a href="https://www.kaggle.com/c/nlp-getting-started">task</a> where we want to train a neural network with <a href="https://keras.io">Keras</a> to detect if a tweet is related to a natural disaster (fires, earthquakes, etc.). Please download this dataset to follow the example.</p>
-<p>The code for the model here is a bit more complex than in section 1.1, but the same rules apply: we create a Ray Server based service that wraps around a <a href="https://www.kaggle.com/shahules/basic-eda-cleaning-and-glove">Kaggle NLP Model</a> which can be trained and then used for predictions:</p>
+<div class="admonition tip">
+<p class="admonition-title">Limit for POST Requests</p>
+<p>Please note that if your model is behind a reverse proxy like nginx, you might have to increase the maximum limit for POST requests in order to receive the training data. MindsDB can send as much as you'd like - it has been stress-tested with over a billion rows.</p>
+</div>
+<h2 id="example-of-keras-nlp-model">Example of Keras NLP Model<a class="headerlink" href="#example-of-keras-nlp-model" title="Permanent link">&para;</a></h2>
+<p>Here, we consider a <a href="https://www.kaggle.com/c/nlp-getting-started">natural language processing (NLP) task</a> where we want to train a neural network using <a href="https://keras.io">Keras</a> to detect if a tweet is related to a natural disaster, such as fires, earthquakes, etc. Please download <a href="https://www.kaggle.com/c/nlp-getting-started">this dataset</a> to follow the example.</p>
+<h3 id="creating-the-ray-serve-model_1">Creating the Ray Serve Model<a class="headerlink" href="#creating-the-ray-serve-model_1" title="Permanent link">&para;</a></h3>
+<p>We create a Ray Serve service that wraps around the <a href="https://www.kaggle.com/shahules/basic-eda-cleaning-and-glove">Kaggle NLP Model</a> that can be trained and used for making predictions.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -2292,16 +2374,16 @@
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<p>We need access to the training data, so we'll create a table called <code>nlp_kaggle_train</code> to load the <a href="https://www.kaggle.com/c/nlp-getting-started">dataset</a> that the original model uses.</p>
-<p>And ingest it into a table with the following schema:</p>
+<p>Now, we need access to the training data. For that, we create a table called <code>nlp_kaggle_train</code> to load the <a href="https://www.kaggle.com/c/nlp-getting-started">dataset</a> that the original model uses. The <code>nlp_kaggle_train</code> table contains the following columns:</p>
 <div class="highlight"><pre><span></span><code><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"></span>
 <span class="n">keyword</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span><span class="w"></span>
 <span class="k">location</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span><span class="w"></span>
 <span class="nb">text</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span><span class="w"></span>
 <span class="n">target</span><span class="w"> </span><span class="nb">INT</span><span class="w"></span>
 </code></pre></div>
-<p><em>Note: specifics of the schema and how to ingest the csv will vary depending on your database.</em></p>
-<p>Next, we can register and train the above custom model using the following query:</p>
+<p>Please note that the specifics of the schema/table and how to ingest the CSV data vary depending on your database.</p>
+<h3 id="bringing-the-ray-serve-model-to-mindsdb_1">Bringing the Ray Serve Model to MindsDB<a class="headerlink" href="#bringing-the-ray-serve-model-to-mindsdb_1" title="Permanent link">&para;</a></h3>
+<p>Now, we can create and train this custom model in MindsDB.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">PREDICTOR</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">byom_ray_serve_nlp</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">maria</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="w"></span>
@@ -2313,19 +2395,27 @@
 <span class="w">    </span><span class="n">dtype_dict</span><span class="o">=</span><span class="err">{</span><span class="ss">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;rich_text&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="n">format</span><span class="o">=</span><span class="s1">&#39;ray_server&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>Training will take a while given that this model is a neural network rather than a simple logistic regression. You can check its status with the query <code>SELECT * FROM mindsdb.predictors WHERE name = 'byom_ray_serve_nlp';</code>, much like you'd do with a "normal" MindsDB predictor.</p>
-<p>Once the predictor's status becomes <code>trained</code> we can query it for predictions as usual:</p>
+<p>The training process takes some time, considering that this model is a neural network rather than a simple logistic regression.</p>
+<p>You can check the model status using this query:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;byom_ray_serve_nlp&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>Once the status of the predictor has a value of <code>trained</code>, you can fetch predictions using the standard MindsDB syntax. Follow the guide on the <a href="/sql/api/select/"><code>SELECT</code></a> statement to learn more.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">byom_ray_serve_nlp</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="nb">text</span><span class="o">=</span><span class="s1">&#39;The tsunami is coming, seek high ground&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>Which would, hopefully, output <code>1</code>. Alternatively, we can try out this tweet to expect <code>0</code> as an output:</p>
+<p>The expected output of the query above is <code>1</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">byom_ray_serve_nlp</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="nb">text</span><span class="o">=</span><span class="s1">&#39;This is lovely dear friend&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>If your results do not match this example, it could help to train the model for a longer amount of epochs.</p>
-<hr />
+<p>The expected output of the query above is <code>0</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Wrong Results?</p>
+<p>If your results do not match this example, try training the model for a longer amount of epochs.</p>
+</div>
 
               
             </article>

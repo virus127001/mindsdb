@@ -1069,8 +1069,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    Validation
+  <a href="#when-to-retrain-the-model" class="md-nav__link">
+    When to RETRAIN the Model?
   </a>
   
 </li>
@@ -1079,33 +1079,6 @@
   <a href="#example" class="md-nav__link">
     Example
   </a>
-  
-    <nav class="md-nav" aria-label="Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#validating-prior-status" class="md-nav__link">
-    Validating Prior Status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#retraining-model" class="md-nav__link">
-    Retraining model
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validating-resulting-status" class="md-nav__link">
-    Validating Resulting Status
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1366,7 +1339,7 @@
   
     <li class="md-nav__item">
       <a href="../../../custom-model/mlflow/" class="md-nav__link">
-        MLFlow
+        MLflow
       </a>
     </li>
   
@@ -2043,8 +2016,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    Validation
+  <a href="#when-to-retrain-the-model" class="md-nav__link">
+    When to RETRAIN the Model?
   </a>
   
 </li>
@@ -2053,33 +2026,6 @@
   <a href="#example" class="md-nav__link">
     Example
   </a>
-  
-    <nav class="md-nav" aria-label="Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#validating-prior-status" class="md-nav__link">
-    Validating Prior Status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#retraining-model" class="md-nav__link">
-    Retraining model
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validating-resulting-status" class="md-nav__link">
-    Validating Resulting Status
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2103,15 +2049,47 @@
 
 <h1 id="retrain-statement"><code class="highlight"><span class="n">RETRAIN</span><span class="w"></span></code> Statement<a class="headerlink" href="#retrain-statement" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>The <code class="highlight"><span class="n">RETRAIN</span><span class="w"></span></code> statement is used to retrain old predictors.
-The predictor is updated to leverage any new data in optimizing its predictive capabilities, without necessarily taking as long to train as starting from scratch. The basic syntax for retraining the predictors is:</p>
+<p>The <code class="highlight"><span class="n">RETRAIN</span><span class="w"></span></code> statement is used to retrain the already trained predictors with the new data. The predictor is updated to leverage the new data in optimizing its predictive capabilities.</p>
+<p>Retraining takes at least as much time as the training process of the predictor did because now the dataset used to retrain has new or updated data.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<p>Here is the syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="n">RETRAIN</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.[</span><span class="n">predictor_name</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">058</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h2>
+<h2 id="when-to-retrain-the-model">When to <code class="highlight"><span class="n">RETRAIN</span><span class="w"></span></code> the Model?<a class="headerlink" href="#when-to-retrain-the-model" title="Permanent link">&para;</a></h2>
+<p>It is advised to <code>RETRAIN</code> the predictor whenever the <code>update_status</code> column value from the <code>mindsdb.predictors</code> table is set to <code>available</code>.</p>
+<p>Here is when the <code>update_status</code> column value is set to <code>available</code>:</p>
+<ul>
+<li>When the new version of MindsDB is available that causes the predictor to become obsolete.</li>
+<li>When the new data is available in the table that was used to train the predictor.</li>
+</ul>
+<p>To find out whether you need to retrain your model, query the <code>mindsdb.predictors</code> table and look for the <code>update_status</code> column.</p>
+<p>Here are the possible values of the <code>update_status</code> column:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>available</code></td>
+<td>It indicates that the model should be updated.</td>
+</tr>
+<tr>
+<td><code>updating</code></td>
+<td>It indicates that the retraining process of the model takes place.</td>
+</tr>
+<tr>
+<td><code>up_to_date</code></td>
+<td>It indicates that your model is up to date and does not need to be retrained.</td>
+</tr>
+</tbody>
+</table>
+<p>Let's run the query.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">update_status</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;[predictor_name]&#39;</span><span class="p">;</span><span class="w"></span>
@@ -2134,16 +2112,17 @@ The predictor is updated to leverage any new data in optimizing its predictive c
 <tbody>
 <tr>
 <td><code>[predictor_name]</code></td>
-<td>Name of the model to be retrained</td>
+<td>Name of the model to be retrained.</td>
 </tr>
 <tr>
 <td><code>update_status</code></td>
-<td>Column from <code class="highlight"><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span></code> that informs if the model can be retrained or not</td>
+<td>Column informing whether the model needs to be retrained.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<h3 id="validating-prior-status">Validating Prior Status<a class="headerlink" href="#validating-prior-status" title="Permanent link">&para;</a></h3>
+<p>Let's look at an example using the <code>home_rentals_model</code> model.</p>
+<p>First, we check the status of the predictor.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">update_status</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;home_rentals_model&#39;</span><span class="p">;</span><span class="w"></span>
@@ -2155,14 +2134,25 @@ The predictor is updated to leverage any new data in optimizing its predictive c
 <span class="o">|</span><span class="w"> </span><span class="n">home_rentals_model</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">available</span><span class="w">     </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">--------------------+---------------+</span>
 </code></pre></div>
-<p>Note the value for <code>update_status</code> is <code>available</code>.</p>
-<h3 id="retraining-model">Retraining model<a class="headerlink" href="#retraining-model" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">RETRAIN</span><span class="w"> </span><span class="n">home_rentals_model</span><span class="p">;</span><span class="w"></span>
+<p>The <code>available</code> value of the <code>update_status</code> column informs us that the new data is available, and we can retrain the model.</p>
+<div class="highlight"><pre><span></span><code><span class="n">RETRAIN</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">058</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<h3 id="validating-resulting-status">Validating Resulting Status<a class="headerlink" href="#validating-resulting-status" title="Permanent link">&para;</a></h3>
+<p>Now, let's check the status again.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w">  </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">update_status</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;home_rentals_model&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>On execution, we get:</p>
+<div class="highlight"><pre><span></span><code><span class="o">+</span><span class="c1">--------------------+---------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="n">update_status</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">--------------------+---------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">home_rentals_model</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">updating</span><span class="w">      </span><span class="o">|</span><span class="w"></span>
+<span class="o">+</span><span class="c1">--------------------+---------------+</span>
+</code></pre></div>
+<p>And after the retraining process is completed:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w">  </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">update_status</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="w"></span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;home_rentals_model&#39;</span><span class="p">;</span><span class="w"></span>

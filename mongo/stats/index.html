@@ -1241,11 +1241,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-stats-method-with-the-scale-features-parameter" class="md-nav__link">
-    Using the stats() Method with the {scale: "features"} Parameter
+  <a href="#the-stats-method-with-the-scale-features-parameter" class="md-nav__link">
+    The stats() Method with the {scale: "features"} Parameter
   </a>
   
-    <nav class="md-nav" aria-label="Using the stats() Method with the {scale: "features"} Parameter">
+    <nav class="md-nav" aria-label="The stats() Method with the {scale: "features"} Parameter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1275,11 +1275,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-stats-method-with-the-scale-model-parameter" class="md-nav__link">
-    Using the stats() Method with the {scale: "model"} Parameter
+  <a href="#the-stats-method-with-the-scale-model-parameter" class="md-nav__link">
+    The stats() Method with the {scale: "model"} Parameter
   </a>
   
-    <nav class="md-nav" aria-label="Using the stats() Method with the {scale: "model"} Parameter">
+    <nav class="md-nav" aria-label="The stats() Method with the {scale: "model"} Parameter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1309,11 +1309,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-stats-method-with-the-scale-ensemble-parameter" class="md-nav__link">
-    Using the stats() Method with the {scale: "ensemble"} Parameter
+  <a href="#the-stats-method-with-the-scale-ensemble-parameter" class="md-nav__link">
+    The stats() Method with the {scale: "ensemble"} Parameter
   </a>
   
-    <nav class="md-nav" aria-label="Using the stats() Method with the {scale: "ensemble"} Parameter">
+    <nav class="md-nav" aria-label="The stats() Method with the {scale: "ensemble"} Parameter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1420,7 +1420,7 @@
   
     <li class="md-nav__item">
       <a href="../../custom-model/mlflow/" class="md-nav__link">
-        MLFlow
+        MLflow
       </a>
     </li>
   
@@ -2090,11 +2090,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-stats-method-with-the-scale-features-parameter" class="md-nav__link">
-    Using the stats() Method with the {scale: "features"} Parameter
+  <a href="#the-stats-method-with-the-scale-features-parameter" class="md-nav__link">
+    The stats() Method with the {scale: "features"} Parameter
   </a>
   
-    <nav class="md-nav" aria-label="Using the stats() Method with the {scale: "features"} Parameter">
+    <nav class="md-nav" aria-label="The stats() Method with the {scale: "features"} Parameter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2124,11 +2124,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-stats-method-with-the-scale-model-parameter" class="md-nav__link">
-    Using the stats() Method with the {scale: "model"} Parameter
+  <a href="#the-stats-method-with-the-scale-model-parameter" class="md-nav__link">
+    The stats() Method with the {scale: "model"} Parameter
   </a>
   
-    <nav class="md-nav" aria-label="Using the stats() Method with the {scale: "model"} Parameter">
+    <nav class="md-nav" aria-label="The stats() Method with the {scale: "model"} Parameter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2158,11 +2158,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-stats-method-with-the-scale-ensemble-parameter" class="md-nav__link">
-    Using the stats() Method with the {scale: "ensemble"} Parameter
+  <a href="#the-stats-method-with-the-scale-ensemble-parameter" class="md-nav__link">
+    The stats() Method with the {scale: "ensemble"} Parameter
   </a>
   
-    <nav class="md-nav" aria-label="Using the stats() Method with the {scale: "ensemble"} Parameter">
+    <nav class="md-nav" aria-label="The stats() Method with the {scale: "ensemble"} Parameter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2212,7 +2212,7 @@
 <h1 id="getting-the-statistics">Getting the Statistics<a class="headerlink" href="#getting-the-statistics" title="Permanent link">&para;</a></h1>
 <h2 id="the-stats-method">The <code>stats()</code> Method<a class="headerlink" href="#the-stats-method" title="Permanent link">&para;</a></h2>
 <p>The <code>stats()</code> method is used to display the attributes of an existing model. It accepts the <code>{scale: "attribute"}</code> object as an argument.</p>
-<p>Here is how to call the <code>stats()</code> method.</p>
+<p>Here is how to call the <code>stats()</code> method:</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">predictor_name</span><span class="p">.</span><span class="n">stats</span><span class="p">(</span><span class="err">{</span><span class="k">scale</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;attribute&quot;</span><span class="err">}</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>Where:</p>
@@ -2226,18 +2226,19 @@
 <tbody>
 <tr>
 <td><code>predictor_name</code></td>
-<td>The name of the predictor whose statistics you want to see</td>
+<td>The name of the predictor whose statistics you want to see.</td>
 </tr>
 <tr>
 <td><code>{scale: "attribute"}</code></td>
-<td>The argument of the <code>stats()</code> method defines the type of statistics (<code>{scale: "features"}</code>, or <code>{scale: "model"}</code>, or <code>{scale: "ensemble"}</code>)</td>
+<td>The argument of the <code>stats()</code> method defines the type of statistics (<code>{scale: "features"}</code>, or <code>{scale: "model"}</code>, or <code>{scale: "ensemble"}</code>).</td>
 </tr>
 </tbody>
 </table>
-<h2 id="using-the-stats-method-with-the-scale-features-parameter">Using the <code>stats()</code> Method with the <code>{scale: "features"}</code> Parameter<a class="headerlink" href="#using-the-stats-method-with-the-scale-features-parameter" title="Permanent link">&para;</a></h2>
+<h2 id="the-stats-method-with-the-scale-features-parameter">The <code>stats()</code> Method with the <code>{scale: "features"}</code> Parameter<a class="headerlink" href="#the-stats-method-with-the-scale-features-parameter" title="Permanent link">&para;</a></h2>
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
 <p>The <code>db.predictor_name.stats({scale: "features"})</code> method is used to display the way the model encoded the data before training.</p>
 <h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
+<p>Here is the syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">predictor_name</span><span class="p">.</span><span class="n">stats</span><span class="p">(</span><span class="err">{</span><span class="k">scale</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;features&quot;</span><span class="err">}</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
@@ -2263,23 +2264,24 @@
 <tbody>
 <tr>
 <td><code>"column"</code></td>
-<td>The name of the column</td>
+<td>The name of the column.</td>
 </tr>
 <tr>
 <td><code>"type"</code></td>
-<td>Type of the inferred data</td>
+<td>Type of the inferred data.</td>
 </tr>
 <tr>
 <td><code>"encoder"</code></td>
-<td>Encoder used</td>
+<td>Encoder used.</td>
 </tr>
 <tr>
 <td><code>"role"</code></td>
-<td>Role of the column (<code>feature</code> or <code>target</code>)</td>
+<td>Role of the column (<code>feature</code> or <code>target</code>).</td>
 </tr>
 </tbody>
 </table>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>Let's describe the <code>home_rentals_model</code> model.</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="p">.</span><span class="n">stats</span><span class="p">(</span><span class="err">{</span><span class="k">scale</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;features&quot;</span><span class="err">}</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
@@ -2337,10 +2339,11 @@
 <span class="w">        </span><span class="nt">&quot;ns&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mindsdb.home_rentals_model&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<h2 id="using-the-stats-method-with-the-scale-model-parameter">Using the <code>stats()</code> Method with the <code>{scale: "model"}</code> Parameter<a class="headerlink" href="#using-the-stats-method-with-the-scale-model-parameter" title="Permanent link">&para;</a></h2>
+<h2 id="the-stats-method-with-the-scale-model-parameter">The <code>stats()</code> Method with the <code>{scale: "model"}</code> Parameter<a class="headerlink" href="#the-stats-method-with-the-scale-model-parameter" title="Permanent link">&para;</a></h2>
 <h3 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h3>
 <p>The <code>db.predictor_name.stats({scale: "model"})</code> method is used to display the performance of the candidate models.</p>
 <h3 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h3>
+<p>Here is the syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">predictor_name</span><span class="p">.</span><span class="n">stats</span><span class="p">(</span><span class="err">{</span><span class="k">scale</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;model&quot;</span><span class="err">}</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
@@ -2366,23 +2369,24 @@
 <tbody>
 <tr>
 <td><code>"name"</code></td>
-<td>Name of the candidate model</td>
+<td>Name of the candidate model.</td>
 </tr>
 <tr>
 <td><code>"performance"</code></td>
-<td>Accuracy from 0 to 1 depending on the type of the model</td>
+<td>Accuracy from 0 to 1 depending on the type of the model.</td>
 </tr>
 <tr>
 <td><code>"training_time"</code></td>
-<td>Time elapsed for the training of the model</td>
+<td>Time elapsed for the training of the model.</td>
 </tr>
 <tr>
 <td><code>"selected"</code></td>
-<td><code>1</code> for the best performing model and <code>0</code> for the rest</td>
+<td><code>1</code> for the best performing model and <code>0</code> for the rest.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<p>Let's see the output for the <code>home_rentals_model</code> model.</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">home_rentals_model</span><span class="p">.</span><span class="n">stats</span><span class="p">(</span><span class="err">{</span><span class="k">scale</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;model&quot;</span><span class="err">}</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
@@ -2410,10 +2414,11 @@
 <span class="w">        </span><span class="nt">&quot;ns&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mindsdb.home_rentals_model&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<h2 id="using-the-stats-method-with-the-scale-ensemble-parameter">Using the <code>stats()</code> Method with the <code>{scale: "ensemble"}</code> Parameter<a class="headerlink" href="#using-the-stats-method-with-the-scale-ensemble-parameter" title="Permanent link">&para;</a></h2>
+<h2 id="the-stats-method-with-the-scale-ensemble-parameter">The <code>stats()</code> Method with the <code>{scale: "ensemble"}</code> Parameter<a class="headerlink" href="#the-stats-method-with-the-scale-ensemble-parameter" title="Permanent link">&para;</a></h2>
 <h3 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h3>
 <p>The <code>db.predictor_name.stats({scale: "ensemble"})</code> method is used to display the parameters used to select the best candidate model.</p>
 <h3 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h3>
+<p>Here is the syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">predictor_name</span><span class="p">.</span><span class="n">stats</span><span class="p">(</span><span class="err">{</span><span class="k">scale</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;ensemble&quot;</span><span class="err">}</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>On execution, we get:</p>
@@ -2434,7 +2439,7 @@
 <tbody>
 <tr>
 <td><code>ensemble</code></td>
-<td>Object of the JSON type describing the parameters used to select the best candidate model</td>
+<td>Object of the JSON type describing the parameters used to select the best candidate model.</td>
 </tr>
 </tbody>
 </table>
@@ -2444,8 +2449,8 @@
 <p>This example is a work in progress.</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Unsure what it all means?</p>
-<p>If you're unsure how to <code class="highlight"><span class="k">DESCRIBE</span><span class="w"></span></code> your model or understand the results, feel free to ask us at the community <a href="https://join.slack.com/t/mindsdbcommunity/shared_invite/zt-o8mrmx3l-5ai~5H66s6wlxFfBMVI6wQ">Slack workspace</a>.</p>
+<p class="admonition-title">Need More Info?</p>
+<p>If you need more information on how to describe your model or understand the results, feel free to ask us on the <a href="https://join.slack.com/t/mindsdbcommunity/shared_invite/zt-o8mrmx3l-5ai~5H66s6wlxFfBMVI6wQ">community Slack workspace</a>.</p>
 </div>
 
               

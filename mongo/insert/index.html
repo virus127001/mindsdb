@@ -1215,11 +1215,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-dbpredictorsinsert-method" class="md-nav__link">
-    Using the db.predictors.insert() Method
+  <a href="#the-dbpredictorsinsert-method" class="md-nav__link">
+    The db.predictors.insert() Method
   </a>
   
-    <nav class="md-nav" aria-label="Using the db.predictors.insert() Method">
+    <nav class="md-nav" aria-label="The db.predictors.insert() Method">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1367,7 +1367,7 @@
   
     <li class="md-nav__item">
       <a href="../../custom-model/mlflow/" class="md-nav__link">
-        MLFlow
+        MLflow
       </a>
     </li>
   
@@ -2030,11 +2030,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-dbpredictorsinsert-method" class="md-nav__link">
-    Using the db.predictors.insert() Method
+  <a href="#the-dbpredictorsinsert-method" class="md-nav__link">
+    The db.predictors.insert() Method
   </a>
   
-    <nav class="md-nav" aria-label="Using the db.predictors.insert() Method">
+    <nav class="md-nav" aria-label="The db.predictors.insert() Method">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2103,10 +2103,11 @@
 
 <h1 id="creating-predictors-in-mongo">Creating Predictors in Mongo<a class="headerlink" href="#creating-predictors-in-mongo" title="Permanent link">&para;</a></h1>
 <p>Predictors are the machine learning models that enable us to forecast future data based on the available data. By using the <code>db.predictors.insert()</code> method, we create and train predictors in Mongo.</p>
-<h2 id="using-the-dbpredictorsinsert-method">Using the <code>db.predictors.insert()</code> Method<a class="headerlink" href="#using-the-dbpredictorsinsert-method" title="Permanent link">&para;</a></h2>
+<h2 id="the-dbpredictorsinsert-method">The <code>db.predictors.insert()</code> Method<a class="headerlink" href="#the-dbpredictorsinsert-method" title="Permanent link">&para;</a></h2>
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
 <p>The <code>db.predictors.insert()</code> method creates and trains a new model.</p>
 <h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
+<p>Here is the syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">predictors</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="err">{</span><span class="w"></span>
 <span class="w">     </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;predictor_name&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">     </span><span class="n">predict</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;target_column&quot;</span><span class="p">,</span><span class="w"></span>
@@ -2136,19 +2137,19 @@
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td>The name of the model to be created</td>
+<td>The name of the model to be created.</td>
 </tr>
 <tr>
 <td><code>predict</code></td>
-<td>The column name of the target variable</td>
+<td>The name of the target column to be predicted.</td>
 </tr>
 <tr>
 <td><code>connection</code></td>
-<td>The name of the integration created via <a href="/mongo/database/"><code>INSERT DATABASE</code></a> or <a href="/sql/api/select_files/">file upload</a></td>
+<td>The name of the integration created via <a href="/mongo/database/">the <code>db.databases.insertOne()</code> method</a> or <a href="/sql/create/file/">file upload</a>.</td>
 </tr>
 <tr>
 <td><code>select_data_query</code></td>
-<td>Object that stores the data collection name to be used for training and validation and additional arguments for filtering the data</td>
+<td>Object that stores the data collection name to be used for training and validation and additional arguments for filtering the data.</td>
 </tr>
 </tbody>
 </table>

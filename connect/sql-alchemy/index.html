@@ -1325,7 +1325,7 @@
   
     <li class="md-nav__item">
       <a href="../../custom-model/mlflow/" class="md-nav__link">
-        MLFlow
+        MLflow
       </a>
     </li>
   
@@ -2029,9 +2029,9 @@
 <p>You can use the Python code below to connect your Cloud MindsDB database to SQL Alchemy.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
 
-<span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;MindsDB Cloud username&#39;</span> <span class="c1"># replace this value</span>
+<span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;MindsDB Cloud username&#39;</span> <span class="c1"># your Mindsdb Cloud email address is your username</span>
 <span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;MindsDB Cloud password&#39;</span> <span class="c1"># replace this value</span>
-<span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;cloud-mysql.mindsdb.com&#39;</span>
+<span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;cloud.mindsdb.com&#39;</span>
 <span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span>
 <span class="n">database</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
@@ -2049,14 +2049,14 @@
 </code></pre></div>
 <p>Please note that we use the following connection details:</p>
 <ul>
-<li>Username is your MindsDB Cloud username</li>
+<li>Username is your MindsDB Cloud email address</li>
 <li>Password is your MindsDB Cloud password</li>
-<li>Host is <code>cloud-mysql.mindsdb.com</code></li>
+<li>Host is <code>cloud.mindsdb.com</code></li>
 <li>Port is <code>3306</code></li>
 <li>Database name is left empty</li>
 </ul>
 <p>To create a database connection, execute the code above. On success, the following output is expected:</p>
-<div class="highlight"><pre><span></span><code>Connection to the cloud-mysql.mindsdb.com <span class="k">for</span> user MindsDB-Cloud-Username created successfully.
+<div class="highlight"><pre><span></span><code>Connection to the cloud.mindsdb.com <span class="k">for</span> user MindsDB-Cloud-Username created successfully.
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2094,6 +2094,10 @@
 </code></pre></div>
 </div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Sqlachemy <code>create_engine</code> is lazy. This implies any human error when entering the connection details would be undetectable until an action becomes necessary, such as when calling the <code>execute</code> method to execute SQL commands.</p>
 </div>
 <h2 id="whats-next">What's Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <p>Now that you are all set, we recommend you check out our <strong>Tutorials</strong> and <strong>Community Tutorials</strong> sections, where you'll find various examples of regression, classification, and time series predictions with MindsDB.</p>

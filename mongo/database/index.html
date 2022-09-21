@@ -1201,11 +1201,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-dbdatabasesinsertone-method" class="md-nav__link">
-    Using the db.databases.insertOne() Method
+  <a href="#the-dbdatabasesinsertone-method" class="md-nav__link">
+    The db.databases.insertOne() Method
   </a>
   
-    <nav class="md-nav" aria-label="Using the db.databases.insertOne() Method">
+    <nav class="md-nav" aria-label="The db.databases.insertOne() Method">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1367,7 +1367,7 @@
   
     <li class="md-nav__item">
       <a href="../../custom-model/mlflow/" class="md-nav__link">
-        MLFlow
+        MLflow
       </a>
     </li>
   
@@ -2030,11 +2030,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-dbdatabasesinsertone-method" class="md-nav__link">
-    Using the db.databases.insertOne() Method
+  <a href="#the-dbdatabasesinsertone-method" class="md-nav__link">
+    The db.databases.insertOne() Method
   </a>
   
-    <nav class="md-nav" aria-label="Using the db.databases.insertOne() Method">
+    <nav class="md-nav" aria-label="The db.databases.insertOne() Method">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2103,11 +2103,12 @@
 
 <h1 id="connecting-databases-to-mindsdb-in-mongo">Connecting Databases to MindsDB in Mongo<a class="headerlink" href="#connecting-databases-to-mindsdb-in-mongo" title="Permanent link">&para;</a></h1>
 <p>Integrations, or external databases, provide data to be used for making forecasts. Here, we use the <code>databases.insertOne()</code> method to connect the integrations to Mongo.</p>
-<h2 id="using-the-dbdatabasesinsertone-method">Using the <code>db.databases.insertOne()</code> Method<a class="headerlink" href="#using-the-dbdatabasesinsertone-method" title="Permanent link">&para;</a></h2>
+<h2 id="the-dbdatabasesinsertone-method">The <code>db.databases.insertOne()</code> Method<a class="headerlink" href="#the-dbdatabasesinsertone-method" title="Permanent link">&para;</a></h2>
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
 <p>MindsDB enables adding databases to your Mongo instance using the <code>db.databases.insertOne()</code> method.</p>
 <p>Our MindsDB Mongo API supports creating a connection by passing the database credentials.</p>
 <h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
+<p>Here is the syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">insertOne</span><span class="p">(</span><span class="err">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;mongo_int&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="n">engine</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;mongodb&quot;</span><span class="p">,</span><span class="w"></span>
@@ -2135,15 +2136,15 @@
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td>Identifier for the data source to be created</td>
+<td>Identifier for the data source to be created.</td>
 </tr>
 <tr>
 <td><code>engine</code></td>
-<td>Engine to be selected (for Mongo API, it is always <code>mongodb</code>)</td>
+<td>Database engine to be selected.</td>
 </tr>
 <tr>
 <td><code>connection_args</code></td>
-<td><code class="highlight"><span class="p">{</span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;value&quot;</span><span class="p">}</span><span class="w"></span></code> object storing the connection parameters such as port, host, database</td>
+<td><code class="highlight"><span class="p">{</span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;value&quot;</span><span class="p">}</span><span class="w"></span></code> object storing the connection parameters such as port, host, database.</td>
 </tr>
 </tbody>
 </table>
